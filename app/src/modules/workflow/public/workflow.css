@@ -1,0 +1,18 @@
+/* P08 · หน้า /officer/cases/:caseNo และ /head/approvals (mobile-first · ไม่มี scroll แนวนอน) */
+.wf-page [hidden] { display: none !important; }
+.wf-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 1rem; }
+.wf-col { min-width: 0; }
+.wf-group { margin: 0 0 1rem; }
+.wf-form { border: 1px solid #d5dbe1; border-radius: 6px; padding: .75rem; margin: .5rem 0 1rem; background: #f7f9fb; }
+.wf-unmask { margin-top: .5rem; }
+.wf-doc-list { list-style: none; padding: 0; margin: 0; }
+.wf-doc-list li { padding: .5rem 0; border-bottom: 1px solid #d5dbe1; overflow-wrap: anywhere; }
+.wf-doc-list li:last-child { border-bottom: 0; }
+.wf-doc-kind { font-weight: 600; margin-right: .5rem; }
+.wf-timeline { list-style: none; padding: 0; margin: 0; }
+.wf-timeline li { border-left: 3px solid #0b5cad; padding: .25rem 0 .5rem .75rem; margin: 0 0 .5rem; overflow-wrap: anywhere; }
+.wf-tl-detail { color: #3d4650; }
+#wf-full-id-slot strong { margin-left: .25rem; }
+@media (min-width: 1024px) {
+  .wf-grid { grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); }
+}

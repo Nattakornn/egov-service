@@ -1,0 +1,21 @@
+/* P04 · ฟอร์มยื่นคำขอ 3 ขั้น (mobile-first · ไม่มี scroll แนวนอนที่ 375 px) */
+.apply-wizard { max-width: 760px; }
+.apply-wizard h1 { overflow-wrap: anywhere; }
+.apply-progress { display: flex; flex-wrap: wrap; gap: .25rem .75rem; list-style: none; margin: 0; padding: 0; counter-reset: st; }
+.apply-progress li { counter-increment: st; color: #4a5560; }
+.apply-progress li::before { content: counter(st) ". "; }
+.apply-progress li[aria-current="step"] { color: #08386f; font-weight: 700; text-decoration: underline; }
+.apply-num { align-items: center; gap: .5rem; flex-wrap: nowrap; }
+.apply-num input { width: 8rem; max-width: 100%; }
+.apply-fee { font-size: 1.15rem; margin: 0; }
+.apply-fee strong { font-size: 1.35rem; color: #08386f; }
+.apply-upload input[type="file"] { width: 100%; }
+.apply-files { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.apply-files:empty::after { content: "ยังไม่มีไฟล์"; color: #4a5560; }
+.apply-file { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: .5rem; padding: .5rem .75rem; border: 1px solid #d5dbe1; border-radius: 6px; background: #fff; }
+.apply-file-info { min-width: 0; overflow-wrap: anywhere; }
+.apply-file-doc { font-weight: 700; }
+.apply-files-title { font-size: 1rem; margin: .5rem 0 0; }
+.apply-receipt { border-color: #1d6b38; }
+.qr-box img { display: block; max-width: 100%; height: auto; }
+.apply-wizard .kv dd { overflow-wrap: anywhere; }

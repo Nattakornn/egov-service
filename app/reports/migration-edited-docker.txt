@@ -1,0 +1,9 @@
+# แก้ migration ที่ apply แล้ว → image จริงไม่ยอมเริ่ม และไม่แตะ DB · 2026-11-19 10:15:22 +0700
+# DB = สำเนา data/app.db หลัง restart-check (มี cit-0005) · 0001_init.sql ที่ต่อท้าย "-- edited after apply" mount ทับในคอนเทนเนอร์
+$ docker run --rm -e DB_PATH=/data/app.db -v /tmp/dockcheck/data:/data -v /tmp/dockcheck/0001_init.sql:/app/src/core/migrations/0001_init.sql:ro egov-eservice-web
+[egov] start failed: [migrate] ไม่เริ่มระบบ: migration ที่ apply แล้วถูกแก้ไข/ลบ/เปลี่ยนชื่อ
+- core/0001_init.sql: ไฟล์ถูกแก้หลัง apply แล้ว (checksum ที่บันทึก db8341a9c2f9… ≠ ไฟล์ตอนนี้ 71474a49b467…)
+ห้ามแก้ไฟล์ migration ที่ apply แล้ว ให้เพิ่มไฟล์ใหม่เท่านั้น → คืนไฟล์เดิม (ชื่อและเนื้อหาเดิม) แล้วเพิ่ม migration ใหม่: npm run migrate:new -- <desc>
+Applied migrations must never be edited, deleted or renamed; restore the original file and add a new migration instead. ข้อมูลใน DB ไม่ถูกแตะ
+exit=1
+sha256(app.db) ก่อน 694e317a7916645a · หลัง 694e317a7916645a (ไฟล์ DB ไม่เปลี่ยนแม้แต่ไบต์เดียว) · users=12 · cit-0005 registered=1 ยังอยู่

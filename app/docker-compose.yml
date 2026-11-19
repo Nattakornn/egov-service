@@ -1,0 +1,70 @@
+# รันเว็บ:           docker compose up --build -d                      (TEST_MODE ปิด → /api/test/* = 404)
+# โหมดทดสอบ:        TEST_MODE=1 docker compose up --build -d
+# เปิดบั๊ก:           TEST_MODE=1 BUG_MODE=B03,B07 docker compose up --build -d
+# รัน Playwright:    TEST_MODE=1 docker compose up --build -d && docker compose --profile test run --rm e2e
+# พอร์ตบนเครื่อง:    WEB_PORT=3000 (ค่าเริ่มต้น)
+services:
+  web:
+    build: .
+    image: egov-eservice-web
+    ports:
+      - "${WEB_PORT:-3000}:3000"
+    environment:
+      TEST_MODE: ${TEST_MODE:-}
+      BUG_MODE: ${BUG_MODE:-}
+      # LOG_REQUESTS=1 → log "METHOD path status ms" ทุกคำขอลง stdout (run-bugs.sh เปิดให้ TC-NFR-04 ตรวจ log ของเว็บ)
+      LOG_REQUESTS: ${LOG_REQUESTS:-}
+      DB_PATH: /data/app.db
+      PORT: "3000"
+    volumes:
+      - ./data:/data
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+    restart: unless-stopped
+
+  # เว็บตัวที่ 2 ไม่ตั้ง TEST_MODE (เฉพาะ profile test) → TC-NFR-03 ตรวจว่า /api/test/* = 404 เมื่อปิด hook
+  web-notest:
+    image: egov-eservice-web
+    profiles: ["test"]
+    depends_on:
+      web:
+        condition: service_healthy
+    environment:
+      TEST_MODE: ""
+      BUG_MODE: ""
+      DB_PATH: /data/app.db
+      PORT: "3000"
+    tmpfs:
+      - /data
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 5s
+
+  e2e:
+    image: mcr.microsoft.com/playwright:v1.49.1-jammy
+    profiles: ["test"]
+    working_dir: /e2e
+    depends_on:
+      web:
+        condition: service_healthy
+      web-notest:
+        condition: service_healthy
+    environment:
+      BASE_URL: http://web:3000
+      BASE_URL_NO_TEST_MODE: http://web-notest:3000
+      DB_PATH: /data/app.db
+      # ไฟล์ log ของ web (run-bugs.sh เก็บ `docker compose logs -f web` ลง ./e2e/results/web.log) → TC-NFR-04 ค้น PII ใน log
+      WEB_LOG_PATH: ${WEB_LOG_PATH:-}
+      CI: "1"
+    volumes:
+      - ./e2e:/e2e
+      - ./data:/data:ro
+    ipc: host
+    command: ["bash", "-lc", "npm install --no-audit --no-fund && npx playwright test"]

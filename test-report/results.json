@@ -1,0 +1,3391 @@
+{
+  "config": {
+    "configFile": "/e2e/report.config.tmp.js",
+    "rootDir": "/e2e/specs",
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": "/e2e/global-setup.js",
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/e2e/.test-report-run/results.json"
+        }
+      ],
+      [
+        "html",
+        {
+          "outputFolder": "/e2e/.test-report-run/html",
+          "open": "never"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 15000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "/e2e/.test-report-run/artifacts",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/e2e/specs",
+        "testIgnore": [],
+        "testMatch": [
+          "/.*\\.spec\\.js$/"
+        ],
+        "timeout": 240000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "version": "1.49.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "part1/auth.spec.js",
+      "file": "part1/auth.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-AUTH-01 · เลขบัตร 13 หลัก + checksum",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1741,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ปฏิเสธ 110170012345 (12 หลัก ต่ำกว่าขอบ)",
+                      "duration": 195
+                    },
+                    {
+                      "title": "ปฏิเสธ 11017001234567 (14 หลัก เกินขอบ)",
+                      "duration": 98
+                    },
+                    {
+                      "title": "ปฏิเสธ 1101700123457 (checksum ผิด (ที่ถูกคือ 6))",
+                      "duration": 212
+                    },
+                    {
+                      "title": "ปฏิเสธ 11017001234ab (ไม่ใช่ตัวเลขล้วน)",
+                      "duration": 207
+                    },
+                    {
+                      "title": "รับ 1101700123456 (checksum ถูก)",
+                      "duration": 202
+                    },
+                    {
+                      "title": "รับ 3100600987659 (checksum ถูก)",
+                      "duration": 214
+                    },
+                    {
+                      "title": "รับ 1909900555015 (checksum ถูก)",
+                      "duration": 202
+                    },
+                    {
+                      "title": "รับ 5500400111221 (checksum ถูก)",
+                      "duration": 200
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:41:55.259Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-auth-TC-AUTH-01-·-เลขบัตร-13-หลัก-checksum-chromium/attachments/video-009a51acd80012892094ae4cc24fa954c84b8c04.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ce2ae6a2f0189f060d7-1a5ec22f4b12305b0083",
+          "file": "part1/auth.spec.js",
+          "line": 7,
+          "column": 1
+        },
+        {
+          "title": "TC-AUTH-02 · OTP ผิด 3 ครั้งล็อก 15 นาที",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1723,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ขั้น 1–3: ปิติ OTP 000000 สามครั้งผ่านหน้าจอ → ล็อก 15 นาที",
+                      "duration": 368
+                    },
+                    {
+                      "title": "ขั้น 4: OTP ถูกทันที → ยัง 423",
+                      "duration": 27
+                    },
+                    {
+                      "title": "ขั้น 5: สมชายล็อกอินปกติระหว่างที่ปิติถูกล็อก",
+                      "duration": 53
+                    },
+                    {
+                      "title": "ขั้น 6: 09:14:59 ปิติ OTP 123456 → ยัง 423",
+                      "duration": 34
+                    },
+                    {
+                      "title": "ขั้น 7–8: 09:15:00 ปลดล็อก ตัวนับเริ่มใหม่ แล้ว OTP ถูก → 200",
+                      "duration": 427
+                    },
+                    {
+                      "title": "ขั้น 9: RESET · ผิด 2 → ถูก → ออก → ผิด 2 → ไม่ล็อก",
+                      "duration": 106
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:41:57.129Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-auth-TC-AUTH-02-·-OTP-ผิด-3-ครั้งล็อก-15-นาที-chromium/attachments/video-be7a35f8b045ab070250f443d45cf375632d06fd.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-auth-TC-AUTH-02-·-OTP-ผิด-3-ครั้งล็อก-15-นาที-chromium/attachments/video-9e22ade4ffbba82a902c2a1384da5f6a82652f4a.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-auth-TC-AUTH-02-·-OTP-ผิด-3-ครั้งล็อก-15-นาที-chromium/attachments/video-53fb52d128fc7dff1f406d93a6670b08080d8b80.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-auth-TC-AUTH-02-·-OTP-ผิด-3-ครั้งล็อก-15-นาที-chromium/attachments/video-2eed0e1e08f0ae1bdc4e18f56ce8f361ee79c02d.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-auth-TC-AUTH-02-·-OTP-ผิด-3-ครั้งล็อก-15-นาที-chromium/attachments/video-7599c9357fc8bed57a9ecbccb8fc08afc0f77058.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-auth-TC-AUTH-02-·-OTP-ผิด-3-ครั้งล็อก-15-นาที-chromium/attachments/video-ab9596eaa2b10114df4b8a5b199b91577ca4fe87.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ce2ae6a2f0189f060d7-2a9284534d9786468ff8",
+          "file": "part1/auth.spec.js",
+          "line": 46,
+          "column": 1
+        },
+        {
+          "title": "TC-AUTH-03 · ลงทะเบียนครั้งแรก",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1694,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1: reg-name = มานะ ตั้งใจ และ readOnly",
+                      "duration": 28
+                    },
+                    {
+                      "title": "2–4: เบอร์ 081234567 → reg-error-mobile",
+                      "duration": 185
+                    },
+                    {
+                      "title": "2–4: เบอร์ 08123456789 → reg-error-mobile",
+                      "duration": 47
+                    },
+                    {
+                      "title": "2–4: เบอร์ 1812345678 → reg-error-mobile",
+                      "duration": 48
+                    },
+                    {
+                      "title": "2–4: เบอร์ 08123abcde → reg-error-mobile",
+                      "duration": 48
+                    },
+                    {
+                      "title": "5: เบอร์ถูก ไม่ติ๊กยินยอม → reg-error-consent",
+                      "duration": 71
+                    },
+                    {
+                      "title": "6: เบอร์ถูก + ติ๊ก + อีเมลว่าง → /citizen",
+                      "duration": 190
+                    },
+                    {
+                      "title": "7: ออกจากระบบ → ล็อกอินมานะอีกครั้ง เข้า /citizen ตรง ๆ",
+                      "duration": 410
+                    },
+                    {
+                      "title": "8: RESET · API register ตรวจฝั่งเซิร์ฟเวอร์",
+                      "duration": 81
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:41:58.855Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-auth-TC-AUTH-03-·-ลงทะเบียนครั้งแรก-chromium/attachments/video-1bb6517e56342924de4aacec1362a7811865fe13.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-auth-TC-AUTH-03-·-ลงทะเบียนครั้งแรก-chromium/attachments/video-b479a79d500e1200b3cd482d48df48735bb5a34d.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ce2ae6a2f0189f060d7-c31a6e2003d417bafaa8",
+          "file": "part1/auth.spec.js",
+          "line": 144,
+          "column": 1
+        },
+        {
+          "title": "TC-AUTH-04 · เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 3542,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "off.reg1 → /officer/queue",
+                      "duration": 286
+                    },
+                    {
+                      "title": "off.reg2 → /officer/queue",
+                      "duration": 283
+                    },
+                    {
+                      "title": "off.works1 → /officer/queue",
+                      "duration": 289
+                    },
+                    {
+                      "title": "head1 → /head/approvals",
+                      "duration": 319
+                    },
+                    {
+                      "title": "exec1 → /dashboard",
+                      "duration": 311
+                    },
+                    {
+                      "title": "audit1 → /audit",
+                      "duration": 285
+                    },
+                    {
+                      "title": "admin1 → /admin/services",
+                      "duration": 274
+                    },
+                    {
+                      "title": "API staff/login คืน role/dept/landing",
+                      "duration": 26
+                    },
+                    {
+                      "title": "ปฏิเสธ: รหัสผ่านผิด",
+                      "duration": 243
+                    },
+                    {
+                      "title": "ปฏิเสธ: username ไม่มี",
+                      "duration": 240
+                    },
+                    {
+                      "title": "ปฏิเสธ: เลขบัตรประชาชนในช่อง username",
+                      "duration": 221
+                    },
+                    {
+                      "title": "หลังออกจากระบบ เปิด /officer/queue → /login",
+                      "duration": 320
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:00.551Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-auth-TC-AUTH-04-·-เจ้าหน้าที่-SSO-จำลองและหน้าตั้งต้น-chromium/attachments/video-a026343d40005d77914fcf2fd5eb821afa6fd6b7.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-auth-TC-AUTH-04-·-เจ้าหน้าที่-SSO-จำลองและหน้าตั้งต้น-chromium/attachments/video-b0f3cc702f44fb2e7caa090947775d82cb2f915c.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2ce2ae6a2f0189f060d7-fa076136c0a7f43ef857",
+          "file": "part1/auth.spec.js",
+          "line": 216,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "part1/fee.spec.js",
+      "file": "part1/fee.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-FEE-01 · ค่าธรรมเนียม SV-01 / SV-02 / SV-03",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1340,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "SV-03 area-input",
+                      "duration": 621
+                    },
+                    {
+                      "title": "SV-01 qty-input",
+                      "duration": 502
+                    },
+                    {
+                      "title": "SV-02 ค่าคงที่ ฿500 ไม่มีช่องกรอก",
+                      "duration": 38
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:04.098Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-fee-TC-FEE-01-·-ค่าธรรมเนียม-SV-01-SV-02-SV-03-chromium/attachments/video-54b908d7086fa9bc057f36db29d6da490aa7600b.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "31b47f749270c6d930d0-e0da2012f3a8f059265d",
+          "file": "part1/fee.spec.js",
+          "line": 11,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "part1/noti.spec.js",
+      "file": "part1/noti.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-NOTI-01 · ผู้รับแจ้งเตือนตามระดับ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 863,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T03:42:05.441Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-01-·-ผู้รับแจ้งเตือนตามระดับ-chromium/attachments/video-16d448de3eca239a20702a37198a2fa14464f4bc.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-01-·-ผู้รับแจ้งเตือนตามระดับ-chromium/attachments/video-c147d9f0aec02c63ac7eb4be333d39498bae30f8.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-01-·-ผู้รับแจ้งเตือนตามระดับ-chromium/attachments/video-4359ef40eb2aab73098511dd7e1853e215c6c454.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-01-·-ผู้รับแจ้งเตือนตามระดับ-chromium/attachments/video-3514a6bbdc4013531f711c319efa508d02cb56df.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cd2387b09d467f1cd13c-618a14c4c682e639d7e4",
+          "file": "part1/noti.spec.js",
+          "line": 63,
+          "column": 1
+        },
+        {
+          "title": "TC-NOTI-02 · ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 4031,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน A: ไม่แจ้งซ้ำ",
+                      "duration": 862
+                    },
+                    {
+                      "title": "ส่วน B: ข้ามระดับ (request แรกที่ ส. 5 ธ.ค. 10:00)",
+                      "duration": 435
+                    },
+                    {
+                      "title": "ส่วน C: ขั้นรออนุมัติและรอออกเอกสาร",
+                      "duration": 346
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:06.307Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/attachments/video-2952b743365978a0399086b591d48d8c53b57fb7.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/attachments/video-bd180815dbe698ef159969aaea1080be5dbac517.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/attachments/video-9e441e13e8b5891b29ff89ddbd134fa95d36200f.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/attachments/video-5ba201630656e45f8b6a46efdca2f647e7e10678.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/attachments/video-3ca7874e8e4a36491ebafd1330586fe26aea3872.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/attachments/video-48cb8897e543d1d9af3b47b2205d02eacb289727.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/attachments/video-135dc46581ad5c5246271d81454f0aa2881053fe.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/attachments/video-dfafe3215098265ea22fd6fb87c43d31c0844ddf.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/attachments/video-50eb8c0358e2a8342a447c7c39f5f55cff78661c.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/attachments/video-02f35e228a924b33e0b1edd5ca55c270a6d9e361.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-noti-TC-NOTI-02-·-ไม-0179a-ละขั้นรออนุมัติ-รอออกเอกสาร-chromium/attachments/video-d4fedcf0a2b6506815279388c21da180f5dbdca7.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "cd2387b09d467f1cd13c-fef244c1e4f37337c2ec",
+          "file": "part1/noti.spec.js",
+          "line": 68,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "part1/pay.spec.js",
+      "file": "part1/pay.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-PAY-01 · อายุ QR 15:00",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 786,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "รอบ 1: 09:00:00 (อายุ 5:00) → 200",
+                      "duration": 43
+                    },
+                    {
+                      "title": "รอบ 2: 09:09:59 (อายุ 14:59) → 200",
+                      "duration": 59
+                    },
+                    {
+                      "title": "รอบ 3: 09:10:00 (อายุ 15:00 พอดี) → 410 QR_EXPIRED",
+                      "duration": 291
+                    },
+                    {
+                      "title": "รอบ 4: 09:10:01 (อายุ 15:01) → 410",
+                      "duration": 73
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:10.345Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-pay-TC-PAY-01-·-อายุ-QR-15-00-chromium/attachments/video-3c9d2186a4af7b021ef0fe97ad0f09c3b0e0f273.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-pay-TC-PAY-01-·-อายุ-QR-15-00-chromium/attachments/video-3c45454c46488b257ee8a853cc514b861a00c3b6.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-pay-TC-PAY-01-·-อายุ-QR-15-00-chromium/attachments/video-20c7f90ccfe8bd303498b542c0b65e8e190b9f54.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-pay-TC-PAY-01-·-อายุ-QR-15-00-chromium/attachments/video-abe701b5300d325daf11ecb25161495c5a8f0c35.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2df6951c3d54f6baa764-1c4ebb78885bf83a28be",
+          "file": "part1/pay.spec.js",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "TC-PAY-02 · ยอดเงินและ callback ซ้ำ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 204,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "pay 19 (ขาด ฿1) → 422",
+                      "duration": 16
+                    },
+                    {
+                      "title": "pay 21 (เกิน ฿1) → 422",
+                      "duration": 14
+                    },
+                    {
+                      "title": "pay 20 → 200 PAID",
+                      "duration": 13
+                    },
+                    {
+                      "title": "pay 20 ซ้ำ ref เดิม → duplicate:true เลขเดิม",
+                      "duration": 11
+                    },
+                    {
+                      "title": "ร่างใหม่จ่ายครบ → 000032 (ไม่มีเลขข้าม)",
+                      "duration": 27
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:11.134Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-pay-TC-PAY-02-·-ยอดเงินและ-callback-ซ้ำ-chromium/attachments/video-87bfdeaf4a50de285bd03b1f2c8e0b4c69c7ba45.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2df6951c3d54f6baa764-90b10f3369b1f74403ad",
+          "file": "part1/pay.spec.js",
+          "line": 70,
+          "column": 1
+        },
+        {
+          "title": "TC-PAY-03 · ชำระพร้อมกัน เลขไม่ซ้ำ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 394,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-11-19T03:42:11.341Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-pay-TC-PAY-03-·-ชำระพร้อมกัน-เลขไม่ซ้ำ-chromium/attachments/video-c08c7baa1bdd1d301fb120ce32cf6bcb5cd37535.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-pay-TC-PAY-03-·-ชำระพร้อมกัน-เลขไม่ซ้ำ-chromium/attachments/video-31070e32286e7f8ed2e105787f125fe931e2d891.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2df6951c3d54f6baa764-36421ad800cfcd7b2208",
+          "file": "part1/pay.spec.js",
+          "line": 113,
+          "column": 1
+        },
+        {
+          "title": "TC-PAY-04 · เลขคำขอข้ามปี",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 869,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1: 31 ธ.ค. 23:58 สร้างร่าง + QR → ยังไม่มีเลข",
+                      "duration": 597
+                    },
+                    {
+                      "title": "2: 23:59 pay ฿20 → EG-2569-000031",
+                      "duration": 60
+                    },
+                    {
+                      "title": "3: 1 ม.ค. 2570 00:00 → EG-2570-000001",
+                      "duration": 40
+                    },
+                    {
+                      "title": "4: ใบที่ 2 ของปี 2570",
+                      "duration": 26
+                    },
+                    {
+                      "title": "5: เลขเดิมปี 2569 ไม่ถูกแก้",
+                      "duration": 4
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:11.738Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-pay-TC-PAY-04-·-เลขคำขอข้ามปี-chromium/attachments/video-f057b0a252550edafd8092014680d127fcdaa357.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2df6951c3d54f6baa764-b83cc99e1092e175f899",
+          "file": "part1/pay.spec.js",
+          "line": 148,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "part1/queue.spec.js",
+      "file": "part1/queue.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-QUEUE-01 · ลำดับคิวและขอบเขตแผนก",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1315,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "off.reg1 filter all: 17 แถวตามลำดับ",
+                      "duration": 407
+                    },
+                    {
+                      "title": "off.reg2 filter mine: 9 แถว",
+                      "duration": 230
+                    },
+                    {
+                      "title": "off.works1 เห็นเฉพาะคิวโยธา",
+                      "duration": 81
+                    },
+                    {
+                      "title": "head1 เห็น 18 แถว (ทะเบียน + โยธา) ไม่มี claim-btn",
+                      "duration": 98
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:12.612Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-01-·-ลำดับคิวและขอบเขตแผนก-chromium/attachments/video-e7020b20164df25ee1dc38e762a2f790ffba5abe.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-01-·-ลำดับคิวและขอบเขตแผนก-chromium/attachments/video-363b35d81466394bfa3397300dd4be1e1b1c9158.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-01-·-ลำดับคิวและขอบเขตแผนก-chromium/attachments/video-de4c7321d2e003cb9d1e0985567dcbf13fd36c3a.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-01-·-ลำดับคิวและขอบเขตแผนก-chromium/attachments/video-f515fa37873683a662bf64b11eed0822f4b3989f.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "615f3dba2acad7d1d41b-d5cb35fcccefee5e779f",
+          "file": "part1/queue.spec.js",
+          "line": 24,
+          "column": 1
+        },
+        {
+          "title": "TC-QUEUE-02 · รับเรื่องซ้อน (พร้อมกันและต่อกัน)",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1675,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน 1: กด claim-btn พร้อมกัน 2 browser context",
+                      "duration": 305
+                    },
+                    {
+                      "title": "ส่วน 2: API 10 ครั้งพร้อมกัน (RESET)",
+                      "duration": 134
+                    },
+                    {
+                      "title": "ส่วน 3: ต่อกัน (RESET · จับ B08)",
+                      "duration": 202
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:13.929Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/attachments/video-93e8c109cc58ffcc7a5eca00467919523b0efa20.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/attachments/video-00a836bd19db08ab875cf69ec1508ebe36e8fe9f.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/attachments/video-c52ed104c0449403634ec707ec293951597d9129.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/attachments/video-29367a4d7a4084e453f0386ea656a49048aefc32.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/attachments/video-fc54774a36156c3620356217898a68162c7e876a.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/attachments/video-b0651e5b4396c1e2ef8f74a34adadfa7418e1801.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/attachments/video-3f2a5fd3e73167c75e25ac22f3265918b0cdc895.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/attachments/video-da4014308f74203181a3ca2ebd4996a6f9867989.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/attachments/video-2b0401e6904f3847f7399a6f2143f77e421d37c2.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "615f3dba2acad7d1d41b-80e4fffa780001a24f1e",
+          "file": "part1/queue.spec.js",
+          "line": 99,
+          "column": 1
+        },
+        {
+          "title": "TC-QUEUE-03 · งานในมือสูงสุด 10",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 2327,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1: workload 9",
+                      "duration": 58
+                    },
+                    {
+                      "title": "2: claim 028 (ครั้งที่ 10) → สำเร็จ",
+                      "duration": 127
+                    },
+                    {
+                      "title": "3: claim 029 (ครั้งที่ 11) → WORKLOAD_LIMIT",
+                      "duration": 144
+                    },
+                    {
+                      "title": "4: อนุมัติ 025 (SV-01) → workload 9",
+                      "duration": 233
+                    },
+                    {
+                      "title": "5: claim 029 อีกครั้ง → สำเร็จ",
+                      "duration": 120
+                    },
+                    {
+                      "title": "6: off.reg1 (3) claim 030 → สำเร็จ",
+                      "duration": 36
+                    },
+                    {
+                      "title": "7: RESET · return 025 → NEED_FIX ไม่นับ → workload 8",
+                      "duration": 327
+                    },
+                    {
+                      "title": "8: claim 028 และ 029 → workload 10",
+                      "duration": 222
+                    },
+                    {
+                      "title": "9: สมหญิงส่งแก้ 025 → คืนผู้ถือเดิมแม้เกิน 10 → workload 11",
+                      "duration": 266
+                    },
+                    {
+                      "title": "10: off.reg2 claim 030 → WORKLOAD_LIMIT · workload ยัง 11",
+                      "duration": 47
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:15.606Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-03-·-งานในมือสูงสุด-10-chromium/attachments/video-97b219dd258b927fdbfd22eccc99f8b016e9f7fb.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-03-·-งานในมือสูงสุด-10-chromium/attachments/video-969e637f35d75c372843ded4b933655400368426.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-03-·-งานในมือสูงสุด-10-chromium/attachments/video-3a9e2fa30c78fde3a2ba0cdc85372f4212261d94.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-queue-TC-QUEUE-03-·-งานในมือสูงสุด-10-chromium/attachments/video-9d504aa8ab4b96b233f5a05e6d322f0533db4a08.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "615f3dba2acad7d1d41b-c8af3cec472bdb4496d6",
+          "file": "part1/queue.spec.js",
+          "line": 184,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "part1/sla.spec.js",
+      "file": "part1/sla.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-SLA-01 · กำหนดเสร็จตามตารางวันที่",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 3219,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "แถว a: SV-01 ชำระ 2026-12-01T09:00:00+07:00 → 2026-12-04T16:30:00+07:00",
+                      "duration": 123
+                    },
+                    {
+                      "title": "แถว b: SV-01 ชำระ 2026-12-01T16:29:00+07:00 → 2026-12-04T16:30:00+07:00",
+                      "duration": 124
+                    },
+                    {
+                      "title": "แถว c: SV-01 ชำระ 2026-12-01T16:30:00+07:00 → 2026-12-08T16:30:00+07:00",
+                      "duration": 132
+                    },
+                    {
+                      "title": "แถว d: SV-01 ชำระ 2026-12-04T10:00:00+07:00 → 2026-12-11T16:30:00+07:00",
+                      "duration": 145
+                    },
+                    {
+                      "title": "แถว e: SV-01 ชำระ 2026-12-05T10:00:00+07:00 → 2026-12-14T16:30:00+07:00",
+                      "duration": 129
+                    },
+                    {
+                      "title": "แถว f: SV-02 ชำระ 2026-12-01T09:00:00+07:00 → 2026-12-17T16:30:00+07:00",
+                      "duration": 141
+                    },
+                    {
+                      "title": "แถว g: SV-03 ชำระ 2026-12-01T09:00:00+07:00 → 2026-12-24T16:30:00+07:00",
+                      "duration": 144
+                    },
+                    {
+                      "title": "แถว h: SV-01 ชำระ 2026-12-29T10:00:00+07:00 → 2027-01-05T16:30:00+07:00",
+                      "duration": 133
+                    },
+                    {
+                      "title": "แถว i: SV-01 ชำระ 2026-12-31T23:59:00+07:00 → 2027-01-07T16:30:00+07:00",
+                      "duration": 136
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:17.939Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/attachments/video-254e7d142235154f020965b71e691614dc385c4e.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/attachments/video-3c5be6bff24ffb6822f12313c12eba84e1e4cc08.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/attachments/video-99c9db5ac2c4b55b782d2ee2d88aba684627ebcb.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/attachments/video-a3b91e20bf26baaf213d749af8fc321980b34bd8.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/attachments/video-3060d7d0cb02bb62a36933adea84dd8ba2178045.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/attachments/video-99061730fadf7488dff313390ec9acda8a20cbd3.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/attachments/video-4370faaab8df433c86bff2b1b97bccf4cba2ed7e.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/attachments/video-0e854cac43f51768384cba31489f785fe235febf.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-01-·-กำหนดเสร็จตามตารางวันที่-chromium/attachments/video-71ef0724bbb4f7a1b53bfc1eb5d6bac5822471b1.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c6b571f39c758b96d8b5-4f09473c71d66528e2c7",
+          "file": "part1/sla.spec.js",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "TC-SLA-02 · หยุดนับ SLA ระหว่างรอแก้ไข",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 2742,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน 1: ตีกลับ 2 ธ.ค. 11:00 ส่งแก้ 3 ธ.ค. 10:00 → 8 ธ.ค.",
+                      "duration": 441
+                    },
+                    {
+                      "title": "ส่วน 2: seed 017 ส่งแก้ 1 ธ.ค. 09:00 → 1 ธ.ค. 16:30",
+                      "duration": 274
+                    },
+                    {
+                      "title": "ส่วน 3: 017 ส่งแก้ 4 ธ.ค. 10:00 → 4 ธ.ค. 16:30",
+                      "duration": 109
+                    },
+                    {
+                      "title": "ส่วน 4: ตีกลับและส่งแก้วันเดียวกัน → หยุด 0 วัน",
+                      "duration": 136
+                    },
+                    {
+                      "title": "ส่วน 5: คร่อมสุดสัปดาห์/วันหยุด ส่งแก้หลัง 16:30 → 8 ธ.ค. เกินกำหนด",
+                      "duration": 366
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:21.161Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/attachments/video-554631228222c22f750ede2536275b2d08f469e3.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/attachments/video-5e2c27fca000e4d01728c9e20c9a1020e0db7e99.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/attachments/video-dbc9559ffa9351104ed7648ddb95041637238ec0.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/attachments/video-aec8dcf562ebf310d78f721518739595e132abde.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/attachments/video-b4770dc3a8cfd94f0b2280b8ae95f19d42beec47.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/attachments/video-ead382b28b6fd1e67e1d02659a9a1bced76100f9.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/attachments/video-c61b3695a7f4add3faaa5da08063d158f269fb64.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-02-·-หยุดนับ-SLA-ระหว่างรอแก้ไข-chromium/attachments/video-4912ba577f393522031b06fb1e96e37952f39162.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c6b571f39c758b96d8b5-9d9a0937dfd83a2509a7",
+          "file": "part1/sla.spec.js",
+          "line": 50,
+          "column": 1
+        },
+        {
+          "title": "TC-SLA-03 · ระดับเตือน ปกติ / ใกล้ครบกำหนด / เกินกำหนด",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1593,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน A: คำขอใหม่ กำหนด ศ. 4 ธ.ค. 16:30",
+                      "duration": 390
+                    },
+                    {
+                      "title": "ส่วน B: seed 016 กำหนด อ. 8 ธ.ค. (คั่น ส-อา และ จ.7)",
+                      "duration": 244
+                    },
+                    {
+                      "title": "ส่วน C: seed ที่ 09:00 ผ่านคิวและหน้าเคส",
+                      "duration": 470
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:23.910Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/attachments/video-32a974acd924b5477b09d827e70434ee5d354cf3.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/attachments/video-dcab6c1fb3bfd7143a3f1f5d6e98e903096c7e26.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/attachments/video-0fe9859b758d3ea76d1e847c0b3839cc9ed21a19.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-sla-TC-SLA-03-·-ระดับเตือน-ปกติ-ใกล้ครบกำหนด-เกินกำหนด-chromium/attachments/video-009b43b0ebdf0fc10aa6003e7287d60365d646eb.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c6b571f39c758b96d8b5-e5ab352930a517afe84e",
+          "file": "part1/sla.spec.js",
+          "line": 140,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "part1/submit.spec.js",
+      "file": "part1/submit.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-SUBMIT-01 · ยื่นคำขอ SV-01 ครบวงจร",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1172,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "1: กรอกข้อมูล qty 2 → ฿40",
+                      "duration": 248
+                    },
+                    {
+                      "title": "2: แนบ id-card.pdf",
+                      "duration": 248
+                    },
+                    {
+                      "title": "3: สร้าง QR",
+                      "duration": 149
+                    },
+                    {
+                      "title": "4: ชำระ PP-0002 ฿40",
+                      "duration": 157
+                    },
+                    {
+                      "title": "5: หน้าคำขอ EG-2569-000031",
+                      "duration": 58
+                    },
+                    {
+                      "title": "off.reg1 เห็นในคิวท้ายกลุ่ม 4 ธ.ค. หลัง 000030",
+                      "duration": 95
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:25.510Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-01-·-ยื่นคำขอ-SV-01-ครบวงจร-chromium/attachments/video-0b26587501d5501c3474d6107f99eefe797f63a9.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-01-·-ยื่นคำขอ-SV-01-ครบวงจร-chromium/attachments/video-d30a2adbd324082cf0dcfbb16a37d23af69e0071.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f15dbdc39b41e317a7f0-956796247ef541a86459",
+          "file": "part1/submit.spec.js",
+          "line": 8,
+          "column": 1
+        },
+        {
+          "title": "TC-SUBMIT-02 · เอกสารบังคับครบก่อนชำระ",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 1456,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "SV-02: บัตร + แผนที่ (ภาพสถานที่ไม่บังคับ)",
+                      "duration": 580
+                    },
+                    {
+                      "title": "SV-03 พื้นที่ 100: บัตร โฉนด แบบแปลน (PDF เท่านั้น)",
+                      "duration": 670
+                    },
+                    {
+                      "title": "API: SV-03 ขาดแบบแปลน → 409 MISSING_DOCS · ครบ → 201",
+                      "duration": 34
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:26.684Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-02-·-เอกสารบังคับครบก่อนชำระ-chromium/attachments/video-3f7022646b70a558377fb80e538007023645b8a4.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f15dbdc39b41e317a7f0-9537ec6164488aa9100a",
+          "file": "part1/submit.spec.js",
+          "line": 85,
+          "column": 1
+        },
+        {
+          "title": "TC-SUBMIT-03 · ร่าง และการยกเลิก",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 2655,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ส่วน A ร่าง",
+                      "duration": 375
+                    },
+                    {
+                      "title": "ส่วน B ยกเลิก (RESET)",
+                      "duration": 447
+                    },
+                    {
+                      "title": "ส่วน C ยกเลิกไม่ได้เมื่อมีผู้รับ (RESET)",
+                      "duration": 150
+                    },
+                    {
+                      "title": "ส่วน E ลบร่าง (RESET)",
+                      "duration": 154
+                    },
+                    {
+                      "title": "ส่วน F ยกเลิกชนกับรับเรื่อง (RESET · 2 context พร้อมกัน)",
+                      "duration": 85
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:28.141Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-03-·-ร่าง-และการยกเลิก-chromium/attachments/video-bba6520ef18cd95304ab64a56eb410c229e8e38b.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-03-·-ร่าง-และการยกเลิก-chromium/attachments/video-abc267e2a6f4e1873a522ea2fd17561ae323c1fe.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-03-·-ร่าง-และการยกเลิก-chromium/attachments/video-dbad0d5610d3f5148c93c932c064bde16467154d.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-03-·-ร่าง-และการยกเลิก-chromium/attachments/video-88ec172acdd55177e975161e76bcd7f97339e835.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-03-·-ร่าง-และการยกเลิก-chromium/attachments/video-7c9c98190db345106362fe562d8e2c45ba78fd6e.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-03-·-ร่าง-และการยกเลิก-chromium/attachments/video-2cdc16c3d22c7c73f679bec573f2504d4d26fba9.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-03-·-ร่าง-และการยกเลิก-chromium/attachments/video-93bd9f436bae4c542cd58efee4d1d50ca9717ed0.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-03-·-ร่าง-และการยกเลิก-chromium/attachments/video-fa88742bd53bf2120985092295e0031c07ec7d6a.webm"
+                    },
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-submit-TC-SUBMIT-03-·-ร่าง-และการยกเลิก-chromium/attachments/video-3ab29b2705a73bcc942633bed6eb0ff4ef01af6b.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "f15dbdc39b41e317a7f0-f137d068956224913e4e",
+          "file": "part1/submit.spec.js",
+          "line": 150,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "part1/upload.spec.js",
+      "file": "part1/upload.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-UPLOAD-01 · ขนาดและจำนวนไฟล์",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 2349,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "ตรวจขนาดไฟล์ทดสอบตรงไบต์",
+                      "duration": 1
+                    },
+                    {
+                      "title": "ขนาด (หน้าจอ)",
+                      "duration": 813
+                    },
+                    {
+                      "title": "ขนาด (API)",
+                      "duration": 70
+                    },
+                    {
+                      "title": "จำนวน (หน้าจอ)",
+                      "duration": 1151
+                    },
+                    {
+                      "title": "จำนวน (API)",
+                      "duration": 47
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:30.801Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-upload-TC-UPLOAD-01-·-ขนาดและจำนวนไฟล์-chromium/attachments/video-9b77aa2cc35c2e0c6e99b336bb466c0a5406f8fb.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "72f04f2369e77031cf11-78a8f3cbd39749355364",
+          "file": "part1/upload.spec.js",
+          "line": 22,
+          "column": 1
+        },
+        {
+          "title": "TC-UPLOAD-02 · ชนิดไฟล์จากเนื้อไฟล์",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 240000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 2778,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "steps": [
+                    {
+                      "title": "หน้าจอ: รับ PDF/JPEG/PNG จริง",
+                      "duration": 956
+                    },
+                    {
+                      "title": "หน้าจอ: ปฏิเสธไฟล์ที่เนื้อไม่ใช่ PDF/JPEG/PNG",
+                      "duration": 1572
+                    },
+                    {
+                      "title": "API: ตรวจจาก magic bytes ไม่เชื่อ Content-Type",
+                      "duration": 50
+                    }
+                  ],
+                  "startTime": "2026-11-19T03:42:33.153Z",
+                  "attachments": [
+                    {
+                      "name": "video",
+                      "contentType": "video/webm",
+                      "path": "/e2e/.test-report-run/artifacts/part1-upload-TC-UPLOAD-02-·-ชนิดไฟล์จากเนื้อไฟล์-chromium/attachments/video-f4aca70d5735058f19ade634c9b70006fef47757.webm"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "72f04f2369e77031cf11-a0a1f0f63a3e54a3ffe0",
+          "file": "part1/upload.spec.js",
+          "line": 89,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "part2/audit.spec.js",
+      "file": "part2/audit.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "AUDIT",
+          "file": "part2/audit.spec.js",
+          "line": 16,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-AUDIT-01 · เหตุการณ์และฟิลด์ใน Audit",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 971,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:35.939Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-audit-AUDIT-TC-AUDIT-01-·-เหตุการณ์และฟิลด์ใน-Audit-chromium/attachments/video-71281e8e74d271a5cff2c330685d20aa3581fa53.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "88c3376fcf27b80e89b7-dd77e14b59dcd8ef9fab",
+              "file": "part2/audit.spec.js",
+              "line": 17,
+              "column": 3
+            },
+            {
+              "title": "TC-AUDIT-02 · Audit แก้/ลบไม่ได้ (405)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 399,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:36.912Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-audit-AUDIT-TC-AUDIT-02-·-Audit-แก้-ลบไม่ได้-405--chromium/attachments/video-7a2fe119fddf805a800821d5c5bf8ff3a0352ebd.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "88c3376fcf27b80e89b7-76a63c918c8682a268e5",
+              "file": "part2/audit.spec.js",
+              "line": 120,
+              "column": 3
+            },
+            {
+              "title": "TC-AUDIT-03 · กรองช่วงวันที่ตามเวลาไทย",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 923,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:37.313Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-audit-AUDIT-TC-AUDIT-03-·-กรองช่วงวันที่ตามเวลาไทย-chromium/attachments/video-0214b3f2fbb9af53d344833575e06442eba2d9b8.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "88c3376fcf27b80e89b7-da5e31d6bb3ef1b9a0ec",
+              "file": "part2/audit.spec.js",
+              "line": 185,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "part2/dash.spec.js",
+      "file": "part2/dash.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "DASH",
+          "file": "part2/dash.spec.js",
+          "line": 46,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-DASH-01 · Dashboard ตัวเลขเริ่มต้น",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 403,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:38.246Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-dash-DASH-TC-DASH-01-·-Dashboard-ตัวเลขเริ่มต้น-chromium/attachments/video-f2062038c5f5d23e2a17641931041c54c37d57f3.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "017f2279b2547e6ba6cc-a30aa5b185087764e8b9",
+              "file": "part2/dash.spec.js",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "TC-DASH-02 · Dashboard ย้อนหลัง",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 709,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:38.651Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-dash-DASH-TC-DASH-02-·-Dashboard-ย้อนหลัง-chromium/attachments/video-bbe071f2b157b48192076196b926229a6032c1b1.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "017f2279b2547e6ba6cc-c85e80431fa7758f752e",
+              "file": "part2/dash.spec.js",
+              "line": 89,
+              "column": 3
+            },
+            {
+              "title": "TC-DASH-03 · ส่งออก Excel/PDF เท่าหน้าจอ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1125,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:39.362Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-dash-DASH-TC-DASH-03-·-ส่งออก-Excel-PDF-เท่าหน้าจอ-chromium/attachments/video-d2498d60ede9b9cc3dba7896febafbf173bcf132.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-dash-DASH-TC-DASH-03-·-ส่งออก-Excel-PDF-เท่าหน้าจอ-chromium/attachments/video-1f2e2ea5893afe6694bd60c496872c6be403a333.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "017f2279b2547e6ba6cc-312bd630e518a420e8d8",
+              "file": "part2/dash.spec.js",
+              "line": 113,
+              "column": 3
+            },
+            {
+              "title": "TC-DASH-04 · ค่าขอบ \"ทันกำหนด\" 16:29:59 / 16:30:00 / 16:30:01",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 518,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:40.489Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-dash-DASH-TC-DASH-04-88791--16-29-59-16-30-00-16-30-01-chromium/attachments/video-b1bfcc4e0841072c1d9093b2fc0b0c29b14a0c4e.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-dash-DASH-TC-DASH-04-88791--16-29-59-16-30-00-16-30-01-chromium/attachments/video-b0ae3ac9f3c4bbc9edcbba6a4102e8d3a213af5d.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "017f2279b2547e6ba6cc-9ae4dca7462d8917007d",
+              "file": "part2/dash.spec.js",
+              "line": 180,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "part2/doc.spec.js",
+      "file": "part2/doc.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "DOC",
+          "file": "part2/doc.spec.js",
+          "line": 34,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-DOC-01 · ออกเอกสารและข้อมูลในเอกสาร",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 428,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:41.011Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-doc-DOC-TC-DOC-01-·-ออกเอกสารและข้อมูลในเอกสาร-chromium/attachments/video-66b2038ef6d7a8a4f8d38a891f84cd4b58d97f0d.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-doc-DOC-TC-DOC-01-·-ออกเอกสารและข้อมูลในเอกสาร-chromium/attachments/video-8381d1d0e72791f9b9ad38c35e969abefea3d59b.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a8de273ce623b8551653-b3ba57ca0a338ddc30d0",
+              "file": "part2/doc.spec.js",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "TC-DOC-02 · ตรวจเอกสาร /verify",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 201,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:41.440Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-doc-DOC-TC-DOC-02-·-ตรวจเอกสาร-verify-chromium/attachments/video-c8c48b114f470d206c61c74bbb643eb6a1733b5d.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a8de273ce623b8551653-6d0f96dddef26cf46a64",
+              "file": "part2/doc.spec.js",
+              "line": 87,
+              "column": 3
+            },
+            {
+              "title": "TC-DOC-03 · เอกสารหมดอายุและลายเซ็นไม่ตรง",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1137,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:41.643Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-doc-DOC-TC-DOC-03-·-เอกสารหมดอายุและลายเซ็นไม่ตรง-chromium/attachments/video-7116e632c7d0487afd2bc3001614d6b05576adcf.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-doc-DOC-TC-DOC-03-·-เอกสารหมดอายุและลายเซ็นไม่ตรง-chromium/attachments/video-010284f58cb44c0d5af7d9a2c2c2819a8d3c181c.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-doc-DOC-TC-DOC-03-·-เอกสารหมดอายุและลายเซ็นไม่ตรง-chromium/attachments/video-a3b7d80c80efa23568483006ff915b8f8221b617.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-doc-DOC-TC-DOC-03-·-เอกสารหมดอายุและลายเซ็นไม่ตรง-chromium/attachments/video-0da33fdf7db0972993c367f850ce791839518bc8.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-doc-DOC-TC-DOC-03-·-เอกสารหมดอายุและลายเซ็นไม่ตรง-chromium/attachments/video-ac49ad0867ea8f2c6675c0c456aaab5d3a4e4182.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a8de273ce623b8551653-641206d1c09718f39555",
+              "file": "part2/doc.spec.js",
+              "line": 120,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "part2/nfr.spec.js",
+      "file": "part2/nfr.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "NFR",
+          "file": "part2/nfr.spec.js",
+          "line": 25,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-NFR-01 · Responsive 375 / 768 / 1280",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 3872,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:42.787Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-01-·-Responsive-375-768-1280-chromium/attachments/video-9a027ffa5553b7b0a98d1045b758c581636c1650.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-01-·-Responsive-375-768-1280-chromium/attachments/video-de2b0f1cefdd16ad92ec42b89835bfd0d4bee92a.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-01-·-Responsive-375-768-1280-chromium/attachments/video-e738d52b3b32c9ee48a0e3b3746753f21f8985b0.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-01-·-Responsive-375-768-1280-chromium/attachments/video-4d56b12eea6fcb96f22d19c7c2e137f0146e6c15.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-01-·-Responsive-375-768-1280-chromium/attachments/video-178fb4030680aa9b420d10aa23d602de2a96c781.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-01-·-Responsive-375-768-1280-chromium/attachments/video-976f21fcdb9441b3ad31854d25d98408668b9242.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-01-·-Responsive-375-768-1280-chromium/attachments/video-81455f2f82c21b6ce0bcc4436e9a05eb35bdb9c5.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-01-·-Responsive-375-768-1280-chromium/attachments/video-a3ec662a6f82abb60aa8e92ecb2a59c34dead1fe.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4d791a4cd7e8ae7ce3b0-4da6ce65a13fc124e744",
+              "file": "part2/nfr.spec.js",
+              "line": 26,
+              "column": 3
+            },
+            {
+              "title": "TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 10072,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:46.663Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-7fb01c16cbfac9e195a897db4c94d0a8e04557ae.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-d160fd6161c889923d428c1a57cfb3ead68d5ccf.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-5d7d08156ebbd43af60b137f494e5376efb8cba1.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-131db62f6db274a42469f3d1305593ab38eb79dc.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-06d4f70f20cca3e99611dbf9ff22c84406ce5fcb.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-0bc1dc2fcf260ceefc9ce37b26daae761d883afc.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-a193ec0db084cad6cfa3382e29c053d54ff6b02c.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-b965963f7c51219211f7e178b82a61534be31d87.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-97b4d5fdedb7d07fd0c25fb504e7e95ef0230638.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-9662b766aa7904762688be97a85c8d8c8505e1e7.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-6b9792a20505c75653a9124160dcce3a6cb227fa.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-6b9ddc8b5d292c54ab2589d15c57781c7503b777.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-6c8b87fc2995d77e0dc18d0c8a2a82079d941aac.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-bd6971de73c2fc0703beb2a51e10be65b4b0aecb.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-ce92f929754d9e16e29391838962ccc346f6a982.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-d86e9873840c49eba7b15edd0f24fb02f1b12eb4.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-2f07afc6d502b8d6e3a8aafa67777e27ae09b859.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-673479895aea9eeb750548e8eae5108b6625c048.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-524e1ecd09f12f93f19aeaea40e3c3e55de03609.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-ecebd586ed7524b04dc71bc14f4e15b6b3ace32b.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-02359c0214d46d27bf6fff6fb44c6d10b6afccb4.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-02-·--f93a9-bel-สถานะไม่ใช้สีอย่างเดียว-chromium/attachments/video-0e41d73bfef770a53e2af53b9cb39f0867c3d5b8.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4d791a4cd7e8ae7ce3b0-55f91b067a2e50d38d5b",
+              "file": "part2/nfr.spec.js",
+              "line": 86,
+              "column": 3
+            },
+            {
+              "title": "TC-NFR-03 · Health เวลาโหลด และผลซ้ำได้",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1233,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:56.740Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-03-·-Health-เวลาโหลด-และผลซ้ำได้-chromium/attachments/video-b67918226f1a882ff19172906cd0d2668de063bd.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-03-·-Health-เวลาโหลด-และผลซ้ำได้-chromium/attachments/video-fc390e52afde489c1ebb7df8abfdefbb49047fc0.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-03-·-Health-เวลาโหลด-และผลซ้ำได้-chromium/attachments/video-ca3ee3c21ff702d2439b2a63d95ee71a15aaae81.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-03-·-Health-เวลาโหลด-และผลซ้ำได้-chromium/attachments/video-6ee416bffcd93a7781c2fe1cf9d83bb0a2c4fe31.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-nfr-NFR-TC-NFR-03-·-Health-เวลาโหลด-และผลซ้ำได้-chromium/attachments/video-acfc1966b1935d7f6e8faa4c83a0398fa04dcbad.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "4d791a4cd7e8ae7ce3b0-95367ea6cac9bdbe6675",
+              "file": "part2/nfr.spec.js",
+              "line": 230,
+              "column": 3
+            }
+          ],
+          "suites": [
+            {
+              "title": "inspection",
+              "file": "part2/nfr.spec.js",
+              "line": 296,
+              "column": 8,
+              "specs": [
+                {
+                  "title": "TC-NFR-04 · เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection)",
+                  "ok": true,
+                  "tags": [],
+                  "tests": [
+                    {
+                      "timeout": 240000,
+                      "annotations": [
+                        {
+                          "type": "web-log",
+                          "description": "[TC-NFR-04] web log /e2e/.test-report-run/web.log: 80505 bytes · 2268 lines · register lines 1 → 2 · PII found 0 · DB files 1"
+                        }
+                      ],
+                      "expectedStatus": "passed",
+                      "projectId": "chromium",
+                      "projectName": "chromium",
+                      "results": [
+                        {
+                          "workerIndex": 0,
+                          "status": "passed",
+                          "duration": 69,
+                          "errors": [],
+                          "stdout": [
+                            {
+                              "text": "[TC-NFR-04] web log /e2e/.test-report-run/web.log: 80505 bytes · 2268 lines · register lines 1 → 2 · PII found 0 · DB files 1\n"
+                            }
+                          ],
+                          "stderr": [],
+                          "retry": 0,
+                          "startTime": "2026-11-19T03:42:57.977Z",
+                          "attachments": []
+                        }
+                      ],
+                      "status": "expected"
+                    }
+                  ],
+                  "id": "4d791a4cd7e8ae7ce3b0-a21d3a8fd472beadbf9c",
+                  "file": "part2/nfr.spec.js",
+                  "line": 300,
+                  "column": 5
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "part2/pdpa.spec.js",
+      "file": "part2/pdpa.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "PDPA",
+          "file": "part2/pdpa.spec.js",
+          "line": 12,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-PDPA-01 · ปิดบังเลขบัตรบนจอ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 720,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:58.051Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-pdpa-PDPA-TC-PDPA-01-·-ปิดบังเลขบัตรบนจอ-chromium/attachments/video-d4c2ae036eb75d80967da2e7f424010f07d4be78.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-pdpa-PDPA-TC-PDPA-01-·-ปิดบังเลขบัตรบนจอ-chromium/attachments/video-02451d3de126bbcd3abcc0931b47b45e6942f8b8.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-pdpa-PDPA-TC-PDPA-01-·-ปิดบังเลขบัตรบนจอ-chromium/attachments/video-7b344812ba45393ff3186fe152bd33b880320c8f.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-pdpa-PDPA-TC-PDPA-01-·-ปิดบังเลขบัตรบนจอ-chromium/attachments/video-23fa73c999d13fbf01f791145ce3d043cd86d1b3.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8715fc8b30ef5dfe2bd3-87b9fd993f77d42ca4cf",
+              "file": "part2/pdpa.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "TC-PDPA-02 · API (JSON) ไม่ส่งเลขบัตรเต็ม",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 79,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:58.773Z",
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8715fc8b30ef5dfe2bd3-3f1cb391a439c7d4aa9b",
+              "file": "part2/pdpa.spec.js",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "TC-PDPA-03 · แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 933,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:58.853Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-pdpa-PDPA-TC-PDPA-03-83dea-ต้องมีเหตุผลและบันทึก-Audit-chromium/attachments/video-b1dbc505de2382865a1835c011873a50adef9cde.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-pdpa-PDPA-TC-PDPA-03-83dea-ต้องมีเหตุผลและบันทึก-Audit-chromium/attachments/video-ba118ea3c32511f0102782b2ab00031bd3d8d55b.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8715fc8b30ef5dfe2bd3-cb3bf3aeafb84a4470ab",
+              "file": "part2/pdpa.spec.js",
+              "line": 92,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "part2/rbac.spec.js",
+      "file": "part2/rbac.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "RBAC",
+          "file": "part2/rbac.spec.js",
+          "line": 13,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-RBAC-01 · ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 234,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:42:59.794Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-01-e18ee-นเปิดคำขอคนอื่นไม่ได้-IDOR--chromium/attachments/video-724dff44694c9b9f9b02a27a3710fe4be1fa1fba.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e92dec8d573b1ff84e4-adc24448dd303018cee8",
+              "file": "part2/rbac.spec.js",
+              "line": 14,
+              "column": 3
+            },
+            {
+              "title": "TC-RBAC-02 · เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 631,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:43:00.029Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-02-7ea64-ิ-SV-02-ไม่ได้-ตรวจที่-API--chromium/attachments/video-5a4774db70fe90e544bf7024fd8eb899224abb8c.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-02-7ea64-ิ-SV-02-ไม่ได้-ตรวจที่-API--chromium/attachments/video-2db1a303139dbc9e7ec7afa9f68ad0f833aa873a.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e92dec8d573b1ff84e4-4741b34745587550c989",
+              "file": "part2/rbac.spec.js",
+              "line": 44,
+              "column": 3
+            },
+            {
+              "title": "TC-RBAC-03 · ตารางสิทธิ์หน้า/API ตามบทบาท",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 4735,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:43:00.663Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-03-·-ตารางสิทธิ์หน้า-API-ตามบทบาท-chromium/attachments/video-def2b4af6ef7231058aa2869a5185d664410a6c5.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-03-·-ตารางสิทธิ์หน้า-API-ตามบทบาท-chromium/attachments/video-162fc59195d2d69064ba4a4e6a666d19df367c54.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-03-·-ตารางสิทธิ์หน้า-API-ตามบทบาท-chromium/attachments/video-70902520e6437c043475cac23fb1d7e7d3ca459b.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-03-·-ตารางสิทธิ์หน้า-API-ตามบทบาท-chromium/attachments/video-0691363c2a6dd51c355deb7fcece0eb52af712dc.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-03-·-ตารางสิทธิ์หน้า-API-ตามบทบาท-chromium/attachments/video-1cd655ce210f5cbec024fae0d9848aa20e52a615.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-03-·-ตารางสิทธิ์หน้า-API-ตามบทบาท-chromium/attachments/video-da4507337a055bc842ab9435fe0d44bf2fe87ede.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-03-·-ตารางสิทธิ์หน้า-API-ตามบทบาท-chromium/attachments/video-0808753b7285fab7031499073548173e5befd37c.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e92dec8d573b1ff84e4-dd5e8318ef2e98dc722d",
+              "file": "part2/rbac.spec.js",
+              "line": 80,
+              "column": 3
+            },
+            {
+              "title": "TC-RBAC-04 · ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1905,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:43:05.401Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-04-f27cb-ันหยุด-ผู้ใช้-และยอดที่ล็อก-chromium/attachments/video-3ae6f5621000cc99600a8e1e101023d811eaf10d.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-04-f27cb-ันหยุด-ผู้ใช้-และยอดที่ล็อก-chromium/attachments/video-2a92238e66d6a246631dc999bcc262fa771a2d6c.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-04-f27cb-ันหยุด-ผู้ใช้-และยอดที่ล็อก-chromium/attachments/video-977e47c811587378c7746688a2205f318fa8c94f.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e92dec8d573b1ff84e4-2e351aaa575fc23f3531",
+              "file": "part2/rbac.spec.js",
+              "line": 186,
+              "column": 3
+            },
+            {
+              "title": "TC-RBAC-05 · สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 676,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:43:07.308Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-05-·-สิทธิ์เปิด-ดาวน์โหลดไฟล์แนบ-chromium/attachments/video-9996b07737c89117d9ce7d943f02aa7bf5dbc00e.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-05-·-สิทธิ์เปิด-ดาวน์โหลดไฟล์แนบ-chromium/attachments/video-8b8bf3a6e67587490043ae87648394d8b934ab50.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-05-·-สิทธิ์เปิด-ดาวน์โหลดไฟล์แนบ-chromium/attachments/video-52213c8e9a00014e63a6806564ad7831da9a7a29.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e92dec8d573b1ff84e4-554b5aea3b865e827777",
+              "file": "part2/rbac.spec.js",
+              "line": 293,
+              "column": 3
+            },
+            {
+              "title": "TC-RBAC-06 · ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1264,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:43:07.987Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-06-·-ผู้ดูแลระบบ-ช่วงค่าที่ยอมรับ-chromium/attachments/video-5cecde9e9420b515518509a608e70be67ac28a92.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-rbac-RBAC-TC-RBAC-06-·-ผู้ดูแลระบบ-ช่วงค่าที่ยอมรับ-chromium/attachments/video-9f6ef9b9f13c243dd31dcbf960a2f61f1e58a808.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e92dec8d573b1ff84e4-aab2227fb45ea893529e",
+              "file": "part2/rbac.spec.js",
+              "line": 369,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "part2/workflow.spec.js",
+      "file": "part2/workflow.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "WORKFLOW",
+          "file": "part2/workflow.spec.js",
+          "line": 24,
+          "column": 6,
+          "specs": [
+            {
+              "title": "TC-WORKFLOW-01 · SV-01 อนุมัติ + ออกเอกสาร",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 837,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:43:09.258Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-c9f67-1-·-SV-01-อนุมัติ-ออกเอกสาร-chromium/attachments/video-b8feb66c080601ad3dcb85b9eec3fcb4865bf486.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-c9f67-1-·-SV-01-อนุมัติ-ออกเอกสาร-chromium/attachments/video-2cdaa5804df26ca1ead29dd049f3f05ca09e4297.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54ce5c43662dd62a9e0b-e055fa371e7caa8c75c5",
+              "file": "part2/workflow.spec.js",
+              "line": 25,
+              "column": 3
+            },
+            {
+              "title": "TC-WORKFLOW-02 · SV-02 ผ่านหัวหน้า",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 2244,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:43:10.098Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-WORKFLOW-02-·-SV-02-ผ่านหัวหน้า-chromium/attachments/video-b05e38331be3292f3d48d14657af95b86bc3e802.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-WORKFLOW-02-·-SV-02-ผ่านหัวหน้า-chromium/attachments/video-cafd785392360232f08684d6e7238b1b65f1b381.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-WORKFLOW-02-·-SV-02-ผ่านหัวหน้า-chromium/attachments/video-e91f1711c2d26fcc8d6c0af1bc2acbfecd1b1ea5.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-WORKFLOW-02-·-SV-02-ผ่านหัวหน้า-chromium/attachments/video-1d04bfd12ffd169bf30e5d365e284cef73711751.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-WORKFLOW-02-·-SV-02-ผ่านหัวหน้า-chromium/attachments/video-60b53a709f8a2b7b2c183c849631b4c4b4fb3c0c.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-WORKFLOW-02-·-SV-02-ผ่านหัวหน้า-chromium/attachments/video-be702deec68b68036bddd842e328f3b54c3ae729.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54ce5c43662dd62a9e0b-b8a0ce348a77b61d9f4c",
+              "file": "part2/workflow.spec.js",
+              "line": 83,
+              "column": 3
+            },
+            {
+              "title": "TC-WORKFLOW-03 · SV-03 สามขั้นตอน",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 1710,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:43:12.345Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-WORKFLOW-03-·-SV-03-สามขั้นตอน-chromium/attachments/video-18c905bfa1033b8d220795b56ba171ee32c3c0a6.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-WORKFLOW-03-·-SV-03-สามขั้นตอน-chromium/attachments/video-dd9c30bb99d8bf4b7ec4a52afa64914ab214442d.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-WORKFLOW-03-·-SV-03-สามขั้นตอน-chromium/attachments/video-913ad306f87247a7fec79c82ae0f7988a44c3e77.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-WORKFLOW-03-·-SV-03-สามขั้นตอน-chromium/attachments/video-d974d6bd4b9c26d2f9e49685183fc49c6caadc42.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54ce5c43662dd62a9e0b-6e6d963fd055a105ff44",
+              "file": "part2/workflow.spec.js",
+              "line": 147,
+              "column": 3
+            },
+            {
+              "title": "TC-WORKFLOW-04 · ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 4335,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:43:14.057Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-45835-สูงสุด-2-ครั้ง-และผลหลังครบ-chromium/attachments/video-1079c8f788cc4692d9ff01fbce41b925e314e031.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-45835-สูงสุด-2-ครั้ง-และผลหลังครบ-chromium/attachments/video-c46ddd7eb2a3a0fe1107365d10671877787e0329.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-45835-สูงสุด-2-ครั้ง-และผลหลังครบ-chromium/attachments/video-b27b20ae07108989664206149d45ba5827beeae0.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-45835-สูงสุด-2-ครั้ง-และผลหลังครบ-chromium/attachments/video-af05a22377e9ddbc98be92edf177e13d8ff286e6.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-45835-สูงสุด-2-ครั้ง-และผลหลังครบ-chromium/attachments/video-03bdbcfc3a9eee18d0e60908a342a3362ff5c667.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-45835-สูงสุด-2-ครั้ง-และผลหลังครบ-chromium/attachments/video-4ed29c08d16ad1a1f7b42b723e89a6d2b67e6e49.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-45835-สูงสุด-2-ครั้ง-และผลหลังครบ-chromium/attachments/video-0caa70eebedc3b56cebbc10907821cb325499855.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54ce5c43662dd62a9e0b-35bf1f03e61d3258c691",
+              "file": "part2/workflow.spec.js",
+              "line": 211,
+              "column": 3
+            },
+            {
+              "title": "TC-WORKFLOW-05 · เหตุผล ≥ 10 ตัวอักษร (ตีกลับ / ไม่อนุมัติ)",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 2946,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:43:18.395Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-48d13-ตัวอักษร-ตีกลับ-ไม่อนุมัติ--chromium/attachments/video-85558a327a681edea25f16850c7b71fd9898af73.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-48d13-ตัวอักษร-ตีกลับ-ไม่อนุมัติ--chromium/attachments/video-350edef5725415f0a2cc3a2bb55e17b5d04d040a.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-48d13-ตัวอักษร-ตีกลับ-ไม่อนุมัติ--chromium/attachments/video-a047a9462ed4c6b95b1661b58ebc25600d748189.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-48d13-ตัวอักษร-ตีกลับ-ไม่อนุมัติ--chromium/attachments/video-f56450dff1783fd41e236510d775d7ea4288a221.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-48d13-ตัวอักษร-ตีกลับ-ไม่อนุมัติ--chromium/attachments/video-4c00ff064b099929ce7afec0eb68c97b6db3b834.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54ce5c43662dd62a9e0b-dbe01fa80cd239f3188b",
+              "file": "part2/workflow.spec.js",
+              "line": 310,
+              "column": 3
+            },
+            {
+              "title": "TC-WORKFLOW-06 · เวลาแก้ไข 168 ชั่วโมง",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 240000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "status": "passed",
+                      "duration": 755,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-11-19T03:43:21.343Z",
+                      "attachments": [
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-c89b6--06-·-เวลาแก้ไข-168-ชั่วโมง-chromium/attachments/video-d0ad5c51c4b87897f04f02e8fff957d068610cc4.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-c89b6--06-·-เวลาแก้ไข-168-ชั่วโมง-chromium/attachments/video-607281a883e18e7bc35656afac7ddbd8744b6161.webm"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/e2e/.test-report-run/artifacts/part2-workflow-WORKFLOW-TC-c89b6--06-·-เวลาแก้ไข-168-ชั่วโมง-chromium/attachments/video-d9040248d32603d1e31609faa443418e9910103e.webm"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "54ce5c43662dd62a9e0b-9a252daae1beef8dde06",
+              "file": "part2/workflow.spec.js",
+              "line": 380,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-11-19T03:41:54.699Z",
+    "duration": 87529.17,
+    "expected": 51,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

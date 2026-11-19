@@ -1,0 +1,6 @@
+== bug-B06 (BUG_MODE=B06)
+total=51 passed=50 failed=1 skipped=0
+  FAIL TC-RBAC-01: Error: UI …000005 (ของสมชาย): expected HTTP 404, received HTTP 200
+expected-fail=[TC-RBAC-01] allowed=[]
+failed=[TC-RBAC-01] extra=[] should-fail-but-passed=[] side-effects=[]
+RESULT: MATCH

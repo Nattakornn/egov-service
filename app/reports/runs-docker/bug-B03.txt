@@ -1,0 +1,10 @@
+== bug-B03 (BUG_MODE=B03)
+total=51 unique=51 passed=46 failed=5 skipped=0
+  FAIL TC-NOTI-02: Error: off.reg2 ส.5: noti-item (หน้าจอ)
+  FAIL TC-RBAC-04: Error: #7 dueAt: expected 2026-12-08T16:30:00+07:00, received 2026-12-04T16:30:00+07:00
+  FAIL TC-SLA-01: Error: แถว c: dueAt
+  FAIL TC-SLA-02: Error: หลังส่งแก้: sla-due data-iso
+  FAIL TC-SLA-03: Error: ส่วน B 2026-12-04T09:00:00+07:00 sla-level ข้อความ
+expected-fail=[TC-SLA-01 TC-SLA-02] allowed=[TC-SLA-03 TC-RBAC-04 TC-NOTI-02]
+failed=[TC-NOTI-02 TC-RBAC-04 TC-SLA-01 TC-SLA-02 TC-SLA-03] extra=[] should-fail-but-passed=[] side-effects=[TC-NOTI-02 TC-RBAC-04 TC-SLA-03]
+RESULT: MATCH

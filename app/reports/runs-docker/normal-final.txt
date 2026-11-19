@@ -1,0 +1,5 @@
+== normal-final (BUG_MODE=-)
+total=51 unique=51 passed=51 failed=0 skipped=0
+expected-fail=[] allowed=[]
+failed=[] extra=[] should-fail-but-passed=[] side-effects=[]
+RESULT: MATCH

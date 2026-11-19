@@ -1,0 +1,31 @@
+# restart-check · 2026-11-19 10:13:41 +0700 · BASE=http://localhost:3000 · เลขบัตรสมมติ xxxxxxxxx0216 · เบอร์ xxxxxxxxx1043
+
+## 1. docker compose up --build -d --wait web (ไม่ตั้ง TEST_MODE)
+  health: {"status":"ok"} · POST /api/test/reset → HTTP 404
+  log: [egov] [migrate] baseline core/0001_init.sql (DB รุ่นก่อน migration · ตารางตรงกัน → บันทึกว่า apply แล้วโดยไม่รัน · ข้อมูลเดิมอยู่ครบ)
+  log: [egov] listening on :3000 · TEST_MODE=off · BUG_MODE=- · DB_PATH=/data/app.db · modules=[auth, apply, cases, documents, payment, queue, workflow, admin, dashboard] · clock=2026-11-19T10:14:35+07:00
+  DB: {"users":11,"cases":30,"citizen":null,"schema_migrations":[{"id":"core/0001_init.sql","checksum":"db8341a9c2f9","applied_at":"2026-11-19T10:14:35+07:00"}],"meta_rows":0}
+
+## 2. ลงทะเบียนประชาชนใหม่ผ่าน API (โหมดปกติ)
+  POST /api/auth/thaid/start   {"status":"OTP_SENT"} → HTTP 200
+  POST /api/auth/thaid/verify  {"registered":false} → HTTP 200
+  POST /api/auth/register      {"registered":true,"landing":"/citizen"} → HTTP 201
+  DB หลังลงทะเบียน: {"users":12,"cases":30,"citizen":{"id":12,"username":"cit-0005","registered":1,"consent_at":"2026-11-19T10:14:40+07:00","created_at":"2026-11-19T10:14:40+07:00"},"schema_migrations":[{"id":"core/0001_init.sql","checksum":"db8341a9c2f9","applied_at":"2026-11-19T10:14:35+07:00"}],"meta_rows":0}
+
+## 3. docker compose restart web · 2026-11-19 10:14:40 +0700
+  log (สะสมทั้งคอนเทนเนอร์): [egov] [migrate] baseline core/0001_init.sql (DB รุ่นก่อน migration · ตารางตรงกัน → บันทึกว่า apply แล้วโดยไม่รัน · ข้อมูลเดิมอยู่ครบ)
+  log (สะสมทั้งคอนเทนเนอร์): [egov] listening on :3000 · TEST_MODE=off · BUG_MODE=- · DB_PATH=/data/app.db · modules=[auth, apply, cases, documents, payment, queue, workflow, admin, dashboard] · clock=2026-11-19T10:14:35+07:00
+  log (สะสมทั้งคอนเทนเนอร์): [egov] listening on :3000 · TEST_MODE=off · BUG_MODE=- · DB_PATH=/data/app.db · modules=[auth, apply, cases, documents, payment, queue, workflow, admin, dashboard] · clock=2026-11-19T10:14:41+07:00
+  POST /api/auth/thaid/start   {"status":"OTP_SENT"} → HTTP 200
+  POST /api/auth/thaid/verify  {"registered":true} → HTTP 200
+  GET  /api/me                 {"username":"cit-0005","role":"citizen"} → HTTP 200
+  DB หลัง restart: {"users":12,"cases":30,"citizen":{"id":12,"username":"cit-0005","registered":1,"consent_at":"2026-11-19T10:14:40+07:00","created_at":"2026-11-19T10:14:40+07:00"},"schema_migrations":[{"id":"core/0001_init.sql","checksum":"db8341a9c2f9","applied_at":"2026-11-19T10:14:35+07:00"}],"meta_rows":0}
+
+## 4. docker compose down (ไม่ -v) แล้ว up -d --wait web · 2026-11-19 10:14:42 +0700
+  log (คอนเทนเนอร์ใหม่): [egov] listening on :3000 · TEST_MODE=off · BUG_MODE=- · DB_PATH=/data/app.db · modules=[auth, apply, cases, documents, payment, queue, workflow, admin, dashboard] · clock=2026-11-19T10:14:42+07:00
+  POST /api/auth/thaid/start   {"status":"OTP_SENT"} → HTTP 200
+  POST /api/auth/thaid/verify  {"registered":true} → HTTP 200
+  GET  /api/me                 {"username":"cit-0005","role":"citizen"} → HTTP 200
+  DB หลัง down/up: {"users":12,"cases":30,"citizen":{"id":12,"username":"cit-0005","registered":1,"consent_at":"2026-11-19T10:14:40+07:00","created_at":"2026-11-19T10:14:40+07:00"},"schema_migrations":[{"id":"core/0001_init.sql","checksum":"db8341a9c2f9","applied_at":"2026-11-19T10:14:35+07:00"}],"meta_rows":0}
+
+RESULT: PASS · ผู้ใช้ที่ลงทะเบียนก่อน restart ยังอยู่ (registered=1) · users/cases/schema_migrations เท่าเดิมทั้งหลัง restart และหลัง down/up

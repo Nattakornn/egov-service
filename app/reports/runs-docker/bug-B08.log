@@ -1,0 +1,190 @@
+ Container app-web-1 Running 
+ Container app-web-notest-1 Running 
+ Container app-web-1 Waiting 
+ Container app-web-1 Healthy 
+ Container app-web-notest-1 Waiting 
+ Container app-web-1 Waiting 
+ Container app-web-1 Healthy 
+ Container app-web-notest-1 Healthy 
+ Container app-e2e-run-d2380c5794fd Creating 
+ Container app-e2e-run-d2380c5794fd Created 
+
+up to date in 511ms
+
+Running 51 tests using 1 worker
+
+  ✓  1 [chromium] › part1/auth.spec.js:7:1 › TC-AUTH-01 · เลขบัตร 13 หลัก + checksum (1.9s)
+  ✓  2 [chromium] › part1/auth.spec.js:46:1 › TC-AUTH-02 · OTP ผิด 3 ครั้งล็อก 15 นาที (1.3s)
+  ✓  3 [chromium] › part1/auth.spec.js:144:1 › TC-AUTH-03 · ลงทะเบียนครั้งแรก (1.7s)
+  ✓  4 [chromium] › part1/auth.spec.js:216:1 › TC-AUTH-04 · เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น (3.0s)
+  ✓  5 [chromium] › part1/fee.spec.js:11:1 › TC-FEE-01 · ค่าธรรมเนียม SV-01 / SV-02 / SV-03 (2.0s)
+  ✓  6 [chromium] › part1/noti.spec.js:63:1 › TC-NOTI-01 · ผู้รับแจ้งเตือนตามระดับ (688ms)
+  ✓  7 [chromium] › part1/noti.spec.js:68:1 › TC-NOTI-02 · ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร (2.1s)
+  ✓  8 [chromium] › part1/pay.spec.js:22:1 › TC-PAY-01 · อายุ QR 15:00 (641ms)
+  ✓  9 [chromium] › part1/pay.spec.js:70:1 › TC-PAY-02 · ยอดเงินและ callback ซ้ำ (218ms)
+  ✓  10 [chromium] › part1/pay.spec.js:113:1 › TC-PAY-03 · ชำระพร้อมกัน เลขไม่ซ้ำ (309ms)
+  ✓  11 [chromium] › part1/pay.spec.js:148:1 › TC-PAY-04 · เลขคำขอข้ามปี (757ms)
+  ✓  12 [chromium] › part1/queue.spec.js:24:1 › TC-QUEUE-01 · ลำดับคิวและขอบเขตแผนก (1.1s)
+  ✘  13 [chromium] › part1/queue.spec.js:99:1 › TC-QUEUE-02 · รับเรื่องซ้อน (พร้อมกันและต่อกัน) (569ms)
+  ✓  14 [chromium] › part1/queue.spec.js:184:1 › TC-QUEUE-03 · งานในมือสูงสุด 10 (1.9s)
+  ✓  15 [chromium] › part1/sla.spec.js:22:1 › TC-SLA-01 · กำหนดเสร็จตามตารางวันที่ (1.7s)
+  ✓  16 [chromium] › part1/sla.spec.js:50:1 › TC-SLA-02 · หยุดนับ SLA ระหว่างรอแก้ไข (1.9s)
+  ✓  17 [chromium] › part1/sla.spec.js:140:1 › TC-SLA-03 · ระดับเตือน ปกติ / ใกล้ครบกำหนด / เกินกำหนด (1.5s)
+  ✓  18 [chromium] › part1/submit.spec.js:8:1 › TC-SUBMIT-01 · ยื่นคำขอ SV-01 ครบวงจร (1.3s)
+  ✓  19 [chromium] › part1/submit.spec.js:85:1 › TC-SUBMIT-02 · เอกสารบังคับครบก่อนชำระ (1.4s)
+  ✓  20 [chromium] › part1/submit.spec.js:150:1 › TC-SUBMIT-03 · ร่าง และการยกเลิก (1.5s)
+  ✓  21 [chromium] › part1/upload.spec.js:22:1 › TC-UPLOAD-01 · ขนาดและจำนวนไฟล์ (2.3s)
+  ✓  22 [chromium] › part1/upload.spec.js:89:1 › TC-UPLOAD-02 · ชนิดไฟล์จากเนื้อไฟล์ (2.8s)
+  ✓  23 [chromium] › part2/audit.spec.js:17:3 › AUDIT › TC-AUDIT-01 · เหตุการณ์และฟิลด์ใน Audit (979ms)
+  ✓  24 [chromium] › part2/audit.spec.js:120:3 › AUDIT › TC-AUDIT-02 · Audit แก้/ลบไม่ได้ (405) (420ms)
+  ✓  25 [chromium] › part2/audit.spec.js:185:3 › AUDIT › TC-AUDIT-03 · กรองช่วงวันที่ตามเวลาไทย (914ms)
+  ✓  26 [chromium] › part2/dash.spec.js:47:3 › DASH › TC-DASH-01 · Dashboard ตัวเลขเริ่มต้น (383ms)
+  ✓  27 [chromium] › part2/dash.spec.js:89:3 › DASH › TC-DASH-02 · Dashboard ย้อนหลัง (1.0s)
+  ✓  28 [chromium] › part2/dash.spec.js:113:3 › DASH › TC-DASH-03 · ส่งออก Excel/PDF เท่าหน้าจอ (964ms)
+  ✓  29 [chromium] › part2/dash.spec.js:180:3 › DASH › TC-DASH-04 · ค่าขอบ "ทันกำหนด" 16:29:59 / 16:30:00 / 16:30:01 (469ms)
+  ✓  30 [chromium] › part2/doc.spec.js:35:3 › DOC › TC-DOC-01 · ออกเอกสารและข้อมูลในเอกสาร (366ms)
+  ✓  31 [chromium] › part2/doc.spec.js:87:3 › DOC › TC-DOC-02 · ตรวจเอกสาร /verify (178ms)
+  ✓  32 [chromium] › part2/doc.spec.js:120:3 › DOC › TC-DOC-03 · เอกสารหมดอายุและลายเซ็นไม่ตรง (815ms)
+  ✓  33 [chromium] › part2/nfr.spec.js:26:3 › NFR › TC-NFR-01 · Responsive 375 / 768 / 1280 (2.4s)
+  ✓  34 [chromium] › part2/nfr.spec.js:86:3 › NFR › TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว (6.9s)
+  ✓  35 [chromium] › part2/nfr.spec.js:230:3 › NFR › TC-NFR-03 · Health เวลาโหลด และผลซ้ำได้ (804ms)
+[TC-NFR-04] web log /e2e/results/web.log: 79702 bytes · 2246 lines · register lines 1 → 2 · PII found 0 · DB files 1
+  ✓  36 [chromium] › part2/nfr.spec.js:300:5 › NFR › inspection › TC-NFR-04 · เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection) (62ms)
+  ✓  37 [chromium] › part2/pdpa.spec.js:13:3 › PDPA › TC-PDPA-01 · ปิดบังเลขบัตรบนจอ (533ms)
+  ✓  38 [chromium] › part2/pdpa.spec.js:47:3 › PDPA › TC-PDPA-02 · API (JSON) ไม่ส่งเลขบัตรเต็ม (82ms)
+  ✓  39 [chromium] › part2/pdpa.spec.js:92:3 › PDPA › TC-PDPA-03 · แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit (859ms)
+  ✓  40 [chromium] › part2/rbac.spec.js:14:3 › RBAC › TC-RBAC-01 · ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR) (248ms)
+  ✓  41 [chromium] › part2/rbac.spec.js:44:3 › RBAC › TC-RBAC-02 · เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API) (438ms)
+  ✓  42 [chromium] › part2/rbac.spec.js:80:3 › RBAC › TC-RBAC-03 · ตารางสิทธิ์หน้า/API ตามบทบาท (2.9s)
+  ✓  43 [chromium] › part2/rbac.spec.js:186:3 › RBAC › TC-RBAC-04 · ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก (1.9s)
+  ✓  44 [chromium] › part2/rbac.spec.js:293:3 › RBAC › TC-RBAC-05 · สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ (661ms)
+  ✓  45 [chromium] › part2/rbac.spec.js:369:3 › RBAC › TC-RBAC-06 · ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ (1.1s)
+  ✓  46 [chromium] › part2/workflow.spec.js:25:3 › WORKFLOW › TC-WORKFLOW-01 · SV-01 อนุมัติ + ออกเอกสาร (791ms)
+  ✓  47 [chromium] › part2/workflow.spec.js:83:3 › WORKFLOW › TC-WORKFLOW-02 · SV-02 ผ่านหัวหน้า (1.6s)
+  ✓  48 [chromium] › part2/workflow.spec.js:147:3 › WORKFLOW › TC-WORKFLOW-03 · SV-03 สามขั้นตอน (1.6s)
+  ✓  49 [chromium] › part2/workflow.spec.js:211:3 › WORKFLOW › TC-WORKFLOW-04 · ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ (3.0s)
+  ✓  50 [chromium] › part2/workflow.spec.js:310:3 › WORKFLOW › TC-WORKFLOW-05 · เหตุผล ≥ 10 ตัวอักษร (ตีกลับ / ไม่อนุมัติ) (1.8s)
+  ✓  51 [chromium] › part2/workflow.spec.js:380:3 › WORKFLOW › TC-WORKFLOW-06 · เวลาแก้ไข 168 ชั่วโมง (728ms)
+
+
+  1) [chromium] › part1/queue.spec.js:99:1 › TC-QUEUE-02 · รับเรื่องซ้อน (พร้อมกันและต่อกัน) ───────
+
+    Error: TC-QUEUE-02 ส่วน 1: กด claim-btn พร้อมกัน 2 browser context
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"ผ่าน"[39m
+    Received: [31m"ล้ม: สำเร็จ 1 คน อีกคน 409 (A=200 {\"caseNo\":\"EG-2569-000028\",\"status\":\"IN_REVIEW\",\"owner\":\"off.reg1\"} · B=200 {\"caseNo\":\"EG-2569-000028\",\"status\":\"IN_REVIEW\",\"owner\":\"off.reg2\"}) | expect(received).toEqual(expected) // deep equality | - Expected  - 1 | + Received  + 1 | Array [ | 200,"[39m
+
+      110 |     try { await test.step(title, fn); } catch (e) { err = e; }
+      111 |     verdicts.push({ part: title, result: err ? `ล้ม: ${clean(err)}` : 'ผ่าน' });
+    > 112 |     expect.soft(err ? `ล้ม: ${clean(err)}` : 'ผ่าน', `TC-QUEUE-02 ${title}`).toBe('ผ่าน');
+          |                                                                              ^
+      113 |   }
+      114 |
+      115 |   await part('ส่วน 1: กด claim-btn พร้อมกัน 2 browser context', async () => {
+        at part (/e2e/specs/part1/queue.spec.js:112:78)
+        at /e2e/specs/part1/queue.spec.js:115:3
+
+    Error: TC-QUEUE-02 ส่วน 2: API 10 ครั้งพร้อมกัน (RESET)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"ผ่าน"[39m
+    Received: [31m"ล้ม: ต้องได้ 200 ครั้งเดียว (off.reg1:200: off.reg2:200: off.reg1:200: off.reg2:200: off.reg1:200: off.reg2:200: off.reg1:200: off.reg2:409:WORKLOAD_LIMIT off.reg1:200: off.reg2:200:) | expect(received).toBe(expected) // Object.is equality | Expected: 1 | Received: 9"[39m
+
+      110 |     try { await test.step(title, fn); } catch (e) { err = e; }
+      111 |     verdicts.push({ part: title, result: err ? `ล้ม: ${clean(err)}` : 'ผ่าน' });
+    > 112 |     expect.soft(err ? `ล้ม: ${clean(err)}` : 'ผ่าน', `TC-QUEUE-02 ${title}`).toBe('ผ่าน');
+          |                                                                              ^
+      113 |   }
+      114 |
+      115 |   await part('ส่วน 1: กด claim-btn พร้อมกัน 2 browser context', async () => {
+        at part (/e2e/specs/part1/queue.spec.js:112:78)
+        at /e2e/specs/part1/queue.spec.js:144:3
+
+    Error: TC-QUEUE-02 ส่วน 3: ต่อกัน (RESET · จับ B08)
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoBe[2m([22m[32mexpected[39m[2m) // Object.is equality[22m
+
+    Expected: [32m"ผ่าน"[39m
+    Received: [31m"ล้ม: off.reg2 claim ต่อจาก off.reg1 [/api/officer/cases/EG-2569-000029/claim]: HTTP status ควรเป็น 409 (body={\"caseNo\":\"EG-2569-000029\",\"status\":\"IN_REVIEW\",\"owner\":\"off.reg2\"}) | expect(received).toBe(expected) // Object.is equality | Expected: 409 | Received: 200"[39m
+
+      110 |     try { await test.step(title, fn); } catch (e) { err = e; }
+      111 |     verdicts.push({ part: title, result: err ? `ล้ม: ${clean(err)}` : 'ผ่าน' });
+    > 112 |     expect.soft(err ? `ล้ม: ${clean(err)}` : 'ผ่าน', `TC-QUEUE-02 ${title}`).toBe('ผ่าน');
+          |                                                                              ^
+      113 |   }
+      114 |
+      115 |   await part('ส่วน 1: กด claim-btn พร้อมกัน 2 browser context', async () => {
+        at part (/e2e/specs/part1/queue.spec.js:112:78)
+        at /e2e/specs/part1/queue.spec.js:163:3
+
+    Error: TC-QUEUE-02 ทุกส่วนต้องผ่าน · ผลรายส่วน [{"part":"ส่วน 1: กด claim-btn พร้อมกัน 2 browser context","result":"ล้ม: สำเร็จ 1 คน อีกคน 409 (A=200 {\"caseNo\":\"EG-2569-000028\",\"status\":\"IN_REVIEW\",\"owner\":\"off.reg1\"} · B=200 {\"caseNo\":\"EG-2569-000028\",\"status\":\"IN_REVIEW\",\"owner\":\"off.reg2\"}) | expect(received).toEqual(expected) // deep equality | - Expected  - 1 | + Received  + 1 | Array [ | 200,"},{"part":"ส่วน 2: API 10 ครั้งพร้อมกัน (RESET)","result":"ล้ม: ต้องได้ 200 ครั้งเดียว (off.reg1:200: off.reg2:200: off.reg1:200: off.reg2:200: off.reg1:200: off.reg2:200: off.reg1:200: off.reg2:409:WORKLOAD_LIMIT off.reg1:200: off.reg2:200:) | expect(received).toBe(expected) // Object.is equality | Expected: 1 | Received: 9"},{"part":"ส่วน 3: ต่อกัน (RESET · จับ B08)","result":"ล้ม: off.reg2 claim ต่อจาก off.reg1 [/api/officer/cases/EG-2569-000029/claim]: HTTP status ควรเป็น 409 (body={\"caseNo\":\"EG-2569-000029\",\"status\":\"IN_REVIEW\",\"owner\":\"off.reg2\"}) | expect(received).toBe(expected) // Object.is equality | Expected: 409 | Received: 200"}]
+
+    [2mexpect([22m[31mreceived[39m[2m).[22mtoEqual[2m([22m[32mexpected[39m[2m) // deep equality[22m
+
+    [32m- Expected  -  1[39m
+    [31m+ Received  + 14[39m
+
+    [32m- Array [][39m
+    [31m+ Array [[39m
+    [31m+   Object {[39m
+    [31m+     "part": "ส่วน 1: กด claim-btn พร้อมกัน 2 browser context",[39m
+    [31m+     "result": "ล้ม: สำเร็จ 1 คน อีกคน 409 (A=200 {\"caseNo\":\"EG-2569-000028\",\"status\":\"IN_REVIEW\",\"owner\":\"off.reg1\"} · B=200 {\"caseNo\":\"EG-2569-000028\",\"status\":\"IN_REVIEW\",\"owner\":\"off.reg2\"}) | expect(received).toEqual(expected) // deep equality | - Expected  - 1 | + Received  + 1 | Array [ | 200,",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "part": "ส่วน 2: API 10 ครั้งพร้อมกัน (RESET)",[39m
+    [31m+     "result": "ล้ม: ต้องได้ 200 ครั้งเดียว (off.reg1:200: off.reg2:200: off.reg1:200: off.reg2:200: off.reg1:200: off.reg2:200: off.reg1:200: off.reg2:409:WORKLOAD_LIMIT off.reg1:200: off.reg2:200:) | expect(received).toBe(expected) // Object.is equality | Expected: 1 | Received: 9",[39m
+    [31m+   },[39m
+    [31m+   Object {[39m
+    [31m+     "part": "ส่วน 3: ต่อกัน (RESET · จับ B08)",[39m
+    [31m+     "result": "ล้ม: off.reg2 claim ต่อจาก off.reg1 [/api/officer/cases/EG-2569-000029/claim]: HTTP status ควรเป็น 409 (body={\"caseNo\":\"EG-2569-000029\",\"status\":\"IN_REVIEW\",\"owner\":\"off.reg2\"}) | expect(received).toBe(expected) // Object.is equality | Expected: 409 | Received: 200",[39m
+    [31m+   },[39m
+    [31m+ ][39m
+
+      179 |
+      180 |   const failedParts = verdicts.filter((v) => v.result !== 'ผ่าน');
+    > 181 |   expect(failedParts, `TC-QUEUE-02 ทุกส่วนต้องผ่าน · ผลรายส่วน ${JSON.stringify(verdicts)}`).toEqual([]);
+          |                                                                                              ^
+      182 | });
+      183 |
+      184 | test('TC-QUEUE-03 · งานในมือสูงสุด 10', async ({ tc }) => {
+        at /e2e/specs/part1/queue.spec.js:181:94
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    results/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/test-failed-5.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: screenshot (image/png) ──────────────────────────────────────────────────────────
+    results/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/test-failed-3.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #3: screenshot (image/png) ──────────────────────────────────────────────────────────
+    results/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/test-failed-4.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #4: screenshot (image/png) ──────────────────────────────────────────────────────────
+    results/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #5: screenshot (image/png) ──────────────────────────────────────────────────────────
+    results/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/test-failed-2.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #6: screenshot (image/png) ──────────────────────────────────────────────────────────
+    results/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/test-failed-6.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #7: trace (application/zip) ─────────────────────────────────────────────────────────
+    results/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace results/artifacts/part1-queue-TC-QUEUE-02-·-รับเรื่องซ้อน-พร้อมกันและต่อกัน--chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › part1/queue.spec.js:99:1 › TC-QUEUE-02 · รับเรื่องซ้อน (พร้อมกันและต่อกัน) ────────
+  50 passed (1.2m)
+

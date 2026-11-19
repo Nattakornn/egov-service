@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="436" viewBox="0 0 1500 436" font-family="Sarabun, Loma, Garuda, 'Noto Sans Thai', Tahoma, 'Noto Color Emoji', sans-serif">
+<defs><marker id="ag" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#9a9a9a"/></marker><marker id="ac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="#e8590c"/></marker></defs>
+<rect width="1500" height="436" fill="#ffffff"/>
+<rect width="1500" height="64" fill="#1e3a5f"/>
+<text x="30" y="42" font-size="26" font-weight="700" fill="#fff">Gantt แผน · egov-eservice</text>
+<text x="30" y="88" font-size="16" fill="#555">แถว = บัญชี · แท่ง = บล็อก (สีตามสกิล) · เวลา = โทเคนประเมิน ÷ ความเร็ว CLI × k · KC-QUEST · MAX_AGENTS=4</text>
+<line x1="200.0" y1="104" x2="200.0" y2="286" stroke="#eee"/><text x="200.0" y="306" font-size="13" text-anchor="middle" fill="#777">0</text>
+<line x1="325.0" y1="104" x2="325.0" y2="286" stroke="#eee"/><text x="325.0" y="306" font-size="13" text-anchor="middle" fill="#777">10</text>
+<line x1="450.0" y1="104" x2="450.0" y2="286" stroke="#eee"/><text x="450.0" y="306" font-size="13" text-anchor="middle" fill="#777">20</text>
+<line x1="575.0" y1="104" x2="575.0" y2="286" stroke="#eee"/><text x="575.0" y="306" font-size="13" text-anchor="middle" fill="#777">30</text>
+<line x1="700.0" y1="104" x2="700.0" y2="286" stroke="#eee"/><text x="700.0" y="306" font-size="13" text-anchor="middle" fill="#777">40</text>
+<line x1="825.0000000000001" y1="104" x2="825.0000000000001" y2="286" stroke="#eee"/><text x="825.0000000000001" y="306" font-size="13" text-anchor="middle" fill="#777">50</text>
+<line x1="950.0000000000001" y1="104" x2="950.0000000000001" y2="286" stroke="#eee"/><text x="950.0000000000001" y="306" font-size="13" text-anchor="middle" fill="#777">60</text>
+<line x1="1075.0" y1="104" x2="1075.0" y2="286" stroke="#eee"/><text x="1075.0" y="306" font-size="13" text-anchor="middle" fill="#777">70</text>
+<line x1="1200.0" y1="104" x2="1200.0" y2="286" stroke="#eee"/><text x="1200.0" y="306" font-size="13" text-anchor="middle" fill="#777">80</text>
+<line x1="1325.0000000000002" y1="104" x2="1325.0000000000002" y2="286" stroke="#eee"/><text x="1325.0000000000002" y="306" font-size="13" text-anchor="middle" fill="#777">90</text>
+<line x1="1450.0000000000002" y1="104" x2="1450.0000000000002" y2="286" stroke="#eee"/><text x="1450.0000000000002" y="306" font-size="13" text-anchor="middle" fill="#777">100</text>
+<text x="825.0" y="328" font-size="14" text-anchor="middle" fill="#555">นาที</text>
+<rect x="30" y="110" width="1440" height="44" fill="#fff"/>
+<text x="190" y="138" font-size="16" text-anchor="end" fill="#333">yolo1</text>
+<rect x="30" y="154" width="1440" height="44" fill="#fafafa"/>
+<text x="190" y="182" font-size="16" text-anchor="end" fill="#333">yolo1 #2</text>
+<rect x="30" y="198" width="1440" height="44" fill="#fff"/>
+<text x="190" y="226" font-size="16" text-anchor="end" fill="#333">yolo2</text>
+<rect x="30" y="242" width="1440" height="44" fill="#fafafa"/>
+<text x="190" y="270" font-size="16" text-anchor="end" fill="#333">yolo2 #2</text>
+<rect x="200.0" y="116" width="310.5" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="#e8590c" stroke-width="3.5"/>
+<text x="355.25" y="138" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P01</text>
+<rect x="200.0" y="204" width="310.5" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="355.25" y="226" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P12</text>
+<rect x="200.0" y="160" width="310.5" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="355.25" y="182" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P13</text>
+<rect x="512.5" y="204" width="154.25000000000006" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="#e8590c" stroke-width="3.5"/>
+<text x="589.625" y="226" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P03</text>
+<rect x="512.5" y="116" width="154.25000000000006" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="589.625" y="138" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P02</text>
+<rect x="512.5" y="248" width="154.25000000000006" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="589.625" y="270" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P09</text>
+<rect x="512.5" y="160" width="154.25000000000006" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="589.625" y="182" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P10</text>
+<rect x="668.75" y="204" width="310.49999999999994" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="#e8590c" stroke-width="3.5"/>
+<text x="824.0" y="226" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P04</text>
+<rect x="668.75" y="160" width="310.49999999999994" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="824.0" y="182" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P07</text>
+<rect x="668.75" y="248" width="310.49999999999994" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="824.0" y="270" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P08</text>
+<rect x="668.75" y="116" width="154.24999999999994" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="745.875" y="138" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P05</text>
+<rect x="825.0" y="116" width="154.25000000000003" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="902.125" y="138" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P06</text>
+<rect x="981.25" y="204" width="154.24999999999994" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="none" stroke-width="3.5"/>
+<text x="1058.375" y="226" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P11</text>
+<rect x="1137.5" y="116" width="310.50000000000006" height="32" rx="5" fill="#7c3aed" fill-opacity="0.9" stroke="#e8590c" stroke-width="3.5"/>
+<text x="1292.75" y="138" font-size="14" font-weight="700" text-anchor="middle" fill="#fff">P14</text>
+<rect x="30" y="357" width="24" height="24" rx="6" fill="#7c3aed"/><text x="42" y="375" font-size="14" text-anchor="middle">🧠</text><text x="62" y="374" font-size="16" fill="#333">yolo · Claude 1 บัญชี</text>
+<text x="265" y="374" font-size="16" fill="#e8590c" font-weight="700">▭ ขอบส้ม = สายวิกฤต</text>
+<text x="1470" y="344"font-size="15" text-anchor="end" fill="#555">รวม ≈ 100.0 นาที · เส้นประ = บล็อกเดียวกันที่ใช้หลายบัญชี</text>
+</svg>

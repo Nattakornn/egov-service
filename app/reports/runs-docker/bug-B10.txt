@@ -1,0 +1,8 @@
+== bug-B10 (BUG_MODE=B10)
+total=51 unique=51 passed=48 failed=3 skipped=0
+  FAIL TC-DASH-01: Error: ธ.ค. ALL kpi-ontime-pct: expected text "–"
+  FAIL TC-DASH-02: Error: 2026-11 ALL kpi-ontime-pct: expected text "85.7%"
+  FAIL TC-DASH-03: Error: พ.ย. ALL kpi-ontime-pct: expected text "85.7%"
+expected-fail=[TC-DASH-02] allowed=[TC-DASH-01 TC-DASH-03]
+failed=[TC-DASH-01 TC-DASH-02 TC-DASH-03] extra=[] should-fail-but-passed=[] side-effects=[TC-DASH-01 TC-DASH-03]
+RESULT: MATCH

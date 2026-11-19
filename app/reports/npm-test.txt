@@ -1,0 +1,1217 @@
+npm notice run egov-eservice@1.0.0 test
+npm notice run node src/core/tools/run-tests.js
+unit test 16 ไฟล์:
+  src/core/test/fmt.test.js
+  src/core/test/migrate.test.js
+  src/core/test/seed.test.js
+  src/core/test/server.test.js
+  src/modules/apply/apply.test.js
+  src/modules/auth/auth.test.js
+  src/modules/cases/cases.test.js
+  src/modules/dashboard/dashboard.test.js
+  src/modules/documents/documents.test.js
+  src/modules/payment/payment.test.js
+  src/modules/workflow/workflow.test.js
+  src/rules/db.test.js
+  src/rules/fee.test.js
+  src/rules/sla.test.js
+  test/pii-check.test.js
+  test/pw-summary.test.js
+TAP version 13
+# Subtest: fmt.money: ฿ + คั่นหลักพัน · ค่าว่าง → –
+ok 1 - fmt.money: ฿ + คั่นหลักพัน · ค่าว่าง → –
+  ---
+  duration_ms: 0.8525
+  type: 'test'
+  ...
+# Subtest: fmt.dateTime / date: พ.ศ. ย่อ เวลาไทย
+ok 2 - fmt.dateTime / date: พ.ศ. ย่อ เวลาไทย
+  ---
+  duration_ms: 1.236333
+  type: 'test'
+  ...
+# Subtest: fmt.iso: ISO +07:00 ตัดมิลลิวินาที
+ok 3 - fmt.iso: ISO +07:00 ตัดมิลลิวินาที
+  ---
+  duration_ms: 7.807167
+  type: 'test'
+  ...
+# Subtest: fmt.pct: 1 ตำแหน่ง · null → –
+ok 4 - fmt.pct: 1 ตำแหน่ง · null → –
+  ---
+  duration_ms: 0.235625
+  type: 'test'
+  ...
+# Subtest: fmt.idFull / maskId (BR-24) / maskName (BR-23)
+ok 5 - fmt.idFull / maskId (BR-24) / maskName (BR-23)
+  ---
+  duration_ms: 0.365334
+  type: 'test'
+  ...
+# Subtest: fmt.esc กัน HTML injection
+ok 6 - fmt.esc กัน HTML injection
+  ---
+  duration_ms: 0.207959
+  type: 'test'
+  ...
+# Subtest: time helpers: วันในสัปดาห์และบวกวัน/ชั่วโมง
+ok 7 - time helpers: วันในสัปดาห์และบวกวัน/ชั่วโมง
+  ---
+  duration_ms: 1.022292
+  type: 'test'
+  ...
+# Subtest: time.parseIsoStrict: ต้องมี offset (INVALID_TIME)
+ok 8 - time.parseIsoStrict: ต้องมี offset (INVALID_TIME)
+  ---
+  duration_ms: 3.8145
+  type: 'test'
+  ...
+# Subtest: clock: แช่แข็ง ตั้งค่า reset
+ok 9 - clock: แช่แข็ง ตั้งค่า reset
+  ---
+  duration_ms: 2.393833
+  type: 'test'
+  ...
+# Subtest: BUG_MODE parser (BUGS §1)
+ok 10 - BUG_MODE parser (BUGS §1)
+  ---
+  duration_ms: 6.728375
+  type: 'test'
+  ...
+# Subtest: (a)–(d) DB ใหม่ → restart → เพิ่ม 0002 → แก้ไฟล์ที่ apply แล้ว (โหมดปกติ ไม่มี TEST_MODE)
+    # Subtest: (a) DB ใหม่: apply ทุกไฟล์ (core ก่อน แล้วโมดูล) + seed
+    ok 1 - (a) DB ใหม่: apply ทุกไฟล์ (core ก่อน แล้วโมดูล) + seed
+      ---
+      duration_ms: 642.308875
+      type: 'test'
+      ...
+    # Subtest: (b) restart โหมดปกติ: ไม่ apply ซ้ำ ไม่ seed ซ้ำ ข้อมูลที่เพิ่มยังอยู่
+    ok 2 - (b) restart โหมดปกติ: ไม่ apply ซ้ำ ไม่ seed ซ้ำ ข้อมูลที่เพิ่มยังอยู่
+      ---
+      duration_ms: 7.949208
+      type: 'test'
+      ...
+    # Subtest: (c) เพิ่ม core/0002 + demo/0002 → apply เฉพาะ 0002 (core ก่อน) ข้อมูลเดิมอยู่ครบ
+    ok 3 - (c) เพิ่ม core/0002 + demo/0002 → apply เฉพาะ 0002 (core ก่อน) ข้อมูลเดิมอยู่ครบ
+      ---
+      duration_ms: 54.708833
+      type: 'test'
+      ...
+    # Subtest: (d) แก้ไฟล์ที่ apply แล้ว → ไม่เริ่มระบบ บอกชื่อไฟล์ + ให้เพิ่มไฟล์ใหม่ · ข้อมูลไม่หาย
+    ok 4 - (d) แก้ไฟล์ที่ apply แล้ว → ไม่เริ่มระบบ บอกชื่อไฟล์ + ให้เพิ่มไฟล์ใหม่ · ข้อมูลไม่หาย
+      ---
+      duration_ms: 33.366292
+      type: 'test'
+      ...
+    # Subtest: (f) TEST_MODE=1 บน DB เดิม → ล้างทุกตาราง + migration ทั้งหมดใหม่ + seed
+    ok 5 - (f) TEST_MODE=1 บน DB เดิม → ล้างทุกตาราง + migration ทั้งหมดใหม่ + seed
+      ---
+      duration_ms: 401.852708
+      type: 'test'
+      ...
+    1..5
+ok 11 - (a)–(d) DB ใหม่ → restart → เพิ่ม 0002 → แก้ไฟล์ที่ apply แล้ว (โหมดปกติ ไม่มี TEST_MODE)
+  ---
+  duration_ms: 1145.353292
+  type: 'test'
+  ...
+# Subtest: (e) DB รุ่นก่อน migration (มีตาราง + meta.schema_hash ไม่มี schema_migrations) ตารางตรง 0001 → baseline ไม่รัน ไม่ลบ ไม่ seed ซ้ำ
+ok 12 - (e) DB รุ่นก่อน migration (มีตาราง + meta.schema_hash ไม่มี schema_migrations) ตารางตรง 0001 → baseline ไม่รัน ไม่ลบ ไม่ seed ซ้ำ
+  ---
+  duration_ms: 392.699126
+  type: 'test'
+  ...
+# Subtest: (e) DB รุ่นก่อนที่ตารางไม่ตรง 0001 หรือ DB ที่ไม่รู้จัก → ไม่เริ่มระบบ ไม่ baseline ไม่ลบข้อมูล
+ok 13 - (e) DB รุ่นก่อนที่ตารางไม่ตรง 0001 หรือ DB ที่ไม่รู้จัก → ไม่เริ่มระบบ ไม่ baseline ไม่ลบข้อมูล
+  ---
+  duration_ms: 546.035167
+  type: 'test'
+  ...
+# Subtest: เลขซ้ำ/ชื่อผิดรูปแบบ/0000/schema.sql แบบเก่า → error ก่อนแตะ DB
+ok 14 - เลขซ้ำ/ชื่อผิดรูปแบบ/0000/schema.sql แบบเก่า → error ก่อนแตะ DB
+  ---
+  duration_ms: 6.414708
+  type: 'test'
+  ...
+# Subtest: ไฟล์ใหม่เลขน้อยกว่าที่ apply แล้ว · ไฟล์ว่าง · SQL ผิด → ไม่เริ่ม (ไฟล์ก่อนหน้าคงอยู่ ไฟล์ที่ผิด rollback)
+ok 15 - ไฟล์ใหม่เลขน้อยกว่าที่ apply แล้ว · ไฟล์ว่าง · SQL ผิด → ไม่เริ่ม (ไฟล์ก่อนหน้าคงอยู่ ไฟล์ที่ผิด rollback)
+  ---
+  duration_ms: 20.469083
+  type: 'test'
+  ...
+# Subtest: npm run migrate:new -- <desc> สร้างไฟล์ว่างเลขถัดไป (core และ --module)
+ok 16 - npm run migrate:new -- <desc> สร้างไฟล์ว่างเลขถัดไป (core และ --module)
+  ---
+  duration_ms: 4.174584
+  type: 'test'
+  ...
+# Subtest: NFR-04: ไฟล์ migration จริงทุกไฟล์ไม่มีเลขบัตร 13 หลัก/เบอร์มือถือ (SQLite เก็บข้อความ CREATE ไว้ในไฟล์ DB)
+ok 17 - NFR-04: ไฟล์ migration จริงทุกไฟล์ไม่มีเลขบัตร 13 หลัก/เบอร์มือถือ (SQLite เก็บข้อความ CREATE ไว้ในไฟล์ DB)
+  ---
+  duration_ms: 0.404708
+  type: 'test'
+  ...
+# Subtest: §1 บัญชี: ประชาชน 4 + เจ้าหน้าที่/บทบาทอื่น 7 · ข้อมูลส่วนบุคคลเข้ารหัสและถอดได้
+ok 18 - §1 บัญชี: ประชาชน 4 + เจ้าหน้าที่/บทบาทอื่น 7 · ข้อมูลส่วนบุคคลเข้ารหัสและถอดได้
+  ---
+  duration_ms: 61.433583
+  type: 'test'
+  ...
+# Subtest: §2 บริการ · §3 วันหยุด
+ok 19 - §2 บริการ · §3 วันหยุด
+  ---
+  duration_ms: 0.482542
+  type: 'test'
+  ...
+# Subtest: §4.1 คำขอ 30 ใบ: จำนวนต่อคน สถานะ ผู้ถือ
+ok 20 - §4.1 คำขอ 30 ใบ: จำนวนต่อคน สถานะ ผู้ถือ
+  ---
+  duration_ms: 1.846541
+  type: 'test'
+  ...
+# Subtest: §9.1 คิวทะเบียน 17 แถวเรียงกำหนดเสร็จแล้วเลขคำขอ · §9.2 โยธา 1 · §9.3 รออนุมัติ 2
+ok 21 - §9.1 คิวทะเบียน 17 แถวเรียงกำหนดเสร็จแล้วเลขคำขอ · §9.2 โยธา 1 · §9.3 รออนุมัติ 2
+  ---
+  duration_ms: 0.51425
+  type: 'test'
+  ...
+# Subtest: §7 ตัวเลขดิบของ Dashboard ตรง TEST-DATA (รับเรื่อง/ปิดงาน/ทัน)
+ok 22 - §7 ตัวเลขดิบของ Dashboard ตรง TEST-DATA (รับเรื่อง/ปิดงาน/ทัน)
+  ---
+  duration_ms: 1.121166
+  type: 'test'
+  ...
+# Subtest: §4.4 ประวัติตีกลับ F01/F02 + paused_days
+ok 23 - §4.4 ประวัติตีกลับ F01/F02 + paused_days
+  ---
+  duration_ms: 1.084625
+  type: 'test'
+  ...
+# Subtest: §4.1 ไฟล์แนบ: SV-01 1 · SV-02 2 · SV-03 3 + ร่าง DR-0002 2 ไฟล์ = PDF จริงบนดิสก์
+ok 24 - §4.1 ไฟล์แนบ: SV-01 1 · SV-02 2 · SV-03 3 + ร่าง DR-0002 2 ไฟล์ = PDF จริงบนดิสก์
+  ---
+  duration_ms: 1.032125
+  type: 'test'
+  ...
+# Subtest: §4.2 ร่าง + §6 รอชำระ PP-0001
+ok 25 - §4.2 ร่าง + §6 รอชำระ PP-0001
+  ---
+  duration_ms: 0.459416
+  type: 'test'
+  ...
+# Subtest: §5 เอกสาร DOC-2569-000001 ลายเซ็น HMAC verify ผ่าน · tamper → ไม่ผ่าน
+ok 26 - §5 เอกสาร DOC-2569-000001 ลายเซ็น HMAC verify ผ่าน · tamper → ไม่ผ่าน
+  ---
+  duration_ms: 1.723375
+  type: 'test'
+  ...
+# Subtest: §10 Audit/แจ้งเตือน/session ว่างตอนเริ่ม · Audit แก้/ลบไม่ได้
+ok 27 - §10 Audit/แจ้งเตือน/session ว่างตอนเริ่ม · Audit แก้/ลบไม่ได้
+  ---
+  duration_ms: 11.298292
+  type: 'test'
+  ...
+# Subtest: §12 เลขถัดไปหลัง seed
+ok 28 - §12 เลขถัดไปหลัง seed
+  ---
+  duration_ms: 18.103792
+  type: 'test'
+  ...
+# Subtest: caseEvents.transition: เปลี่ยนสถานะ + ไทม์ไลน์ + Audit · สถานะผิด → INVALID_STATE
+ok 29 - caseEvents.transition: เปลี่ยนสถานะ + ไทม์ไลน์ + Audit · สถานะผิด → INVALID_STATE
+  ---
+  duration_ms: 20.44225
+  type: 'test'
+  ...
+# Subtest: NFR-04: ไฟล์ DB ไม่มีเลขบัตร/เบอร์โทรตรง ๆ (ทั้งแบบมีขีด)
+ok 30 - NFR-04: ไฟล์ DB ไม่มีเลขบัตร/เบอร์โทรตรง ๆ (ทั้งแบบมีขีด)
+  ---
+  duration_ms: 1.325708
+  type: 'test'
+  ...
+# Subtest: catalog: บริการ/วันหยุดจาก DB · audit.toJson · caseEvents.record
+ok 31 - catalog: บริการ/วันหยุดจาก DB · audit.toJson · caseEvents.record
+  ---
+  duration_ms: 9.401959
+  type: 'test'
+  ...
+# Subtest: GET /api/health → 200 {"status":"ok"} ตรงตัว (ไม่ต้องล็อกอิน)
+ok 32 - GET /api/health → 200 {"status":"ok"} ตรงตัว (ไม่ต้องล็อกอิน)
+  ---
+  duration_ms: 106.326167
+  type: 'test'
+  ...
+# Subtest: POST /api/test/reset → {"ok":true,"now":"2026-12-01T09:00:00+07:00"} + ล้าง session
+ok 33 - POST /api/test/reset → {"ok":true,"now":"2026-12-01T09:00:00+07:00"} + ล้าง session
+  ---
+  duration_ms: 249.186125
+  type: 'test'
+  ...
+# Subtest: GET/PUT /api/test/clock · INVALID_TIME เมื่อไม่มี offset
+ok 34 - GET/PUT /api/test/clock · INVALID_TIME เมื่อไม่มี offset
+  ---
+  duration_ms: 179.977208
+  type: 'test'
+  ...
+# Subtest: NFR-09: reset 2 ครั้ง (มีการเปลี่ยนแปลงคั่น) ได้ข้อมูลเหมือนกัน
+ok 35 - NFR-09: reset 2 ครั้ง (มีการเปลี่ยนแปลงคั่น) ได้ข้อมูลเหมือนกัน
+  ---
+  duration_ms: 129.463292
+  type: 'test'
+  ...
+# Subtest: ไม่ตั้ง TEST_MODE → /api/test/* ตอบ 404 · health ยัง 200 · นาฬิกาเป็นเวลาจริง
+ok 36 - ไม่ตั้ง TEST_MODE → /api/test/* ตอบ 404 · health ยัง 200 · นาฬิกาเป็นเวลาจริง
+  ---
+  duration_ms: 83.845708
+  type: 'test'
+  ...
+# Subtest: test route ของโมดูล (hooks.testRoute) ใช้ได้ใน TEST_MODE · ไม่เรียก onRequest
+ok 37 - test route ของโมดูล (hooks.testRoute) ใช้ได้ใน TEST_MODE · ไม่เรียก onRequest
+  ---
+  duration_ms: 12.794291
+  type: 'test'
+  ...
+# Subtest: BUG_MODE parser ต่อเข้า ctx.bugs
+ok 38 - BUG_MODE parser ต่อเข้า ctx.bugs
+  ---
+  duration_ms: 0.206458
+  type: 'test'
+  ...
+# Subtest: route / redirect ตามบทบาท (CONTRACT §1)
+ok 39 - route / redirect ตามบทบาท (CONTRACT §1)
+  ---
+  duration_ms: 144.838291
+  type: 'test'
+  ...
+# Subtest: guard หน้า: ไม่ล็อกอิน → /login · บทบาทไม่ตรง → 403 forbidden-msg · ยังไม่ลงทะเบียน → /register
+ok 40 - guard หน้า: ไม่ล็อกอิน → /login · บทบาทไม่ตรง → 403 forbidden-msg · ยังไม่ลงทะเบียน → /register
+  ---
+  duration_ms: 61.74375
+  type: 'test'
+  ...
+# Subtest: guard API: 401/403 JSON {code,message}
+ok 41 - guard API: 401/403 JSON {code,message}
+  ---
+  duration_ms: 34.183041
+  type: 'test'
+  ...
+# Subtest: layout: testid หัวหน้าเว็บ เมนูตามบทบาท กระดิ่ง lang=th badge วันที่ เงิน
+ok 42 - layout: testid หัวหน้าเว็บ เมนูตามบทบาท กระดิ่ง lang=th badge วันที่ เงิน
+  ---
+  duration_ms: 32.811375
+  type: 'test'
+  ...
+# Subtest: POST /logout → 303 /login และ session ถูกลบ
+ok 43 - POST /logout → 303 /login และ session ถูกลบ
+  ---
+  duration_ms: 16.287167
+  type: 'test'
+  ...
+# Subtest: static ของ core และโมดูล · โฟลเดอร์ขึ้นต้น _ ไม่ถูกโหลด
+ok 44 - static ของ core และโมดูล · โฟลเดอร์ขึ้นต้น _ ไม่ถูกโหลด
+  ---
+  duration_ms: 7.142083
+  type: 'test'
+  ...
+# Subtest: CONTRACT §0 ข้อ 10: multipart 5,242,881 ไบต์ไม่โดน 413 (ถึง handler ของโมดูล) · 5,242,880 ผ่าน
+ok 45 - CONTRACT §0 ข้อ 10: multipart 5,242,881 ไบต์ไม่โดน 413 (ถึง handler ของโมดูล) · 5,242,880 ผ่าน
+  ---
+  duration_ms: 131.104625
+  type: 'test'
+  ...
+# Subtest: cleanFileName: UTF-8 ที่ multer ถอดเป็น latin1 · ตัด path
+ok 46 - cleanFileName: UTF-8 ที่ multer ถอดเป็น latin1 · ตัด path
+  ---
+  duration_ms: 12.108208
+  type: 'test'
+  ...
+# Subtest: ค่าธรรมเนียม: POST /api/drafts/fee และ POST /api/drafts ตาม BR-04 BR-05 (ผ่าน rules ของ P03)
+ok 47 - ค่าธรรมเนียม: POST /api/drafts/fee และ POST /api/drafts ตาม BR-04 BR-05 (ผ่าน rules ของ P03)
+  ---
+  duration_ms: 669.835375
+  type: 'test'
+  ...
+# Subtest: B01 ของ P03 แสดงผ่าน API ของหน้านี้ (พื้นที่ 101 → 1000)
+ok 48 - B01 ของ P03 แสดงผ่าน API ของหน้านี้ (พื้นที่ 101 → 1000)
+  ---
+  duration_ms: 63.480333
+  type: 'test'
+  ...
+# Subtest: ร่าง: GET รายการ/รายละเอียด · ของคนอื่น 404 · PATCH · ไม่มีเลขคำขอ
+ok 49 - ร่าง: GET รายการ/รายละเอียด · ของคนอื่น 404 · PATCH · ไม่มีเลขคำขอ
+  ---
+  duration_ms: 227.189209
+  type: 'test'
+  ...
+# Subtest: ไฟล์: ขนาด ≤ 5,242,880 · ชนิดจาก magic bytes · จำนวน ≤ 5
+ok 50 - ไฟล์: ขนาด ≤ 5,242,880 · ชนิดจาก magic bytes · จำนวน ≤ 5
+  ---
+  duration_ms: 436.853584
+  type: 'test'
+  ...
+# Subtest: B02: 5,242,880 ไบต์ถูกปฏิเสธ · 5,242,879 ยังรับ
+ok 51 - B02: 5,242,880 ไบต์ถูกปฏิเสธ · 5,242,879 ยังรับ
+  ---
+  duration_ms: 76.876375
+  type: 'test'
+  ...
+# Subtest: เอกสารบังคับ SV-03 · แบบแปลน PDF เท่านั้น · payment ตอบ 409 MISSING_DOCS
+ok 52 - เอกสารบังคับ SV-03 · แบบแปลน PDF เท่านั้น · payment ตอบ 409 MISSING_DOCS
+  ---
+  duration_ms: 147.063959
+  type: 'test'
+  ...
+# Subtest: ลบร่าง: DRAFT/PENDING_PAYMENT → 204 · ref ชำระหายไป · ไฟล์ถูกลบ
+ok 53 - ลบร่าง: DRAFT/PENDING_PAYMENT → 204 · ref ชำระหายไป · ไฟล์ถูกลบ
+  ---
+  duration_ms: 54.312959
+  type: 'test'
+  ...
+# Subtest: RBAC: ไม่ล็อกอิน 401 · admin/เจ้าหน้าที่ 403 · หน้า /citizen/new ของ admin 403
+ok 54 - RBAC: ไม่ล็อกอิน 401 · admin/เจ้าหน้าที่ 403 · หน้า /citizen/new ของ admin 403
+  ---
+  duration_ms: 100.068291
+  type: 'test'
+  ...
+# Subtest: หน้า /citizen/new/:service: testid ขั้น 1 · ค่าตั้งต้น · เปิดร่าง · 404
+ok 55 - หน้า /citizen/new/:service: testid ขั้น 1 · ค่าตั้งต้น · เปิดร่าง · 404
+  ---
+  duration_ms: 63.656917
+  type: 'test'
+  ...
+# Subtest: static: /static/apply/apply.js และ apply.css เสิร์ฟได้
+ok 56 - static: /static/apply/apply.js และ apply.css เสิร์ฟได้
+  ---
+  duration_ms: 2.962459
+  type: 'test'
+  ...
+# Subtest: BR-01 · isValidThaiId: เลขใน seed ผ่านทุกเลข
+ok 57 - BR-01 · isValidThaiId: เลขใน seed ผ่านทุกเลข
+  ---
+  duration_ms: 8.022167
+  type: 'test'
+  ...
+# Subtest: BR-01 · isValidThaiId: 12/14 หลัก · checksum ผิด · ไม่ใช่ตัวเลข → false
+ok 58 - BR-01 · isValidThaiId: 12/14 หลัก · checksum ผิด · ไม่ใช่ตัวเลข → false
+  ---
+  duration_ms: 0.206125
+  type: 'test'
+  ...
+# Subtest: BR-01 · isValidThaiId: หลักตรวจที่คำนวณได้ 10/11 → mod 10
+ok 59 - BR-01 · isValidThaiId: หลักตรวจที่คำนวณได้ 10/11 → mod 10
+  ---
+  duration_ms: 1.353542
+  type: 'test'
+  ...
+# Subtest: BR-03 · isValidMobile: 9/10/11 หลัก · ไม่ขึ้นต้น 0
+ok 60 - BR-03 · isValidMobile: 9/10/11 หลัก · ไม่ขึ้นต้น 0
+  ---
+  duration_ms: 0.471791
+  type: 'test'
+  ...
+# Subtest: §6.1 thaid/start: ผิด → 400 INVALID_ID ข้อความตรง · ถูก → {status:OTP_SENT}
+ok 61 - §6.1 thaid/start: ผิด → 400 INVALID_ID ข้อความตรง · ถูก → {status:OTP_SENT}
+  ---
+  duration_ms: 405.824959
+  type: 'test'
+  ...
+# Subtest: BR-02 · OTP ผิด 3 ครั้ง → 423 ล็อก 15 นาทีตามนาฬิกาทดสอบ · 14:59 ยังล็อก · 15:00 ปลด ตัวนับเริ่มใหม่
+ok 62 - BR-02 · OTP ผิด 3 ครั้ง → 423 ล็อก 15 นาทีตามนาฬิกาทดสอบ · 14:59 ยังล็อก · 15:00 ปลด ตัวนับเริ่มใหม่
+  ---
+  duration_ms: 239.257959
+  type: 'test'
+  ...
+# Subtest: BR-02 · ผิด 2 → ถูก → ผิด 2 ไม่ล็อก · reset ล้างการล็อก
+ok 63 - BR-02 · ผิด 2 → ถูก → ผิด 2 ไม่ล็อก · reset ล้างการล็อก
+  ---
+  duration_ms: 192.672542
+  type: 'test'
+  ...
+# Subtest: BR-02 · ล็อกแยกตามเลขบัตร และ otp_attempts ไม่เก็บเลขบัตรตรง
+ok 64 - BR-02 · ล็อกแยกตามเลขบัตร และ otp_attempts ไม่เก็บเลขบัตรตรง
+  ---
+  duration_ms: 124.475959
+  type: 'test'
+  ...
+# Subtest: FR-02 · ผู้ใช้ยังไม่ลงทะเบียน → registered:false + cookie เฉพาะ /register · BR-03 ตรวจฝั่งเซิร์ฟเวอร์
+ok 65 - FR-02 · ผู้ใช้ยังไม่ลงทะเบียน → registered:false + cookie เฉพาะ /register · BR-03 ตรวจฝั่งเซิร์ฟเวอร์
+  ---
+  duration_ms: 157.199667
+  type: 'test'
+  ...
+# Subtest: FR-01 · เลขบัตร checksum ถูกแต่ไม่มีในระบบ → สร้างบัญชีใหม่ registered:false
+ok 66 - FR-01 · เลขบัตร checksum ถูกแต่ไม่มีในระบบ → สร้างบัญชีใหม่ registered:false
+  ---
+  duration_ms: 88.796292
+  type: 'test'
+  ...
+# Subtest: FR-03 · staff/login ทุกบทบาท → role/dept/landing + Audit STAFF_LOGIN · ผิด → 401
+ok 67 - FR-03 · staff/login ทุกบทบาท → role/dept/landing + Audit STAFF_LOGIN · ผิด → 401
+  ---
+  duration_ms: 242.726333
+  type: 'test'
+  ...
+# Subtest: §6.1 logout → 204 แล้ว /api/me 401 · ไม่ล็อกอิน /api/me 401
+ok 68 - §6.1 logout → 204 แล้ว /api/me 401 · ไม่ล็อกอิน /api/me 401
+  ---
+  duration_ms: 45.838375
+  type: 'test'
+  ...
+# Subtest: §2.2 หน้า /login มี testid และข้อความปุ่มตรงสัญญา
+ok 69 - §2.2 หน้า /login มี testid และข้อความปุ่มตรงสัญญา
+  ---
+  duration_ms: 3.468834
+  type: 'test'
+  ...
+# Subtest: /citizen: คำขอ 10 แถวเรียงเลขมาก→น้อย + ร่าง 2 แถว (ไม่มี EG-) + ปุ่มเริ่ม 3 บริการ + dueAt/ระดับเตือน
+ok 70 - /citizen: คำขอ 10 แถวเรียงเลขมาก→น้อย + ร่าง 2 แถว (ไม่มี EG-) + ปุ่มเริ่ม 3 บริการ + dueAt/ระดับเตือน
+  ---
+  duration_ms: 268.421875
+  type: 'test'
+  ...
+# Subtest: GET /api/cases/:caseNo รูปแบบ CONTRACT 6.7 · เจ้าของได้ idNo · staff ได้ idMasked · executive/auditor 403
+ok 71 - GET /api/cases/:caseNo รูปแบบ CONTRACT 6.7 · เจ้าของได้ idNo · staff ได้ idMasked · executive/auditor 403
+  ---
+  duration_ms: 360.692875
+  type: 'test'
+  ...
+# Subtest: BR-22 IDOR: สมหญิงเปิดของสมชาย → 404 เหมือนเลขที่ไม่มี · B06 เปิดได้
+ok 72 - BR-22 IDOR: สมหญิงเปิดของสมชาย → 404 เหมือนเลขที่ไม่มี · B06 เปิดได้
+  ---
+  duration_ms: 140.132709
+  type: 'test'
+  ...
+# Subtest: FR-10 ยกเลิก: SUBMITTED ไม่มีผู้รับได้ (มี confirm) · มีผู้รับ/IN_REVIEW → 409 CANNOT_CANCEL
+ok 73 - FR-10 ยกเลิก: SUBMITTED ไม่มีผู้รับได้ (มี confirm) · มีผู้รับ/IN_REVIEW → 409 CANNOT_CANCEL
+  ---
+  duration_ms: 257.525959
+  type: 'test'
+  ...
+# Subtest: BR-20 · TC-WORKFLOW-06: 167:59 ส่งแก้ได้ (ผู้ถือเดิม)
+ok 74 - BR-20 · TC-WORKFLOW-06: 167:59 ส่งแก้ได้ (ผู้ถือเดิม)
+  ---
+  duration_ms: 97.777833
+  type: 'test'
+  ...
+# Subtest: BR-20 · A-46: 168:00 ยกเลิกอัตโนมัติ (ไทม์ไลน์ = เส้นตาย) → resubmit 409 FIX_WINDOW_EXPIRED
+ok 75 - BR-20 · A-46: 168:00 ยกเลิกอัตโนมัติ (ไทม์ไลน์ = เส้นตาย) → resubmit 409 FIX_WINDOW_EXPIRED
+  ---
+  duration_ms: 98.078084
+  type: 'test'
+  ...
+# Subtest: resubmit ผ่าน API โดยตรงที่ 168:00 (ก่อนมี request อื่น) ก็ได้ 409 FIX_WINDOW_EXPIRED
+ok 76 - resubmit ผ่าน API โดยตรงที่ 168:00 (ก่อนมี request อื่น) ก็ได้ 409 FIX_WINDOW_EXPIRED
+  ---
+  duration_ms: 107.193458
+  type: 'test'
+  ...
+# Subtest: BR-13 · TC-SLA-02 ส่วน 2: ส่งแก้ …017 ที่ 1 ธ.ค. 09:00 → dueAt 1 ธ.ค. 16:30 near · B04 → คงเดิม
+ok 77 - BR-13 · TC-SLA-02 ส่วน 2: ส่งแก้ …017 ที่ 1 ธ.ค. 09:00 → dueAt 1 ธ.ค. 16:30 near · B04 → คงเดิม
+  ---
+  duration_ms: 124.420167
+  type: 'test'
+  ...
+# Subtest: resubmit แนบไฟล์ใหม่ (multipart) · ไฟล์ผิดชนิด → 400 FILE_TYPE ไม่เปลี่ยนสถานะ
+ok 78 - resubmit แนบไฟล์ใหม่ (multipart) · ไฟล์ผิดชนิด → 400 FILE_TYPE ไม่เปลี่ยนสถานะ
+  ---
+  duration_ms: 74.456125
+  type: 'test'
+  ...
+# Subtest: หน้า /citizen/cases: case-id-full ของตัวเอง · ขั้นตอน SV-03 · closed-at เฉพาะ COMPLETED/REJECTED · ผู้ไม่ใช่ citizen 403
+ok 79 - หน้า /citizen/cases: case-id-full ของตัวเอง · ขั้นตอน SV-03 · closed-at เฉพาะ COMPLETED/REJECTED · ผู้ไม่ใช่ citizen 403
+  ---
+  duration_ms: 78.034917
+  type: 'test'
+  ...
+# Subtest: pctHalfUp: ทศนิยม 1 ตำแหน่ง ปัดครึ่งขึ้น · ตัวหาร 0 → null
+ok 80 - pctHalfUp: ทศนิยม 1 ตำแหน่ง ปัดครึ่งขึ้น · ตัวหาร 0 → null
+  ---
+  duration_ms: 2.087125
+  type: 'test'
+  ...
+# Subtest: fmtPct / displayValues: 85.7% · 100.0% · 0.0% · null → – (U+2013 ห้าม NaN/0%)
+ok 81 - fmtPct / displayValues: 85.7% · 100.0% · 0.0% · null → – (U+2013 ห้าม NaN/0%)
+  ---
+  duration_ms: 1.579208
+  type: 'test'
+  ...
+# Subtest: parsePeriod: YYYY-MM | YYYY เท่านั้น
+ok 82 - parsePeriod: YYYY-MM | YYYY เท่านั้น
+  ---
+  duration_ms: 1.183875
+  type: 'test'
+  ...
+# Subtest: TEST-DATA §7.1 §7.2 §7.3: ทุกช่วง/บริการ ตรงตาราง (คำนวณจากตาราง 4.1 ที่ถอดเอง)
+ok 83 - TEST-DATA §7.1 §7.2 §7.3: ทุกช่วง/บริการ ตรงตาราง (คำนวณจากตาราง 4.1 ที่ถอดเอง)
+  ---
+  duration_ms: 4.729209
+  type: 'test'
+  ...
+# Subtest: BR-25: CANCELLED (…009) นับรับเรื่องแต่ไม่นับปิดงาน · ชำระแล้วทุกใบนับครบ 30 ในปี
+ok 84 - BR-25: CANCELLED (…009) นับรับเรื่องแต่ไม่นับปิดงาน · ชำระแล้วทุกใบนับครบ 30 ในปี
+  ---
+  duration_ms: 43.278042
+  type: 'test'
+  ...
+# Subtest: BR-26: รายปีรวมยอดแล้วคิด % (87.5) ไม่ใช่เฉลี่ย % รายเดือน (92.9)
+ok 85 - BR-26: รายปีรวมยอดแล้วคิด % (87.5) ไม่ใช่เฉลี่ย % รายเดือน (92.9)
+  ---
+  duration_ms: 7.254875
+  type: 'test'
+  ...
+# Subtest: ทันกำหนด (DECISIONS ข้อ 18): 16:29:59 ทัน · 16:30:00 ทัน · 16:30:01 ไม่ทัน · 16:31 ไม่ทัน · ตรงกับ rules.isOnTime
+ok 86 - ทันกำหนด (DECISIONS ข้อ 18): 16:29:59 ทัน · 16:30:00 ทัน · 16:30:01 ไม่ทัน · 16:31 ไม่ทัน · ตรงกับ rules.isOnTime
+  ---
+  duration_ms: 19.86825
+  type: 'test'
+  ...
+# Subtest: TEST-DATA §7.2.1 (TC-DASH-04): ปิด 3 ใบที่กำหนด 3 ธ.ค. 16:30 → สะสม 1/1 · 2/2 · 3/2 · backlog 18 · นับ REJECTED ด้วย
+ok 87 - TEST-DATA §7.2.1 (TC-DASH-04): ปิด 3 ใบที่กำหนด 3 ธ.ค. 16:30 → สะสม 1/1 · 2/2 · 3/2 · backlog 18 · นับ REJECTED ด้วย
+  ---
+  duration_ms: 1.210333
+  type: 'test'
+  ...
+# Subtest: เกินกำหนดคงค้าง: ตอนนี้ > กำหนดเสร็จ (เท่ากันยังไม่เกิน) · NEED_FIX ไม่นับ · ไม่ขึ้นกับช่วง
+ok 88 - เกินกำหนดคงค้าง: ตอนนี้ > กำหนดเสร็จ (เท่ากันยังไม่เกิน) · NEED_FIX ไม่นับ · ไม่ขึ้นกับช่วง
+  ---
+  duration_ms: 1.915333
+  type: 'test'
+  ...
+# Subtest: BUGS B10: หารด้วยรับเรื่อง → พ.ย. 23.1% · ปี 23.3% · ธ.ค. 0.0% · ต.ค. 100.0%
+ok 89 - BUGS B10: หารด้วยรับเรื่อง → พ.ย. 23.1% · ปี 23.3% · ธ.ค. 0.0% · ต.ค. 100.0%
+  ---
+  duration_ms: 2.66075
+  type: 'test'
+  ...
+# Subtest: งานในมือ: off.reg1 3 · off.reg2 9 · off.works1 0 · ไม่ขึ้นกับตัวกรอง (A-41)
+ok 90 - งานในมือ: off.reg1 3 · off.reg2 9 · off.works1 0 · ไม่ขึ้นกับตัวกรอง (A-41)
+  ---
+  duration_ms: 1.948083
+  type: 'test'
+  ...
+# Subtest: kpiLine (CONTRACT §7): พ.ย. ตรงตัว · ปิดงาน 0 → ontime=- · ASCII ล้วน
+ok 91 - kpiLine (CONTRACT §7): พ.ย. ตรงตัว · ปิดงาน 0 → ontime=- · ASCII ล้วน
+  ---
+  duration_ms: 0.875875
+  type: 'test'
+  ...
+# Subtest: periodOptions: ค่าเริ่มต้นมี 2026-12 2026-11 2026-10 2026 · ป้ายไทย
+ok 92 - periodOptions: ค่าเริ่มต้นมี 2026-12 2026-11 2026-10 2026 · ป้ายไทย
+  ---
+  duration_ms: 1.224708
+  type: 'test'
+  ...
+# Subtest: HTTP · seed จริง
+    # Subtest: seed ของ core ตรงกับ TEST-DATA §4.1 ที่ถอดเอง (บริการ สถานะ ผู้ถือ ชำระ กำหนด ปิด)
+    ok 1 - seed ของ core ตรงกับ TEST-DATA §4.1 ที่ถอดเอง (บริการ สถานะ ผู้ถือ ชำระ กำหนด ปิด)
+      ---
+      duration_ms: 80.391208
+      type: 'test'
+      ...
+    # Subtest: GET /api/dashboard: ค่าเริ่มต้น = ธ.ค. ALL (§7.1) · ontimePct null · งานในมือ 3/9/0
+    ok 2 - GET /api/dashboard: ค่าเริ่มต้น = ธ.ค. ALL (§7.1) · ontimePct null · งานในมือ 3/9/0
+      ---
+      duration_ms: 237.521583
+      type: 'test'
+      ...
+    # Subtest: GET /api/dashboard: ทุกแถวของ TEST-DATA §7.2 §7.3 (CONTRACT §6.4)
+    ok 3 - GET /api/dashboard: ทุกแถวของ TEST-DATA §7.2 §7.3 (CONTRACT §6.4)
+      ---
+      duration_ms: 185.534542
+      type: 'test'
+      ...
+    # Subtest: BUG_MODE B10: พ.ย. 23.1% · ปี 23.3% · ธ.ค. 0.0% · ต.ค. 100.0% (ทั้ง API และหน้า)
+    ok 4 - BUG_MODE B10: พ.ย. 23.1% · ปี 23.3% · ธ.ค. 0.0% · ต.ค. 100.0% (ทั้ง API และหน้า)
+      ---
+      duration_ms: 57.35425
+      type: 'test'
+      ...
+    # Subtest: §7.2.1 ค่าขอบตามนาฬิกาทดสอบ: ปิด 16:29:59 / 16:30:00 (REJECTED) / 16:30:01 → 1/1 · 2/2 · 3/2 · backlog 18
+    ok 5 - §7.2.1 ค่าขอบตามนาฬิกาทดสอบ: ปิด 16:29:59 / 16:30:00 (REJECTED) / 16:30:01 → 1/1 · 2/2 · 3/2 · backlog 18
+      ---
+      duration_ms: 89.457708
+      type: 'test'
+      ...
+    # Subtest: หน้า /dashboard: ตัวกรองเริ่มต้น 2026-12/ALL · kpi 5 ช่องตาม §7.1 · workload-row 3 แถว · ปุ่มส่งออก · ไม่มี PII
+    ok 6 - หน้า /dashboard: ตัวกรองเริ่มต้น 2026-12/ALL · kpi 5 ช่องตาม §7.1 · workload-row 3 แถว · ปุ่มส่งออก · ไม่มี PII
+      ---
+      duration_ms: 46.695542
+      type: 'test'
+      ...
+    # Subtest: หน้า /dashboard?period=2026-11&service=SV-02 → 10 · 3 · 66.7% · 7 · 0 · ค่าผิด → ใช้ค่าเริ่มต้น
+    ok 7 - หน้า /dashboard?period=2026-11&service=SV-02 → 10 · 3 · 66.7% · 7 · 0 · ค่าผิด → ใช้ค่าเริ่มต้น
+      ---
+      duration_ms: 45.708625
+      type: 'test'
+      ...
+    # Subtest: RBAC: /dashboard และ /api/dashboard* เฉพาะ executive · ค่าผิด 400
+    ok 8 - RBAC: /dashboard และ /api/dashboard* เฉพาะ executive · ค่าผิด 400
+      ---
+      duration_ms: 136.713292
+      type: 'test'
+      ...
+    # Subtest: ส่งออก xlsx (CONTRACT §7): ชีตแรก ตัวชี้วัด/ค่า · แถว 2–6 = จอ (ข้อความ) · ธ.ค. – · ไม่มี PII · Audit EXPORT 1 แถว/ครั้ง
+    ok 9 - ส่งออก xlsx (CONTRACT §7): ชีตแรก ตัวชี้วัด/ค่า · แถว 2–6 = จอ (ข้อความ) · ธ.ค. – · ไม่มี PII · Audit EXPORT 1 แถว/ครั้ง
+      ---
+      duration_ms: 447.563167
+      type: 'test'
+      ...
+    # Subtest: ส่งออก pdf (CONTRACT §7): application/pdf · %PDF · บรรทัด kpi ASCII · ธ.ค. ontime=- · ไม่มี PII · Audit EXPORT
+    ok 10 - ส่งออก pdf (CONTRACT §7): application/pdf · %PDF · บรรทัด kpi ASCII · ธ.ค. ontime=- · ไม่มี PII · Audit EXPORT
+      ---
+      duration_ms: 300.411292
+      type: 'test'
+      ...
+    # Subtest: ส่งออกตามนาฬิกาทดสอบ: ปิดงานใหม่แล้วไฟล์ตรงกับจอ ณ ตอนนั้น
+    ok 11 - ส่งออกตามนาฬิกาทดสอบ: ปิดงานใหม่แล้วไฟล์ตรงกับจอ ณ ตอนนั้น
+      ---
+      duration_ms: 32.64625
+      type: 'test'
+      ...
+    1..11
+ok 93 - HTTP · seed จริง
+  ---
+  duration_ms: 2324.308251
+  type: 'suite'
+  ...
+# Subtest: BR-23 SV-01 90 วัน: ออก 1 ธ.ค. 69 → ใช้ได้ถึง 28 ก.พ. 70
+ok 94 - BR-23 SV-01 90 วัน: ออก 1 ธ.ค. 69 → ใช้ได้ถึง 28 ก.พ. 70
+  ---
+  duration_ms: 7.454791
+  type: 'test'
+  ...
+# Subtest: BR-23 SV-02/03 1 ปี: ออก 1 ธ.ค. 69 → ใช้ได้ถึง 30 พ.ย. 70
+ok 95 - BR-23 SV-02/03 1 ปี: ออก 1 ธ.ค. 69 → ใช้ได้ถึง 30 พ.ย. 70
+  ---
+  duration_ms: 0.186125
+  type: 'test'
+  ...
+# Subtest: BR-23 seed DOC-2569-000001: ออก 5 พ.ย. 69 → 2 ก.พ. 70 (ออก + 89 วัน)
+ok 96 - BR-23 seed DOC-2569-000001: ออก 5 พ.ย. 69 → 2 ก.พ. 70 (ออก + 89 วัน)
+  ---
+  duration_ms: 0.288791
+  type: 'test'
+  ...
+# Subtest: BR-23 / A-61 ออก 29 ก.พ. 2571 (ค.ศ. 2028)
+ok 97 - BR-23 / A-61 ออก 29 ก.พ. 2571 (ค.ศ. 2028)
+  ---
+  duration_ms: 0.149209
+  type: 'test'
+  ...
+# Subtest: BR-23 ขอบอื่น: ออก 28 ก.พ. 2570 / 1 มี.ค. 2570 / ข้ามปีอธิกสุรทิน · เวลาไทยใกล้เที่ยงคืน
+ok 98 - BR-23 ขอบอื่น: ออก 28 ก.พ. 2570 / 1 มี.ค. 2570 / ข้ามปีอธิกสุรทิน · เวลาไทยใกล้เที่ยงคืน
+  ---
+  duration_ms: 0.181833
+  type: 'test'
+  ...
+# Subtest: FR-18 seed K7M2Q9XA: VALID ไม่ต้องล็อกอิน · ชื่อปิดบัง · 404 ไม่พบเอกสาร
+ok 99 - FR-18 seed K7M2Q9XA: VALID ไม่ต้องล็อกอิน · ชื่อปิดบัง · 404 ไม่พบเอกสาร
+  ---
+  duration_ms: 219.496
+  type: 'test'
+  ...
+# Subtest: FR-18 seed หมดอายุตั้งแต่ 3 ก.พ. 70 00:00 · tamper → TAMPERED (ก่อน EXPIRED)
+ok 100 - FR-18 seed หมดอายุตั้งแต่ 3 ก.พ. 70 00:00 · tamper → TAMPERED (ก่อน EXPIRED)
+  ---
+  duration_ms: 274.609334
+  type: 'test'
+  ...
+# Subtest: FR-17 ออกเอกสาร SV-01 …000025 → DOC-2569-000002 · PDF เฉพาะเจ้าของ/เจ้าหน้าที่ · ออกซ้ำ 409
+ok 101 - FR-17 ออกเอกสาร SV-01 …000025 → DOC-2569-000002 · PDF เฉพาะเจ้าของ/เจ้าหน้าที่ · ออกซ้ำ 409
+  ---
+  duration_ms: 436.208334
+  type: 'test'
+  ...
+# Subtest: A-61 ออกเอกสาร 29 ก.พ. 2571 → DOC-2571-000001/2 · SV-01 2028-05-28 · SV-02 2029-02-27
+ok 102 - A-61 ออกเอกสาร 29 ก.พ. 2571 → DOC-2571-000001/2 · SV-01 2028-05-28 · SV-02 2029-02-27
+  ---
+  duration_ms: 87.6325
+  type: 'test'
+  ...
+# Subtest: TC-PAY-01 อายุ QR: 5:00 และ 14:59 จ่ายได้ · 15:00 และ 15:01 ได้ 410 QR_EXPIRED
+ok 103 - TC-PAY-01 อายุ QR: 5:00 และ 14:59 จ่ายได้ · 15:00 และ 15:01 ได้ 410 QR_EXPIRED
+  ---
+  duration_ms: 733.479084
+  type: 'test'
+  ...
+# Subtest: B05: อายุ 15:00 พอดียังจ่ายได้ · 15:01 ยัง 410
+ok 104 - B05: อายุ 15:00 พอดียังจ่ายได้ · 15:01 ยัง 410
+  ---
+  duration_ms: 119.768167
+  type: 'test'
+  ...
+# Subtest: TC-PAY-02 ยอดขาด/เกิน ฿1 → 422 · ตรง → PAID · callback ซ้ำ duplicate:true เลขเดิม · ถัดไปไม่ข้ามเลข
+ok 105 - TC-PAY-02 ยอดขาด/เกิน ฿1 → 422 · ตรง → PAID · callback ซ้ำ duplicate:true เลขเดิม · ถัดไปไม่ข้ามเลข
+  ---
+  duration_ms: 338.982375
+  type: 'test'
+  ...
+# Subtest: TC-PAY-03 ชำระพร้อมกัน 6 ref ได้เลขไม่ซ้ำ
+ok 106 - TC-PAY-03 ชำระพร้อมกัน 6 ref ได้เลขไม่ซ้ำ
+  ---
+  duration_ms: 404.992917
+  type: 'test'
+  ...
+# Subtest: TC-PAY-04 เลขคำขอข้ามปี: 31 ธ.ค. 23:59 → 2569 · 1 ม.ค. 00:00 → EG-2570-000001
+ok 107 - TC-PAY-04 เลขคำขอข้ามปี: 31 ธ.ค. 23:59 → 2569 · 1 ม.ค. 00:00 → EG-2570-000001
+  ---
+  duration_ms: 78.102125
+  type: 'test'
+  ...
+# Subtest: คำขอใหม่: SUBMITTED · dueAt จาก rules (P03) · ไทม์ไลน์ PAID · ไฟล์ผูกเลขคำขอ · ร่าง PAID · SV-03 step 1
+ok 108 - คำขอใหม่: SUBMITTED · dueAt จาก rules (P03) · ไทม์ไลน์ PAID · ไฟล์ผูกเลขคำขอ · ร่าง PAID · SV-03 step 1
+  ---
+  duration_ms: 56.574708
+  type: 'test'
+  ...
+# Subtest: MISSING_DOCS: SV-03 ขาดแบบแปลน → 409 + missing · ครบแล้ว 201
+ok 109 - MISSING_DOCS: SV-03 ขาดแบบแปลน → 409 + missing · ครบแล้ว 201
+  ---
+  duration_ms: 47.809916
+  type: 'test'
+  ...
+# Subtest: BR-11 ยอดล็อก: admin แก้ SV-02 เป็น ฿600 → PP-0001 จ่าย 600 = 422 · 500 = 200 · QR ใหม่ของร่างเดิมยัง ฿500 · ร่างใหม่ ฿600
+ok 110 - BR-11 ยอดล็อก: admin แก้ SV-02 เป็น ฿600 → PP-0001 จ่าย 600 = 422 · 500 = 200 · QR ใหม่ของร่างเดิมยัง ฿500 · ร่างใหม่ ฿600
+  ---
+  duration_ms: 48.293541
+  type: 'test'
+  ...
+# Subtest: สิทธิ์และ 404: ไม่ล็อกอิน 401 · admin 403 · ร่าง/ref ของคนอื่น 404 · ref ไม่มี 404 · ร่างถูกลบ ref เป็น 404
+ok 111 - สิทธิ์และ 404: ไม่ล็อกอิน 401 · admin 403 · ร่าง/ref ของคนอื่น 404 · ref ไม่มี 404 · ร่างถูกลบ ref เป็น 404
+  ---
+  duration_ms: 39.506917
+  type: 'test'
+  ...
+# Subtest: ส่วนหน้า: panel ก่อนสร้าง QR มี create-qr-btn · สคริปต์เสิร์ฟได้ · QR svg
+ok 112 - ส่วนหน้า: panel ก่อนสร้าง QR มี create-qr-btn · สคริปต์เสิร์ฟได้ · QR svg
+  ---
+  duration_ms: 23.071875
+  type: 'test'
+  ...
+# Subtest: BR-19 · A-44 เหตุผล ≥ 10 ตัวอักษรหลัง trim
+ok 113 - BR-19 · A-44 เหตุผล ≥ 10 ตัวอักษรหลัง trim
+  ---
+  duration_ms: 5.893458
+  type: 'test'
+  ...
+# Subtest: A-40 ป้ายขั้นตอน SV-03 · บริการอื่นไม่มี
+ok 114 - A-40 ป้ายขั้นตอน SV-03 · บริการอื่นไม่มี
+  ---
+  duration_ms: 0.416709
+  type: 'test'
+  ...
+# Subtest: FR-15 ขั้นถัดไปตามเส้นทาง · BR-29 แผนกที่เคยผ่าน
+ok 115 - FR-15 ขั้นถัดไปตามเส้นทาง · BR-29 แผนกที่เคยผ่าน
+  ---
+  duration_ms: 1.116625
+  type: 'test'
+  ...
+# Subtest: Content-Disposition รองรับชื่อไทย
+ok 116 - Content-Disposition รองรับชื่อไทย
+  ---
+  duration_ms: 0.808333
+  type: 'test'
+  ...
+# Subtest: TC-WORKFLOW-01 SV-01: ผู้ถือเรื่องอนุมัติ · คนอื่น 403 · หัวหน้า 403
+ok 117 - TC-WORKFLOW-01 SV-01: ผู้ถือเรื่องอนุมัติ · คนอื่น 403 · หัวหน้า 403
+  ---
+  duration_ms: 370.934125
+  type: 'test'
+  ...
+# Subtest: TC-WORKFLOW-02 / TC-RBAC-02 SV-02 ผ่านหัวหน้า · เจ้าหน้าที่อนุมัติไม่ได้ (B07 ปิด)
+ok 118 - TC-WORKFLOW-02 / TC-RBAC-02 SV-02 ผ่านหัวหน้า · เจ้าหน้าที่อนุมัติไม่ได้ (B07 ปิด)
+  ---
+  duration_ms: 145.975833
+  type: 'test'
+  ...
+# Subtest: B07: off.reg2 อนุมัติ SV-02 ผ่าน API ได้ (ปุ่มยังซ่อน)
+ok 119 - B07: off.reg2 อนุมัติ SV-02 ผ่าน API ได้ (ปุ่มยังซ่อน)
+  ---
+  duration_ms: 70.778417
+  type: 'test'
+  ...
+# Subtest: TC-WORKFLOW-03 SV-03 ทะเบียน → โยธา → หัวหน้า
+ok 120 - TC-WORKFLOW-03 SV-03 ทะเบียน → โยธา → หัวหน้า
+  ---
+  duration_ms: 138.683083
+  type: 'test'
+  ...
+# Subtest: TC-WORKFLOW-04 ตีกลับสูงสุด 2 ครั้ง · B12
+ok 121 - TC-WORKFLOW-04 ตีกลับสูงสุด 2 ครั้ง · B12
+  ---
+  duration_ms: 74.981001
+  type: 'test'
+  ...
+# Subtest: TC-WORKFLOW-04 C · SV-02 หลังตีกลับครบ: เจ้าหน้าที่ส่งต่อได้อย่างเดียว
+ok 122 - TC-WORKFLOW-04 C · SV-02 หลังตีกลับครบ: เจ้าหน้าที่ส่งต่อได้อย่างเดียว
+  ---
+  duration_ms: 65.745458
+  type: 'test'
+  ...
+# Subtest: TC-WORKFLOW-05 เหตุผล 9 ✗ · เว้นวรรค 10 ✗ · 10 ✓ (ตีกลับ / ไม่อนุมัติ)
+ok 123 - TC-WORKFLOW-05 เหตุผล 9 ✗ · เว้นวรรค 10 ✗ · 10 ✓ (ตีกลับ / ไม่อนุมัติ)
+  ---
+  duration_ms: 118.982083
+  type: 'test'
+  ...
+# Subtest: สิทธิ์ return/forward: แผนกอื่น/หัวหน้า/บทบาทอื่น 403 · ไม่ล็อกอิน 401
+ok 124 - สิทธิ์ return/forward: แผนกอื่น/หัวหน้า/บทบาทอื่น 403 · ไม่ล็อกอิน 401
+  ---
+  duration_ms: 240.09975
+  type: 'test'
+  ...
+# Subtest: TC-RBAC-05 สิทธิ์ไฟล์แนบ (BR-29)
+ok 125 - TC-RBAC-05 สิทธิ์ไฟล์แนบ (BR-29)
+  ---
+  duration_ms: 111.038959
+  type: 'test'
+  ...
+# Subtest: หน้า: 404 · สิทธิ์เข้าหน้า · /head/approvals เฉพาะ head
+ok 126 - หน้า: 404 · สิทธิ์เข้าหน้า · /head/approvals เฉพาะ head
+  ---
+  duration_ms: 107.509958
+  type: 'test'
+  ...
+# Subtest: ctx.rules โหลดไลบรารีนี้ได้
+ok 127 - ctx.rules โหลดไลบรารีนี้ได้
+  ---
+  duration_ms: 0.796
+  type: 'test'
+  ...
+# Subtest: ค่าธรรมเนียมจากตาราง services (seed): SV-01 ×qty · SV-02 ฿500 · SV-03 101 → ฿1,010
+ok 128 - ค่าธรรมเนียมจากตาราง services (seed): SV-01 ×qty · SV-02 ฿500 · SV-03 101 → ฿1,010
+  ---
+  duration_ms: 0.6075
+  type: 'test'
+  ...
+# Subtest: dueAt จากเวลาชำระ + SLA/วันหยุดในตาราง (TC-SLA-01 แถว a c f g i)
+ok 129 - dueAt จากเวลาชำระ + SLA/วันหยุดในตาราง (TC-SLA-01 แถว a c f g i)
+  ---
+  duration_ms: 0.988208
+  type: 'test'
+  ...
+# Subtest: seed ทุกใบ: dueAt ที่เก็บ = ชำระ + SLA + หยุดนับจากตาราง returns · ระดับ ณ 1 ธ.ค. 09:00 ตาม TEST-DATA §4.1
+ok 130 - seed ทุกใบ: dueAt ที่เก็บ = ชำระ + SLA + หยุดนับจากตาราง returns · ระดับ ณ 1 ธ.ค. 09:00 ตาม TEST-DATA §4.1
+  ---
+  duration_ms: 2.8525
+  type: 'test'
+  ...
+# Subtest: ผู้ดูแลแก้ค่าธรรมเนียม/SLA/วันหยุด → การคำนวณใหม่เห็นทันที (TC-RBAC-04)
+ok 131 - ผู้ดูแลแก้ค่าธรรมเนียม/SLA/วันหยุด → การคำนวณใหม่เห็นทันที (TC-RBAC-04)
+  ---
+  duration_ms: 87.209125
+  type: 'test'
+  ...
+# Subtest: forContext ใช้นาฬิกากลาง: …000022 ที่ 16:30 ใกล้ · 16:31 เกิน · slaInfo
+ok 132 - forContext ใช้นาฬิกากลาง: …000022 ที่ 16:30 ใกล้ · 16:31 เกิน · slaInfo
+  ---
+  duration_ms: 1.557958
+  type: 'test'
+  ...
+# Subtest: BUG_MODE ผ่าน ctx.bugs: B01 B03 B04 เปลี่ยนเฉพาะการคำนวณใหม่ · ค่า seed ใน DB ไม่เปลี่ยน
+ok 133 - BUG_MODE ผ่าน ctx.bugs: B01 B03 B04 เปลี่ยนเฉพาะการคำนวณใหม่ · ค่า seed ใน DB ไม่เปลี่ยน
+  ---
+  duration_ms: 0.75825
+  type: 'test'
+  ...
+# Subtest: BR-04 SV-01 ฿20 ต่อฉบับ: 0 ✗ · 1 → ฿20 · 5 → ฿100 · 6 ✗ ข้อความเดียวกัน
+ok 134 - BR-04 SV-01 ฿20 ต่อฉบับ: 0 ✗ · 1 → ฿20 · 5 → ฿100 · 6 ✗ ข้อความเดียวกัน
+  ---
+  duration_ms: 1.645833
+  type: 'test'
+  ...
+# Subtest: BR-04 SV-01 ค่าที่ไม่ใช่จำนวนเต็ม 1–5 → INVALID_QTY · สตริงตัวเลขรับได้ · ไม่ส่ง qty = 1 (A-56)
+ok 135 - BR-04 SV-01 ค่าที่ไม่ใช่จำนวนเต็ม 1–5 → INVALID_QTY · สตริงตัวเลขรับได้ · ไม่ส่ง qty = 1 (A-56)
+  ---
+  duration_ms: 0.519833
+  type: 'test'
+  ...
+# Subtest: BR-05 SV-02 ฿500 คงที่ (ไม่สน qty/พื้นที่)
+ok 136 - BR-05 SV-02 ฿500 คงที่ (ไม่สน qty/พื้นที่)
+  ---
+  duration_ms: 0.482667
+  type: 'test'
+  ...
+# Subtest: BR-05 SV-03 ตามพื้นที่: 0 ✗ · 1 → ฿1,000 · 100 → ฿1,000 · 101 → ฿1,010 · 500 → ฿5,000 · 501 ✗
+ok 137 - BR-05 SV-03 ตามพื้นที่: 0 ✗ · 1 → ฿1,000 · 100 → ฿1,000 · 101 → ฿1,010 · 500 → ฿5,000 · 501 ✗
+  ---
+  duration_ms: 0.181833
+  type: 'test'
+  ...
+# Subtest: TC-FEE-01 ตาราง SV-03 ครบทุกแถว (-1 0 1 100 101 102 250 300 499 500 501)
+ok 138 - TC-FEE-01 ตาราง SV-03 ครบทุกแถว (-1 0 1 100 101 102 250 300 499 500 501)
+  ---
+  duration_ms: 1.122667
+  type: 'test'
+  ...
+# Subtest: SV-03 ค่าใน seed (TEST-DATA §4.1): 80 → ฿1,000 · 101 → ฿1,010 · 120 → ฿1,200 · 150 → ฿1,500
+ok 139 - SV-03 ค่าใน seed (TEST-DATA §4.1): 80 → ฿1,000 · 101 → ฿1,010 · 120 → ฿1,200 · 150 → ฿1,500
+  ---
+  duration_ms: 0.529333
+  type: 'test'
+  ...
+# Subtest: SV-03 ค่าที่กรอกผิดรูป → INVALID_AREA · มากเกิน → AREA_TOO_LARGE · ชื่อฟิลด์ area/area_sqm ใช้ได้ · สตริงตัวเลขได้
+ok 140 - SV-03 ค่าที่กรอกผิดรูป → INVALID_AREA · มากเกิน → AREA_TOO_LARGE · ชื่อฟิลด์ area/area_sqm ใช้ได้ · สตริงตัวเลขได้
+  ---
+  duration_ms: 0.211666
+  type: 'test'
+  ...
+# Subtest: รับแถว DB (snake_case) และรหัสบริการ + แหล่งข้อมูล (catalog / db / {services})
+ok 141 - รับแถว DB (snake_case) และรหัสบริการ + แหล่งข้อมูล (catalog / db / {services})
+  ---
+  duration_ms: 0.420541
+  type: 'test'
+  ...
+# Subtest: ค่าธรรมเนียมที่ผู้ดูแลแก้ (TC-RBAC-04): SV-01 ฿25 → 5 ฉบับ ฿125 · 1 ฉบับ ฿25 · SV-02 ฿600 · SV-03 ฐาน/ต่อ ตร.ม. ใหม่
+ok 142 - ค่าธรรมเนียมที่ผู้ดูแลแก้ (TC-RBAC-04): SV-01 ฿25 → 5 ฉบับ ฿125 · 1 ฉบับ ฿25 · SV-02 ฿600 · SV-03 ฐาน/ต่อ ตร.ม. ใหม่
+  ---
+  duration_ms: 0.291917
+  type: 'test'
+  ...
+# Subtest: requireFee → throw AppError 400 ข้อความตาม CONTRACT §5 · validateFeeInput
+ok 143 - requireFee → throw AppError 400 ข้อความตาม CONTRACT §5 · validateFeeInput
+  ---
+  duration_ms: 0.815667
+  type: 'test'
+  ...
+# Subtest: B01: SV-03 พื้นที่ 101 = ฿1,000 (ใช้ > 101) · 102 ยัง ฿1,020 · ค่าอื่น/บริการอื่นไม่เปลี่ยน
+ok 144 - B01: SV-03 พื้นที่ 101 = ฿1,000 (ใช้ > 101) · 102 ยัง ฿1,020 · ค่าอื่น/บริการอื่นไม่เปลี่ยน
+  ---
+  duration_ms: 0.180459
+  type: 'test'
+  ...
+# Subtest: A-02 วันทำการ = จ.–ศ. ที่ไม่อยู่ในตารางวันหยุด
+ok 145 - A-02 วันทำการ = จ.–ศ. ที่ไม่อยู่ในตารางวันหยุด
+  ---
+  duration_ms: 1.398917
+  type: 'test'
+  ...
+# Subtest: addBusinessDays / nextBusinessDay / countBusinessDays
+ok 146 - addBusinessDays / nextBusinessDay / countBusinessDays
+  ---
+  duration_ms: 0.938208
+  type: 'test'
+  ...
+# Subtest: BR-12 D0: ก่อน 16:30:00 ของวันทำการ = วันนั้น · ตั้งแต่ 16:30:00 / วันหยุด = วันทำการถัดไป
+ok 147 - BR-12 D0: ก่อน 16:30:00 ของวันทำการ = วันนั้น · ตั้งแต่ 16:30:00 / วันหยุด = วันทำการถัดไป
+  ---
+  duration_ms: 1.308209
+  type: 'test'
+  ...
+# Subtest: BR-12 ตัวอย่างใน REQUIREMENTS + DECISIONS §8 (ขอบวินาที 16:29:59 / 16:30:00)
+ok 148 - BR-12 ตัวอย่างใน REQUIREMENTS + DECISIONS §8 (ขอบวินาที 16:29:59 / 16:30:00)
+  ---
+  duration_ms: 0.469
+  type: 'test'
+  ...
+# Subtest: TC-SLA-01 ตารางกำหนดเสร็จ a–i (D0 และ dueAt)
+ok 149 - TC-SLA-01 ตารางกำหนดเสร็จ a–i (D0 และ dueAt)
+  ---
+  duration_ms: 0.658917
+  type: 'test'
+  ...
+# Subtest: computeDueAt รับ SLA เป็นแถวบริการ/รหัสบริการ (+ แหล่งข้อมูล) และ SLA ที่ผู้ดูแลแก้
+ok 150 - computeDueAt รับ SLA เป็นแถวบริการ/รหัสบริการ (+ แหล่งข้อมูล) และ SLA ที่ผู้ดูแลแก้
+  ---
+  duration_ms: 0.537667
+  type: 'test'
+  ...
+# Subtest: TC-RBAC-04 ข้อ 6–7: วันหยุดใหม่ 2026-12-02 มีผลกับการคำนวณใหม่ (ค่าเดิมไม่คำนวณซ้ำ = หน้าที่ผู้เรียก)
+ok 151 - TC-RBAC-04 ข้อ 6–7: วันหยุดใหม่ 2026-12-02 มีผลกับการคำนวณใหม่ (ค่าเดิมไม่คำนวณซ้ำ = หน้าที่ผู้เรียก)
+  ---
+  duration_ms: 0.126458
+  type: 'test'
+  ...
+# Subtest: TEST-DATA §4.1: dueAt ของ seed ทุกใบที่ไม่เคยถูกตีกลับ = computeDueAt(เวลาชำระ, SLA)
+ok 152 - TEST-DATA §4.1: dueAt ของ seed ทุกใบที่ไม่เคยถูกตีกลับ = computeDueAt(เวลาชำระ, SLA)
+  ---
+  duration_ms: 1.238958
+  type: 'test'
+  ...
+# Subtest: BR-13 ตัวอย่าง: ตีกลับ พ.2 11:00 ส่งแก้ พฤ.3 10:00 → หยุด 1 วัน → อ.8 ธ.ค. 16:30
+ok 153 - BR-13 ตัวอย่าง: ตีกลับ พ.2 11:00 ส่งแก้ พฤ.3 10:00 → หยุด 1 วัน → อ.8 ธ.ค. 16:30
+  ---
+  duration_ms: 0.777709
+  type: 'test'
+  ...
+# Subtest: BR-13 ตีกลับและส่งแก้วันเดียวกัน → หยุด 0 วัน (TC-SLA-02 ส่วน 4)
+ok 154 - BR-13 ตีกลับและส่งแก้วันเดียวกัน → หยุด 0 วัน (TC-SLA-02 ส่วน 4)
+  ---
+  duration_ms: 0.2025
+  type: 'test'
+  ...
+# Subtest: BR-13 ตีกลับ ศ.4 ส่งแก้ อ.8 17:00 → หยุด 1 วัน (อ.8) → อ.8 16:30 และเกินกำหนดทันที (TC-SLA-02 ส่วน 5)
+ok 155 - BR-13 ตีกลับ ศ.4 ส่งแก้ อ.8 17:00 → หยุด 1 วัน (อ.8) → อ.8 16:30 และเกินกำหนดทันที (TC-SLA-02 ส่วน 5)
+  ---
+  duration_ms: 0.214541
+  type: 'test'
+  ...
+# Subtest: BR-13 นับตามวันที่ไม่ขึ้นกับเวลา (ส่งแก้ 00:00:01 วันถัดไปนับ 1 · ตีกลับ 23:59 นับจากวันถัดไป)
+ok 156 - BR-13 นับตามวันที่ไม่ขึ้นกับเวลา (ส่งแก้ 00:00:01 วันถัดไปนับ 1 · ตีกลับ 23:59 นับจากวันถัดไป)
+  ---
+  duration_ms: 0.081167
+  type: 'test'
+  ...
+# Subtest: TEST-DATA §4.4: F01/F02 กำหนดเสร็จที่เก็บ = ชำระ + SLA + หยุดนับทุกครั้ง · TC-SLA-02 ส่วน 2 และ 3
+ok 157 - TEST-DATA §4.4: F01/F02 กำหนดเสร็จที่เก็บ = ชำระ + SLA + หยุดนับทุกครั้ง · TC-SLA-02 ส่วน 2 และ 3
+  ---
+  duration_ms: 0.5775
+  type: 'test'
+  ...
+# Subtest: TC-SLA-02 ส่วน 1: ตีกลับ 2 ธ.ค. 11:00 → เส้นตายแก้ 9 ธ.ค. 11:00 · หยุดนับ · ส่งแก้ 3 ธ.ค. 10:00 → 8 ธ.ค. ปกติ (เหลือ 2)
+ok 158 - TC-SLA-02 ส่วน 1: ตีกลับ 2 ธ.ค. 11:00 → เส้นตายแก้ 9 ธ.ค. 11:00 · หยุดนับ · ส่งแก้ 3 ธ.ค. 10:00 → 8 ธ.ค. ปกติ (เหลือ 2)
+  ---
+  duration_ms: 0.255709
+  type: 'test'
+  ...
+# Subtest: BR-13 ใช้ตารางวันหยุด ณ เวลาที่ส่งแก้ (A-42)
+ok 159 - BR-13 ใช้ตารางวันหยุด ณ เวลาที่ส่งแก้ (A-42)
+  ---
+  duration_ms: 0.091208
+  type: 'test'
+  ...
+# Subtest: BR-14 กำหนด ศ.4 ธ.ค. 16:30: อ.1 ปกติ(3) · พ.2 ปกติ(2) · พฤ.3 ใกล้(1) · ศ.4 16:30:00 ใกล้(0) · 16:30:01 / 16:31 / ส.5 เกิน
+ok 160 - BR-14 กำหนด ศ.4 ธ.ค. 16:30: อ.1 ปกติ(3) · พ.2 ปกติ(2) · พฤ.3 ใกล้(1) · ศ.4 16:30:00 ใกล้(0) · 16:30:01 / 16:31 / ส.5 เกิน
+  ---
+  duration_ms: 0.581416
+  type: 'test'
+  ...
+# Subtest: BR-14 กำหนด อ.8 ธ.ค. (คั่น ส-อา + จ.7 หยุด): พฤ.3 ปกติ(2) · ศ.4 ใกล้(1) · อ.8 16:30:00 ใกล้ · 16:31 เกิน (TC-SLA-03 ส่วน B)
+ok 161 - BR-14 กำหนด อ.8 ธ.ค. (คั่น ส-อา + จ.7 หยุด): พฤ.3 ปกติ(2) · ศ.4 ใกล้(1) · อ.8 16:30:00 ใกล้ · 16:31 เกิน (TC-SLA-03 ส่วน B)
+  ---
+  duration_ms: 0.194542
+  type: 'test'
+  ...
+# Subtest: BR-14 ไม่คำนวณเมื่อปิดแล้ว (closed) หรือ NEED_FIX (paused) · ไม่มี dueAt → null
+ok 162 - BR-14 ไม่คำนวณเมื่อปิดแล้ว (closed) หรือ NEED_FIX (paused) · ไม่มี dueAt → null
+  ---
+  duration_ms: 0.216042
+  type: 'test'
+  ...
+# Subtest: TEST-DATA §4.1 คอลัมน์ "ระดับ ณ 1 ธ.ค. 09:00" ครบ 30 ใบ + TC-SLA-03 ส่วน C
+ok 163 - TEST-DATA §4.1 คอลัมน์ "ระดับ ณ 1 ธ.ค. 09:00" ครบ 30 ใบ + TC-SLA-03 ส่วน C
+  ---
+  duration_ms: 0.5385
+  type: 'test'
+  ...
+# Subtest: ไม่ส่ง now → ใช้นาฬิกากลาง (core/clock) · ตัดมิลลิวินาที
+ok 164 - ไม่ส่ง now → ใช้นาฬิกากลาง (core/clock) · ตัดมิลลิวินาที
+  ---
+  duration_ms: 0.302542
+  type: 'test'
+  ...
+# Subtest: BR-20 ตีกลับ 27 พ.ย. 14:00 → เส้นตาย 4 ธ.ค. 14:00 · 13:59 ส่งแก้ได้ · 14:00 หมดเวลา
+ok 165 - BR-20 ตีกลับ 27 พ.ย. 14:00 → เส้นตาย 4 ธ.ค. 14:00 · 13:59 ส่งแก้ได้ · 14:00 หมดเวลา
+  ---
+  duration_ms: 0.164125
+  type: 'test'
+  ...
+# Subtest: ทันกำหนด ⇔ closed_at ≤ dueAt: 16:29 ทัน · 16:30:00 ทัน · 16:30:01 / 16:31 ไม่ทัน · seed H08 ไม่ทัน
+ok 166 - ทันกำหนด ⇔ closed_at ≤ dueAt: 16:29 ทัน · 16:30:00 ทัน · 16:30:01 / 16:31 ไม่ทัน · seed H08 ไม่ทัน
+  ---
+  duration_ms: 0.129166
+  type: 'test'
+  ...
+# Subtest: B03: ข้ามแค่เสาร์-อาทิตย์ ไม่ข้ามวันหยุดในตาราง → ค่าตาม BUGS.md
+ok 167 - B03: ข้ามแค่เสาร์-อาทิตย์ ไม่ข้ามวันหยุดในตาราง → ค่าตาม BUGS.md
+  ---
+  duration_ms: 0.381958
+  type: 'test'
+  ...
+# Subtest: B04: extendDueForFix คืนกำหนดเดิม ไม่หยุดนับ → ค่าตาม BUGS.md
+ok 168 - B04: extendDueForFix คืนกำหนดเดิม ไม่หยุดนับ → ค่าตาม BUGS.md
+  ---
+  duration_ms: 0.231375
+  type: 'test'
+  ...
+# Subtest: B01 ไม่กระทบ SLA · B03+B04 รวมกันได้ (union)
+ok 169 - B01 ไม่กระทบ SLA · B03+B04 รวมกันได้ (union)
+  ---
+  duration_ms: 0.165583
+  type: 'test'
+  ...
+# Subtest: สตริงที่ถูกแยกสระ/วรรณยุกต์ขึ้นบรรทัดใหม่ "ส\\nม\\nห\\nญ\\nิ\\nง" → จับชื่อ สมหญิง ได้ (แบบทีละบรรทัดพลาด)
+ok 170 - สตริงที่ถูกแยกสระ/วรรณยุกต์ขึ้นบรรทัดใหม่ "ส\\nม\\nห\\nญ\\nิ\\nง" → จับชื่อ สมหญิง ได้ (แบบทีละบรรทัดพลาด)
+  ---
+  duration_ms: 2.25025
+  type: 'test'
+  ...
+# Subtest: เลข 13 หลัก และ 0\\d{9} ตรวจทีละบรรทัด
+ok 171 - เลข 13 หลัก และ 0\\d{9} ตรวจทีละบรรทัด
+  ---
+  duration_ms: 0.278
+  type: 'test'
+  ...
+# Warning: Indexing all PDF objects
+# Subtest: ข้อความว่าง/อ่านไม่ได้ → throw (ห้ามผ่านแบบไม่ได้ตรวจ)
+ok 172 - ข้อความว่าง/อ่านไม่ได้ → throw (ห้ามผ่านแบบไม่ได้ตรวจ)
+  ---
+  duration_ms: 177.078166
+  type: 'test'
+  ...
+# Subtest: ตัวควบคุมบวก: PDF จาก buildPdf ของเว็บที่แทรกชื่อ/เลขบัตร/เบอร์ → pdf-parse + pdfPiiFindings จับได้ครบ
+ok 173 - ตัวควบคุมบวก: PDF จาก buildPdf ของเว็บที่แทรกชื่อ/เลขบัตร/เบอร์ → pdf-parse + pdfPiiFindings จับได้ครบ
+  ---
+  duration_ms: 110.103792
+  type: 'test'
+  ...
+# pdf-parse "สมหญิง ใจดี" → "สมหญิง ใจดี (x1)"
+# แบบเดิมทีละบรรทัดเจอ: ["สมหญิง","ปิติ","สมชาย","มานะ"] · แบบใหม่เจอ: ["สมชาย","สมหญิง","ปิติ","มานะ"]
+# Subtest: ตัวควบคุมบวก: ข้อความที่ pdf-parse แยกวรรณยุกต์ขึ้นบรรทัดใหม่ใน PDF จริงของเว็บ → แบบทีละบรรทัดพลาด แบบตัด whitespace จับได้
+ok 174 - ตัวควบคุมบวก: ข้อความที่ pdf-parse แยกวรรณยุกต์ขึ้นบรรทัดใหม่ใน PDF จริงของเว็บ → แบบทีละบรรทัดพลาด แบบตัด whitespace จับได้
+  ---
+  duration_ms: 37.941875
+  type: 'test'
+  ...
+# pdf-parse "ผู้ยื่น ช่วงสมหญิง" → "ผู้ยื่น ช\\n่\\nวงสมหญิง (x1"
+# Subtest: PDF ปกติ (seed พ.ย. ไม่มี PII) → ไม่พบอะไร · บรรทัด KPI อยู่ในข้อความที่ดึงได้
+ok 175 - PDF ปกติ (seed พ.ย. ไม่มี PII) → ไม่พบอะไร · บรรทัด KPI อยู่ในข้อความที่ดึงได้
+  ---
+  duration_ms: 32.718792
+  type: 'test'
+  ...
+# Subtest: needleFindings (TC-NFR-04 DB + log ของเว็บ): จับค่าตรงตัวทั้ง utf8 และ utf16le · log สะอาด → ไม่พบ
+ok 176 - needleFindings (TC-NFR-04 DB + log ของเว็บ): จับค่าตรงตัวทั้ง utf8 และ utf16le · log สะอาด → ไม่พบ
+  ---
+  duration_ms: 0.434833
+  type: 'test'
+  ...
+# Subtest: 51 passed → MATCH
+ok 177 - 51 passed → MATCH
+  ---
+  duration_ms: 53.103
+  type: 'test'
+  ...
+# Subtest: รอบปกติมี 1 TC skipped → MISMATCH (skip ไม่นับว่าผ่าน)
+ok 178 - รอบปกติมี 1 TC skipped → MISMATCH (skip ไม่นับว่าผ่าน)
+  ---
+  duration_ms: 37.274416
+  type: 'test'
+  ...
+# Subtest: รอบเปิดบั๊ก: TC ที่ต้องล้มถูก skip → MISMATCH (ไม่ใช่ "ล้มตามคาด")
+ok 179 - รอบเปิดบั๊ก: TC ที่ต้องล้มถูก skip → MISMATCH (ไม่ใช่ "ล้มตามคาด")
+  ---
+  duration_ms: 32.648583
+  type: 'test'
+  ...
+# Subtest: รอบเปิดบั๊กถูกต้อง: ต้องล้ม + อาจล้ม → MATCH · ล้มเกิน → MISMATCH
+ok 180 - รอบเปิดบั๊กถูกต้อง: ต้องล้ม + อาจล้ม → MATCH · ล้มเกิน → MISMATCH
+  ---
+  duration_ms: 89.335416
+  type: 'test'
+  ...
+# Subtest: จำนวน TC ไม่ครบ 51 หรือมีรหัสซ้ำ → MISMATCH
+ok 181 - จำนวน TC ไม่ครบ 51 หรือมีรหัสซ้ำ → MISMATCH
+  ---
+  duration_ms: 54.60525
+  type: 'test'
+  ...
+1..181
+# tests 196
+# suites 1
+# pass 196
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 2929.333918

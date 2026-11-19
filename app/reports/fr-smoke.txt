@@ -1,0 +1,55 @@
+PASS FR-28 · GET /api/health = {"status":"ok"}
+PASS FR-28 · GET /api/test/clock
+PASS FR-01 · / ยังไม่ล็อกอิน → redirect /login
+PASS FR-01 · /citizen ยังไม่ล็อกอิน → redirect /login
+PASS FR-01 · ThaiD verify → registered:true
+PASS FR-01 · GET /api/me
+PASS FR-01 · / ล็อกอินแล้ว → /citizen
+PASS FR-04 · /citizen มี start-service-SV-01..03
+PASS FR-09 · /citizen มี my-case-row
+PASS FR-04 · /citizen/new/SV-01 200 + fee-total
+PASS FR-04 · /citizen/new/SV-02 200 + fee-total
+PASS FR-04 · /citizen/new/SV-03 200 + fee-total
+PASS FR-07 · POST /api/drafts SV-02 → 201 fee 500
+PASS FR-07 · GET /api/drafts items
+PASS FR-09 · GET /api/cases เฉพาะของฉัน
+PASS FR-09 · หน้า case มี case-status/case-timeline/sla-due/sla-level
+PASS FR-01 · POST /api/auth/logout → 204
+PASS FR-01 · หลัง logout /api/me → 401
+PASS FR-03 · off.reg1 landing /officer/queue
+PASS FR-03 · off.reg1 เปิด /officer/queue → 200
+PASS FR-03 · head1 landing /head/approvals
+PASS FR-03 · head1 เปิด /head/approvals → 200
+PASS FR-03 · exec1 landing /dashboard
+PASS FR-03 · exec1 เปิด /dashboard → 200
+PASS FR-03 · audit1 landing /audit
+PASS FR-03 · audit1 เปิด /audit → 200
+PASS FR-03 · admin1 landing /admin/services
+PASS FR-03 · admin1 เปิด /admin/services → 200
+PASS FR-03 · officer เปิด /dashboard → 403 forbidden-msg
+PASS FR-12 · queue filter=unclaimed
+PASS FR-20 · /notifications officer 200
+PASS FR-20 · GET /api/notifications
+PASS FR-20 · executive /api/notifications → 403
+PASS FR-16 · /head/approvals มี EG-2569-000014
+PASS FR-18 · GET /api/verify/K7M2Q9XA → VALID ไม่ต้องล็อกอิน
+PASS FR-18 · /verify/<ไม่มี> → 404 ไม่พบเอกสาร
+PASS FR-22 · dashboard พ.ย. received 26 closed 7 ontimePct 85.7
+PASS FR-23 · export xlsx ต้องล็อกอิน (ไม่ล็อกอิน → 401/302)
+PASS FR-23 · export pdf ต้องล็อกอิน (ไม่ล็อกอิน → 401/302)
+PASS FR-24 · GET /api/audit count
+PASS FR-24 · admin DELETE /api/audit/1 → 405
+PASS FR-25 · admin เปิด /admin/services → 200
+PASS FR-03 · executive เปิด /admin/services → 403
+PASS FR-26 · admin เปิด /admin/holidays → 200
+PASS FR-03 · executive เปิด /admin/holidays → 403
+PASS FR-27 · admin เปิด /admin/users → 200
+PASS FR-03 · executive เปิด /admin/users → 403
+PASS FR-26 · GET /api/admin/holidays มี 4 วัน
+PASS FR-27 · GET /api/admin/users
+PASS FR-03 · admin POST /api/drafts → 403
+PASS FR-29 · executive /api/cases/:no/files → 403
+PASS FR-29 · head /api/cases/:no/files → 200
+PASS BRIEF · หน้า /login มีชื่อหน่วยงานสมมติ "เทศบาลนครตัวอย่าง"
+
+53/53 PASS

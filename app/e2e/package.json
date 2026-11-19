@@ -1,0 +1,17 @@
+{
+  "name": "egov-eservice-e2e",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Playwright E2E (51 TC ตาม TEST-PLAN.md) สำหรับ e-Service เทศบาลนครตัวอย่าง (สมมติ)",
+  "scripts": {
+    "test": "playwright test",
+    "test:list": "playwright test --list",
+    "testfiles": "node -e \"require('./global-setup').ensureTestFiles(true)\""
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.1",
+    "@playwright/test": "1.49.1",
+    "exceljs": "4.4.0",
+    "pdf-parse": "1.1.1"
+  }
+}

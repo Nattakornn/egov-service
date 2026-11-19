@@ -1,0 +1,1 @@
+web-1  | [egov] listening on :3000 · TEST_MODE=1 · BUG_MODE=- · DB_PATH=/data/app.db · modules=[auth, apply, cases, documents, payment, queue, workflow, admin, dashboard] · clock=2026-12-01T09:00:00+07:00

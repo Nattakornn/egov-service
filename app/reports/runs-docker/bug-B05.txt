@@ -1,0 +1,6 @@
+== bug-B05 (BUG_MODE=B05)
+total=51 unique=51 passed=50 failed=1 skipped=0
+  FAIL TC-PAY-01: Error: รอบ 3 pay PP-0001 (body={"status":"PAID","caseNo":"EG-2569-000031","receiptNo":"RC-2569-000031","duplicate":false,"paidAt":"2026-12-01T09:10:00+07:00","amount":500,"dueAt":"2026-12-17T16:30:00+07:00"})
+expected-fail=[TC-PAY-01] allowed=[]
+failed=[TC-PAY-01] extra=[] should-fail-but-passed=[] side-effects=[]
+RESULT: MATCH

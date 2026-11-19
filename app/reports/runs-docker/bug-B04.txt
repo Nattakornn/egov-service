@@ -1,0 +1,6 @@
+== bug-B04 (BUG_MODE=B04)
+total=51 unique=51 passed=50 failed=1 skipped=0
+  FAIL TC-SLA-02: Error: หลังส่งแก้: sla-due data-iso
+expected-fail=[TC-SLA-02] allowed=[]
+failed=[TC-SLA-02] extra=[] should-fail-but-passed=[] side-effects=[]
+RESULT: MATCH

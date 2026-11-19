@@ -1,0 +1,186 @@
+npm notice run egov-eservice-e2e@1.0.0 npx
+npm notice run 'playwright' test
+
+Running 51 tests using 1 worker
+
+  ✓  1 [chromium] › part1/auth.spec.js:7:1 › TC-AUTH-01 · เลขบัตร 13 หลัก + checksum (1.9s)
+  ✓  2 [chromium] › part1/auth.spec.js:46:1 › TC-AUTH-02 · OTP ผิด 3 ครั้งล็อก 15 นาที (1.2s)
+  ✓  3 [chromium] › part1/auth.spec.js:144:1 › TC-AUTH-03 · ลงทะเบียนครั้งแรก (1.8s)
+  ✓  4 [chromium] › part1/auth.spec.js:216:1 › TC-AUTH-04 · เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น (3.2s)
+  ✓  5 [chromium] › part1/fee.spec.js:11:1 › TC-FEE-01 · ค่าธรรมเนียม SV-01 / SV-02 / SV-03 (1.7s)
+  ✓  6 [chromium] › part1/noti.spec.js:63:1 › TC-NOTI-01 · ผู้รับแจ้งเตือนตามระดับ (593ms)
+  ✓  7 [chromium] › part1/noti.spec.js:68:1 › TC-NOTI-02 · ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร (1.7s)
+  ✓  8 [chromium] › part1/pay.spec.js:22:1 › TC-PAY-01 · อายุ QR 15:00 (579ms)
+  ✓  9 [chromium] › part1/pay.spec.js:70:1 › TC-PAY-02 · ยอดเงินและ callback ซ้ำ (180ms)
+  ✓  10 [chromium] › part1/pay.spec.js:113:1 › TC-PAY-03 · ชำระพร้อมกัน เลขไม่ซ้ำ (330ms)
+  ✓  11 [chromium] › part1/pay.spec.js:148:1 › TC-PAY-04 · เลขคำขอข้ามปี (905ms)
+  ✓  12 [chromium] › part1/queue.spec.js:24:1 › TC-QUEUE-01 · ลำดับคิวและขอบเขตแผนก (1.0s)
+  ✓  13 [chromium] › part1/queue.spec.js:99:1 › TC-QUEUE-02 · รับเรื่องซ้อน (พร้อมกันและต่อกัน) (915ms)
+  ✓  14 [chromium] › part1/queue.spec.js:170:1 › TC-QUEUE-03 · งานในมือสูงสุด 10 (1.6s)
+  ✓  15 [chromium] › part1/sla.spec.js:22:1 › TC-SLA-01 · กำหนดเสร็จตามตารางวันที่ (1.7s)
+  ✓  16 [chromium] › part1/sla.spec.js:50:1 › TC-SLA-02 · หยุดนับ SLA ระหว่างรอแก้ไข (1.5s)
+  ✓  17 [chromium] › part1/sla.spec.js:140:1 › TC-SLA-03 · ระดับเตือน ปกติ / ใกล้ครบกำหนด / เกินกำหนด (1.1s)
+  ✓  18 [chromium] › part1/submit.spec.js:8:1 › TC-SUBMIT-01 · ยื่นคำขอ SV-01 ครบวงจร (1.2s)
+  ✓  19 [chromium] › part1/submit.spec.js:85:1 › TC-SUBMIT-02 · เอกสารบังคับครบก่อนชำระ (1.4s)
+  ✓  20 [chromium] › part1/submit.spec.js:150:1 › TC-SUBMIT-03 · ร่าง และการยกเลิก (1.5s)
+  ✓  21 [chromium] › part1/upload.spec.js:22:1 › TC-UPLOAD-01 · ขนาดและจำนวนไฟล์ (2.3s)
+  ✓  22 [chromium] › part1/upload.spec.js:90:1 › TC-UPLOAD-02 · ชนิดไฟล์จากเนื้อไฟล์ (2.7s)
+  ✓  23 [chromium] › part2/audit.spec.js:17:3 › AUDIT › TC-AUDIT-01 · เหตุการณ์และฟิลด์ใน Audit (886ms)
+  ✓  24 [chromium] › part2/audit.spec.js:120:3 › AUDIT › TC-AUDIT-02 · Audit แก้/ลบไม่ได้ (405) (378ms)
+  ✓  25 [chromium] › part2/audit.spec.js:185:3 › AUDIT › TC-AUDIT-03 · กรองช่วงวันที่ตามเวลาไทย (906ms)
+  ✘  26 [chromium] › part2/dash.spec.js:47:3 › DASH › TC-DASH-01 · Dashboard ตัวเลขเริ่มต้น (10.2s)
+  ✘  27 [chromium] › part2/dash.spec.js:89:3 › DASH › TC-DASH-02 · Dashboard ย้อนหลัง (10.5s)
+  ✘  28 [chromium] › part2/dash.spec.js:113:3 › DASH › TC-DASH-03 · ส่งออก Excel/PDF เท่าหน้าจอ (10.4s)
+  ✓  29 [chromium] › part2/dash.spec.js:179:3 › DASH › TC-DASH-04 · ค่าขอบ "ทันกำหนด" 16:29:59 / 16:30:00 / 16:30:01 (724ms)
+  ✓  30 [chromium] › part2/doc.spec.js:35:3 › DOC › TC-DOC-01 · ออกเอกสารและข้อมูลในเอกสาร (567ms)
+  ✓  31 [chromium] › part2/doc.spec.js:87:3 › DOC › TC-DOC-02 · ตรวจเอกสาร /verify (167ms)
+  ✓  32 [chromium] › part2/doc.spec.js:120:3 › DOC › TC-DOC-03 · เอกสารหมดอายุและลายเซ็นไม่ตรง (857ms)
+  ✓  33 [chromium] › part2/nfr.spec.js:26:3 › NFR › TC-NFR-01 · Responsive 375 / 768 / 1280 (2.3s)
+  ✓  34 [chromium] › part2/nfr.spec.js:86:3 › NFR › TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว (5.5s)
+  ✓  35 [chromium] › part2/nfr.spec.js:230:3 › NFR › TC-NFR-03 · Health เวลาโหลด และผลซ้ำได้ (715ms)
+  ✓  36 [chromium] › part2/nfr.spec.js:300:5 › NFR › inspection › TC-NFR-04 · เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection) (70ms)
+  ✓  37 [chromium] › part2/pdpa.spec.js:13:3 › PDPA › TC-PDPA-01 · ปิดบังเลขบัตรบนจอ (741ms)
+  ✓  38 [chromium] › part2/pdpa.spec.js:47:3 › PDPA › TC-PDPA-02 · API (JSON) ไม่ส่งเลขบัตรเต็ม (166ms)
+  ✓  39 [chromium] › part2/pdpa.spec.js:92:3 › PDPA › TC-PDPA-03 · แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit (1.8s)
+  ✓  40 [chromium] › part2/rbac.spec.js:14:3 › RBAC › TC-RBAC-01 · ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR) (308ms)
+  ✓  41 [chromium] › part2/rbac.spec.js:44:3 › RBAC › TC-RBAC-02 · เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API) (536ms)
+  ✓  42 [chromium] › part2/rbac.spec.js:80:3 › RBAC › TC-RBAC-03 · ตารางสิทธิ์หน้า/API ตามบทบาท (2.3s)
+  ✓  43 [chromium] › part2/rbac.spec.js:186:3 › RBAC › TC-RBAC-04 · ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก (1.7s)
+  ✓  44 [chromium] › part2/rbac.spec.js:293:3 › RBAC › TC-RBAC-05 · สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ (563ms)
+  ✓  45 [chromium] › part2/rbac.spec.js:369:3 › RBAC › TC-RBAC-06 · ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ (1.3s)
+  ✓  46 [chromium] › part2/workflow.spec.js:25:3 › WORKFLOW › TC-WORKFLOW-01 · SV-01 อนุมัติ + ออกเอกสาร (695ms)
+  ✓  47 [chromium] › part2/workflow.spec.js:83:3 › WORKFLOW › TC-WORKFLOW-02 · SV-02 ผ่านหัวหน้า (1.3s)
+  ✓  48 [chromium] › part2/workflow.spec.js:147:3 › WORKFLOW › TC-WORKFLOW-03 · SV-03 สามขั้นตอน (1.5s)
+  ✓  49 [chromium] › part2/workflow.spec.js:211:3 › WORKFLOW › TC-WORKFLOW-04 · ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ (3.1s)
+  ✓  50 [chromium] › part2/workflow.spec.js:310:3 › WORKFLOW › TC-WORKFLOW-05 · เหตุผล ≥ 10 ตัวอักษร (ตีกลับ / ไม่อนุมัติ) (2.2s)
+  ✓  51 [chromium] › part2/workflow.spec.js:380:3 › WORKFLOW › TC-WORKFLOW-06 · เวลาแก้ไข 168 ชั่วโมง (648ms)
+
+
+  1) [chromium] › part2/dash.spec.js:47:3 › DASH › TC-DASH-01 · Dashboard ตัวเลขเริ่มต้น ───────────
+
+    Error: ธ.ค. ALL kpi-ontime-pct: expected text "–"
+
+    [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: getByTestId('kpi-ontime-pct')
+    Expected string: [32m"–"[39m
+    Received string: [31m"0.0%"[39m
+    Call log:
+    [2m  - ธ.ค. ALL kpi-ontime-pct: expected text "–" with timeout 10000ms[22m
+    [2m  - waiting for getByTestId('kpi-ontime-pct')[22m
+    [2m    14 × locator resolved to <dd data-key="ontimePct" data-testid="kpi-ontime-pct">0.0%</dd>[22m
+    [2m       - unexpected value "0.0%"[22m
+
+
+       at part2/_lib.js:295
+
+      293 |
+      294 | async function expectText(loc, text, label) {
+    > 295 |   await expect(loc, `${label}: expected text "${text}"`).toHaveText(text);
+          |                                                          ^
+      296 | }
+      297 |
+      298 | /** data-* ของทุกแถว */
+        at expectText (/workspace/plans/egov-eservice/app/e2e/specs/part2/_lib.js:295:58)
+        at expectKpis (/workspace/plans/egov-eservice/app/e2e/specs/part2/dash.spec.js:28:11)
+        at /workspace/plans/egov-eservice/app/e2e/specs/part2/dash.spec.js:55:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    results/artifacts/part2-dash-DASH-TC-DASH-01-·-Dashboard-ตัวเลขเริ่มต้น-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    results/artifacts/part2-dash-DASH-TC-DASH-01-·-Dashboard-ตัวเลขเริ่มต้น-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace results/artifacts/part2-dash-DASH-TC-DASH-01-·-Dashboard-ตัวเลขเริ่มต้น-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › part2/dash.spec.js:89:3 › DASH › TC-DASH-02 · Dashboard ย้อนหลัง ─────────────────
+
+    Error: 2026-11 ALL kpi-ontime-pct: expected text "85.7%"
+
+    [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: getByTestId('kpi-ontime-pct')
+    Expected string: [32m"[7m85.7[27m%"[39m
+    Received string: [31m"[7m23.1[27m%"[39m
+    Call log:
+    [2m  - 2026-11 ALL kpi-ontime-pct: expected text "85.7%" with timeout 10000ms[22m
+    [2m  - waiting for getByTestId('kpi-ontime-pct')[22m
+    [2m    14 × locator resolved to <dd data-key="ontimePct" data-testid="kpi-ontime-pct">23.1%</dd>[22m
+    [2m       - unexpected value "23.1%"[22m
+
+
+       at part2/_lib.js:295
+
+      293 |
+      294 | async function expectText(loc, text, label) {
+    > 295 |   await expect(loc, `${label}: expected text "${text}"`).toHaveText(text);
+          |                                                          ^
+      296 | }
+      297 |
+      298 | /** data-* ของทุกแถว */
+        at expectText (/workspace/plans/egov-eservice/app/e2e/specs/part2/_lib.js:295:58)
+        at expectKpis (/workspace/plans/egov-eservice/app/e2e/specs/part2/dash.spec.js:28:11)
+        at /workspace/plans/egov-eservice/app/e2e/specs/part2/dash.spec.js:108:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    results/artifacts/part2-dash-DASH-TC-DASH-02-·-Dashboard-ย้อนหลัง-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    results/artifacts/part2-dash-DASH-TC-DASH-02-·-Dashboard-ย้อนหลัง-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace results/artifacts/part2-dash-DASH-TC-DASH-02-·-Dashboard-ย้อนหลัง-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › part2/dash.spec.js:113:3 › DASH › TC-DASH-03 · ส่งออก Excel/PDF เท่าหน้าจอ ───────
+
+    Error: พ.ย. ALL kpi-ontime-pct: expected text "85.7%"
+
+    [31mTimed out 10000ms waiting for [39m[2mexpect([22m[31mlocator[39m[2m).[22mtoHaveText[2m([22m[32mexpected[39m[2m)[22m
+
+    Locator: getByTestId('kpi-ontime-pct')
+    Expected string: [32m"[7m85.7[27m%"[39m
+    Received string: [31m"[7m23.1[27m%"[39m
+    Call log:
+    [2m  - พ.ย. ALL kpi-ontime-pct: expected text "85.7%" with timeout 10000ms[22m
+    [2m  - waiting for getByTestId('kpi-ontime-pct')[22m
+    [2m    14 × locator resolved to <dd data-key="ontimePct" data-testid="kpi-ontime-pct">23.1%</dd>[22m
+    [2m       - unexpected value "23.1%"[22m
+
+
+       at part2/_lib.js:295
+
+      293 |
+      294 | async function expectText(loc, text, label) {
+    > 295 |   await expect(loc, `${label}: expected text "${text}"`).toHaveText(text);
+          |                                                          ^
+      296 | }
+      297 |
+      298 | /** data-* ของทุกแถว */
+        at expectText (/workspace/plans/egov-eservice/app/e2e/specs/part2/_lib.js:295:58)
+        at expectKpis (/workspace/plans/egov-eservice/app/e2e/specs/part2/dash.spec.js:28:11)
+        at /workspace/plans/egov-eservice/app/e2e/specs/part2/dash.spec.js:137:5
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    results/artifacts/part2-dash-DASH-TC-DASH-03-·-ส่งออก-Excel-PDF-เท่าหน้าจอ-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    results/artifacts/part2-dash-DASH-TC-DASH-03-·-ส่งออก-Excel-PDF-เท่าหน้าจอ-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace results/artifacts/part2-dash-DASH-TC-DASH-03-·-ส่งออก-Excel-PDF-เท่าหน้าจอ-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3 failed
+    [chromium] › part2/dash.spec.js:47:3 › DASH › TC-DASH-01 · Dashboard ตัวเลขเริ่มต้น ────────────
+    [chromium] › part2/dash.spec.js:89:3 › DASH › TC-DASH-02 · Dashboard ย้อนหลัง ──────────────────
+    [chromium] › part2/dash.spec.js:113:3 › DASH › TC-DASH-03 · ส่งออก Excel/PDF เท่าหน้าจอ ────────
+  48 passed (1.6m)

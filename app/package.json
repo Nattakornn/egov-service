@@ -1,0 +1,29 @@
+{
+  "name": "egov-eservice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "e-Service กลางของเทศบาลนครตัวอย่าง (หน่วยงานสมมติ) · Node 20 + Express 4 + better-sqlite3 + SSR",
+  "main": "src/server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "start:test": "TEST_MODE=1 node src/server.js",
+    "test": "node src/core/tools/run-tests.js",
+    "seed:check": "node src/core/tools/seed-check.js",
+    "migrate:new": "node src/core/tools/migrate-new.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "12.11.1",
+    "cookie-parser": "1.4.7",
+    "exceljs": "4.4.0",
+    "express": "4.22.3",
+    "multer": "2.5.0",
+    "pdfkit": "0.17.2",
+    "qrcode": "1.5.4"
+  },
+  "allowScripts": {
+    "better-sqlite3@12.11.1": true
+  }
+}

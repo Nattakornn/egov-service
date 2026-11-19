@@ -1,0 +1,6 @@
+== bug-B12 (BUG_MODE=B12)
+total=51 unique=51 passed=50 failed=1 skipped=0
+  FAIL TC-WORKFLOW-04: Error: A5 return-btn: expected count 0
+expected-fail=[TC-WORKFLOW-04] allowed=[]
+failed=[TC-WORKFLOW-04] extra=[] should-fail-but-passed=[] side-effects=[]
+RESULT: MATCH

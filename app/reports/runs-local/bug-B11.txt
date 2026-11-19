@@ -1,0 +1,7 @@
+== bug-B11 (BUG_MODE=B11)
+total=51 passed=49 failed=2 skipped=0
+  FAIL TC-AUDIT-01: Error: audit-count: expected text "16"
+  FAIL TC-PDPA-03: Error: #5 UNMASK audit-count: expected text "1"
+expected-fail=[TC-PDPA-03 TC-AUDIT-01] allowed=[]
+failed=[TC-AUDIT-01 TC-PDPA-03] extra=[] should-fail-but-passed=[] side-effects=[]
+RESULT: MATCH

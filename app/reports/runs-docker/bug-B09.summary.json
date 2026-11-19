@@ -1,0 +1,528 @@
+{
+  "total": 51,
+  "passed": [
+    "TC-AUDIT-01",
+    "TC-AUDIT-02",
+    "TC-AUDIT-03",
+    "TC-AUTH-01",
+    "TC-AUTH-02",
+    "TC-AUTH-03",
+    "TC-AUTH-04",
+    "TC-DASH-01",
+    "TC-DASH-02",
+    "TC-DASH-03",
+    "TC-DASH-04",
+    "TC-DOC-01",
+    "TC-DOC-02",
+    "TC-DOC-03",
+    "TC-FEE-01",
+    "TC-NFR-01",
+    "TC-NFR-02",
+    "TC-NFR-03",
+    "TC-NFR-04",
+    "TC-NOTI-01",
+    "TC-NOTI-02",
+    "TC-PAY-01",
+    "TC-PAY-02",
+    "TC-PAY-03",
+    "TC-PAY-04",
+    "TC-PDPA-01",
+    "TC-PDPA-03",
+    "TC-QUEUE-01",
+    "TC-QUEUE-02",
+    "TC-QUEUE-03",
+    "TC-RBAC-01",
+    "TC-RBAC-02",
+    "TC-RBAC-03",
+    "TC-RBAC-04",
+    "TC-RBAC-05",
+    "TC-RBAC-06",
+    "TC-SLA-01",
+    "TC-SLA-02",
+    "TC-SLA-03",
+    "TC-SUBMIT-01",
+    "TC-SUBMIT-02",
+    "TC-SUBMIT-03",
+    "TC-UPLOAD-01",
+    "TC-UPLOAD-02",
+    "TC-WORKFLOW-01",
+    "TC-WORKFLOW-02",
+    "TC-WORKFLOW-03",
+    "TC-WORKFLOW-04",
+    "TC-WORKFLOW-05",
+    "TC-WORKFLOW-06"
+  ],
+  "failed": [
+    "TC-PDPA-02"
+  ],
+  "skipped": [],
+  "extra": [],
+  "missedExpected": [],
+  "sideEffects": [],
+  "expectFail": [
+    "TC-PDPA-02"
+  ],
+  "allowFail": [],
+  "match": true,
+  "tests": [
+    {
+      "id": "TC-AUDIT-01",
+      "title": "TC-AUDIT-01 · เหตุการณ์และฟิลด์ใน Audit",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 981
+    },
+    {
+      "id": "TC-AUDIT-02",
+      "title": "TC-AUDIT-02 · Audit แก้/ลบไม่ได้ (405)",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 421
+    },
+    {
+      "id": "TC-AUDIT-03",
+      "title": "TC-AUDIT-03 · กรองช่วงวันที่ตามเวลาไทย",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 907
+    },
+    {
+      "id": "TC-AUTH-01",
+      "title": "TC-AUTH-01 · เลขบัตร 13 หลัก + checksum",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1915
+    },
+    {
+      "id": "TC-AUTH-02",
+      "title": "TC-AUTH-02 · OTP ผิด 3 ครั้งล็อก 15 นาที",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1239
+    },
+    {
+      "id": "TC-AUTH-03",
+      "title": "TC-AUTH-03 · ลงทะเบียนครั้งแรก",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1622
+    },
+    {
+      "id": "TC-AUTH-04",
+      "title": "TC-AUTH-04 · เจ้าหน้าที่ SSO จำลองและหน้าตั้งต้น",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 3394
+    },
+    {
+      "id": "TC-DASH-01",
+      "title": "TC-DASH-01 · Dashboard ตัวเลขเริ่มต้น",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 295
+    },
+    {
+      "id": "TC-DASH-02",
+      "title": "TC-DASH-02 · Dashboard ย้อนหลัง",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1036
+    },
+    {
+      "id": "TC-DASH-03",
+      "title": "TC-DASH-03 · ส่งออก Excel/PDF เท่าหน้าจอ",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1148
+    },
+    {
+      "id": "TC-DASH-04",
+      "title": "TC-DASH-04 · ค่าขอบ \"ทันกำหนด\" 16:29:59 / 16:30:00 / 16:30:01",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 502
+    },
+    {
+      "id": "TC-DOC-01",
+      "title": "TC-DOC-01 · ออกเอกสารและข้อมูลในเอกสาร",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 365
+    },
+    {
+      "id": "TC-DOC-02",
+      "title": "TC-DOC-02 · ตรวจเอกสาร /verify",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 175
+    },
+    {
+      "id": "TC-DOC-03",
+      "title": "TC-DOC-03 · เอกสารหมดอายุและลายเซ็นไม่ตรง",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 999
+    },
+    {
+      "id": "TC-FEE-01",
+      "title": "TC-FEE-01 · ค่าธรรมเนียม SV-01 / SV-02 / SV-03",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1908
+    },
+    {
+      "id": "TC-NFR-01",
+      "title": "TC-NFR-01 · Responsive 375 / 768 / 1280",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 2261
+    },
+    {
+      "id": "TC-NFR-02",
+      "title": "TC-NFR-02 · WCAG: axe + คีย์บอร์ด + label + สถานะไม่ใช้สีอย่างเดียว",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 6912
+    },
+    {
+      "id": "TC-NFR-03",
+      "title": "TC-NFR-03 · Health เวลาโหลด และผลซ้ำได้",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 996
+    },
+    {
+      "id": "TC-NFR-04",
+      "title": "TC-NFR-04 · เข้ารหัสข้อมูลส่วนบุคคลที่เก็บ (inspection)",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 84
+    },
+    {
+      "id": "TC-NOTI-01",
+      "title": "TC-NOTI-01 · ผู้รับแจ้งเตือนตามระดับ",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 678
+    },
+    {
+      "id": "TC-NOTI-02",
+      "title": "TC-NOTI-02 · ไม่แจ้งซ้ำ ข้ามระดับ และขั้นรออนุมัติ/รอออกเอกสาร",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 2133
+    },
+    {
+      "id": "TC-PAY-01",
+      "title": "TC-PAY-01 · อายุ QR 15:00",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 640
+    },
+    {
+      "id": "TC-PAY-02",
+      "title": "TC-PAY-02 · ยอดเงินและ callback ซ้ำ",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 197
+    },
+    {
+      "id": "TC-PAY-03",
+      "title": "TC-PAY-03 · ชำระพร้อมกัน เลขไม่ซ้ำ",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 331
+    },
+    {
+      "id": "TC-PAY-04",
+      "title": "TC-PAY-04 · เลขคำขอข้ามปี",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 874
+    },
+    {
+      "id": "TC-PDPA-01",
+      "title": "TC-PDPA-01 · ปิดบังเลขบัตรบนจอ",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 605
+    },
+    {
+      "id": "TC-PDPA-02",
+      "title": "TC-PDPA-02 · API (JSON) ไม่ส่งเลขบัตรเต็ม",
+      "status": "failed",
+      "ok": false,
+      "skipped": false,
+      "msg": "Error: PDPA JSON: expected no full id, received 10 problem(s)",
+      "ms": 84
+    },
+    {
+      "id": "TC-PDPA-03",
+      "title": "TC-PDPA-03 · แสดงเลขเต็มต้องมีเหตุผลและบันทึก Audit",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 931
+    },
+    {
+      "id": "TC-QUEUE-01",
+      "title": "TC-QUEUE-01 · ลำดับคิวและขอบเขตแผนก",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1172
+    },
+    {
+      "id": "TC-QUEUE-02",
+      "title": "TC-QUEUE-02 · รับเรื่องซ้อน (พร้อมกันและต่อกัน)",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 991
+    },
+    {
+      "id": "TC-QUEUE-03",
+      "title": "TC-QUEUE-03 · งานในมือสูงสุด 10",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1940
+    },
+    {
+      "id": "TC-RBAC-01",
+      "title": "TC-RBAC-01 · ประชาชนเปิดคำขอคนอื่นไม่ได้ (IDOR)",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 223
+    },
+    {
+      "id": "TC-RBAC-02",
+      "title": "TC-RBAC-02 · เจ้าหน้าที่อนุมัติ SV-02 ไม่ได้ (ตรวจที่ API)",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 460
+    },
+    {
+      "id": "TC-RBAC-03",
+      "title": "TC-RBAC-03 · ตารางสิทธิ์หน้า/API ตามบทบาท",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 3139
+    },
+    {
+      "id": "TC-RBAC-04",
+      "title": "TC-RBAC-04 · ผู้ดูแลระบบ: บริการ วันหยุด ผู้ใช้ และยอดที่ล็อก",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 2042
+    },
+    {
+      "id": "TC-RBAC-05",
+      "title": "TC-RBAC-05 · สิทธิ์เปิด/ดาวน์โหลดไฟล์แนบ",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 719
+    },
+    {
+      "id": "TC-RBAC-06",
+      "title": "TC-RBAC-06 · ผู้ดูแลระบบ: ช่วงค่าที่ยอมรับ",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1096
+    },
+    {
+      "id": "TC-SLA-01",
+      "title": "TC-SLA-01 · กำหนดเสร็จตามตารางวันที่",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1838
+    },
+    {
+      "id": "TC-SLA-02",
+      "title": "TC-SLA-02 · หยุดนับ SLA ระหว่างรอแก้ไข",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1961
+    },
+    {
+      "id": "TC-SLA-03",
+      "title": "TC-SLA-03 · ระดับเตือน ปกติ / ใกล้ครบกำหนด / เกินกำหนด",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1400
+    },
+    {
+      "id": "TC-SUBMIT-01",
+      "title": "TC-SUBMIT-01 · ยื่นคำขอ SV-01 ครบวงจร",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1228
+    },
+    {
+      "id": "TC-SUBMIT-02",
+      "title": "TC-SUBMIT-02 · เอกสารบังคับครบก่อนชำระ",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1512
+    },
+    {
+      "id": "TC-SUBMIT-03",
+      "title": "TC-SUBMIT-03 · ร่าง และการยกเลิก",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1994
+    },
+    {
+      "id": "TC-UPLOAD-01",
+      "title": "TC-UPLOAD-01 · ขนาดและจำนวนไฟล์",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 2385
+    },
+    {
+      "id": "TC-UPLOAD-02",
+      "title": "TC-UPLOAD-02 · ชนิดไฟล์จากเนื้อไฟล์",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 2757
+    },
+    {
+      "id": "TC-WORKFLOW-01",
+      "title": "TC-WORKFLOW-01 · SV-01 อนุมัติ + ออกเอกสาร",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 842
+    },
+    {
+      "id": "TC-WORKFLOW-02",
+      "title": "TC-WORKFLOW-02 · SV-02 ผ่านหัวหน้า",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1547
+    },
+    {
+      "id": "TC-WORKFLOW-03",
+      "title": "TC-WORKFLOW-03 · SV-03 สามขั้นตอน",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1684
+    },
+    {
+      "id": "TC-WORKFLOW-04",
+      "title": "TC-WORKFLOW-04 · ตีกลับสูงสุด 2 ครั้ง และผลหลังครบ",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 3138
+    },
+    {
+      "id": "TC-WORKFLOW-05",
+      "title": "TC-WORKFLOW-05 · เหตุผล ≥ 10 ตัวอักษร (ตีกลับ / ไม่อนุมัติ)",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 1770
+    },
+    {
+      "id": "TC-WORKFLOW-06",
+      "title": "TC-WORKFLOW-06 · เวลาแก้ไข 168 ชั่วโมง",
+      "status": "passed",
+      "ok": true,
+      "skipped": false,
+      "msg": "",
+      "ms": 613
+    }
+  ]
+}

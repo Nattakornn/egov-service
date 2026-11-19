@@ -1,0 +1,19 @@
+/* P11 · หน้า /dashboard · mobile-first (NFR-01: ไม่มี scroll แนวนอนที่ 375/768/1280) */
+.dash-filter { display: grid; grid-template-columns: 1fr; gap: 0 1rem; }
+.dash-filter .field { margin: 0; }
+.dash-filter select { width: 100%; max-width: 100%; }
+.kpi-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .75rem; margin: 0 0 1rem; }
+.kpi { border: 1px solid #d5dbe1; border-left: 4px solid #0b3d6e; border-radius: 6px; padding: .6rem .75rem; background: #fbfcfd; min-width: 0; }
+.kpi dt { font-weight: 600; color: #3d4650; font-size: .95rem; }
+.kpi dd { margin: .15rem 0 0; font-size: 1.75rem; font-weight: 700; line-height: 1.2; color: #1b1f24; font-variant-numeric: tabular-nums; }
+.dashboard[aria-busy="true"] .kpi dd { opacity: .6; }
+.dash-defs summary { cursor: pointer; font-weight: 600; }
+.dash-defs ul { margin: .5rem 0 0; padding-left: 1.25rem; }
+.dashboard .tbl .num { text-align: right; font-variant-numeric: tabular-nums; }
+@media (min-width: 600px) {
+  .dash-filter { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .kpi-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (min-width: 1000px) {
+  .kpi-grid { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+}

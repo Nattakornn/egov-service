@@ -1,0 +1,171 @@
+/* CSS กลาง · mobile-first · ไม่มี scroll แนวนอนที่ 375/768/1280 (NFR-01) · focus เห็นชัด (NFR-02/03)
+   สีผ่าน WCAG AA (ข้อความ ≥ 4.5:1) · สถานะ/ระดับมีข้อความเสมอ ไม่ใช้สีอย่างเดียว (NFR-11)
+   คลาสที่โมดูลใช้ได้: .card .stack .row .grid-2 .table-wrap .tbl .btn .btn-primary .btn-danger .btn-ghost .btn-small
+                      .field .hint .field-error .msg .msg-error .msg-ok .msg-info .badge .muted .sr-only .kv .actions .wizard-step */
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  font-family: "Noto Sans Thai", "Sarabun", "Leelawadee UI", Tahoma, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #1b1f24;
+  background: #f4f6f8;
+  overflow-wrap: break-word;
+  min-width: 0;
+}
+img, svg, canvas, video { max-width: 100%; height: auto; }
+a { color: #0b4f9c; }
+a:hover { color: #08386f; }
+h1 { font-size: 1.5rem; line-height: 1.3; margin: 0 0 1rem; }
+h2 { font-size: 1.25rem; line-height: 1.35; margin: 1.5rem 0 .75rem; }
+h3 { font-size: 1.1rem; margin: 1.25rem 0 .5rem; }
+p { margin: 0 0 .75rem; }
+
+/* ---------- focus (NFR-02 ส่วน B: outline มองเห็น) ---------- */
+:focus { outline: 3px solid #0b5cad; outline-offset: 2px; }
+:focus:not(:focus-visible) { outline: 3px solid #0b5cad; }
+:focus-visible { outline: 3px solid #0b5cad; outline-offset: 2px; box-shadow: 0 0 0 5px #ffd34d; }
+.app-header :focus, .app-header :focus-visible { outline-color: #ffd34d; box-shadow: none; }
+main:focus { outline: none; box-shadow: none; }
+
+.skip-link {
+  position: absolute; left: .5rem; top: -3rem; z-index: 100;
+  background: #ffd34d; color: #1b1f24; padding: .5rem .75rem; border-radius: 4px; font-weight: 600;
+}
+.skip-link:focus { top: .5rem; }
+.sr-only {
+  position: absolute !important; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+/* ---------- header ---------- */
+.app-header { background: #0b3d6e; color: #fff; }
+.header-inner {
+  max-width: 1200px; margin: 0 auto; padding: .5rem 1rem;
+  display: flex; flex-wrap: wrap; align-items: center; gap: .5rem 1rem;
+}
+.brand { color: #fff; font-weight: 700; text-decoration: none; font-size: 1.05rem; margin-right: auto; }
+a.brand:hover { color: #fff; text-decoration: underline; }
+.app-nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: .25rem .5rem; }
+.app-nav a {
+  display: inline-block; color: #fff; text-decoration: none; padding: .35rem .6rem; border-radius: 4px;
+  min-height: 44px; line-height: 1.9;
+}
+.app-nav a:hover { background: #134f8a; color: #fff; }
+.app-nav a[aria-current="page"] { background: #fff; color: #0b3d6e; font-weight: 600; }
+.bell-count {
+  display: inline-block; min-width: 1.6em; padding: 0 .4em; margin-left: .2em; border-radius: 999px;
+  background: #ffd34d; color: #1b1f24; font-weight: 700; text-align: center; line-height: 1.6;
+}
+.userbox { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem .6rem; font-size: .95rem; }
+.user-role { background: #134f8a; border-radius: 4px; padding: 0 .5rem; }
+.logout-form { margin: 0; }
+.app-header .btn-ghost { color: #fff; border-color: #fff; background: transparent; }
+.app-header .btn-ghost:hover { background: #134f8a; }
+
+/* ---------- main ---------- */
+.app-main { max-width: 1200px; margin: 0 auto; padding: 1rem; min-height: 60vh; }
+.app-footer { color: #3d4650; font-size: .85rem; text-align: center; padding: 1.5rem 1rem; border-top: 1px solid #d5dbe1; }
+.app-footer p { margin: 0; }
+
+.card { background: #fff; border: 1px solid #d5dbe1; border-radius: 8px; padding: 1rem; margin: 0 0 1rem; }
+.stack > * + * { margin-top: .75rem; }
+.row { display: flex; flex-wrap: wrap; gap: .5rem 1rem; align-items: center; }
+.actions { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; margin: .75rem 0; }
+.grid-2 { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+.muted { color: #4a5560; }
+.kv { display: grid; grid-template-columns: 1fr; gap: .15rem .75rem; margin: 0 0 1rem; }
+.kv dt { font-weight: 600; color: #3d4650; }
+.kv dd { margin: 0 0 .5rem; }
+
+/* ---------- forms ---------- */
+.field { margin: 0 0 1rem; max-width: 100%; }
+.field label { display: block; font-weight: 600; margin-bottom: .25rem; }
+.field .req { color: #a3141f; }
+.hint { color: #4a5560; font-size: .9rem; margin: 0 0 .25rem; }
+input[type="text"], input[type="number"], input[type="tel"], input[type="email"], input[type="password"],
+input[type="date"], input[type="search"], input:not([type]), select, textarea {
+  display: block; width: 100%; max-width: 32rem; min-height: 44px;
+  font: inherit; color: #1b1f24; background: #fff;
+  border: 2px solid #5f6b76; border-radius: 4px; padding: .45rem .6rem;
+}
+input[type="file"] { display: block; max-width: 100%; font: inherit; padding: .35rem 0; }
+input[type="checkbox"], input[type="radio"] { width: 1.25rem; height: 1.25rem; vertical-align: middle; }
+input[readonly] { background: #eef1f4; }
+textarea { min-height: 6rem; }
+.field-error { color: #a3141f; font-weight: 600; margin: .25rem 0 0; }
+.check { display: flex; gap: .5rem; align-items: flex-start; }
+
+/* ---------- buttons ---------- */
+.btn, button {
+  display: inline-flex; align-items: center; justify-content: center; gap: .35rem;
+  min-height: 44px; padding: .45rem 1rem; font: inherit; font-weight: 600; line-height: 1.3;
+  border-radius: 6px; border: 2px solid #0b5cad; background: #fff; color: #0b4f9c; cursor: pointer;
+  text-decoration: none; max-width: 100%; white-space: normal; text-align: center;
+}
+.btn:hover, button:hover { background: #e8f0fb; }
+.btn-primary, button.btn-primary { background: #0b5cad; color: #fff; }
+.btn-primary:hover, button.btn-primary:hover { background: #08467f; color: #fff; }
+.btn-danger, button.btn-danger { background: #a3141f; border-color: #a3141f; color: #fff; }
+.btn-danger:hover, button.btn-danger:hover { background: #7d0f18; }
+.btn-ghost { background: transparent; }
+.btn-small { min-height: 36px; padding: .25rem .65rem; font-size: .9rem; }
+button:disabled, .btn[aria-disabled="true"] { opacity: 1; background: #e3e7eb; border-color: #8a949e; color: #4a5560; cursor: not-allowed; }
+
+/* ---------- messages ---------- */
+.msg { border-radius: 6px; padding: .6rem .8rem; margin: 0 0 1rem; border: 2px solid; }
+.msg[hidden] { display: none; }
+.msg-error { background: #fdecee; border-color: #a3141f; color: #7d0f18; }
+.msg-ok { background: #e7f5ec; border-color: #1e7b3c; color: #145228; }
+.msg-info { background: #e8f0fb; border-color: #0b5cad; color: #08386f; }
+
+/* ---------- tables (กว้างเกินจอ → เลื่อนในกล่องตัวเอง ไม่ใช่ทั้งหน้า) ---------- */
+.table-wrap { width: 100%; max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 0 0 1rem; }
+.tbl { width: 100%; border-collapse: collapse; background: #fff; font-size: .95rem; }
+.tbl caption { text-align: left; font-weight: 600; padding: .25rem 0; }
+.tbl th, .tbl td { border-bottom: 1px solid #d5dbe1; padding: .5rem .6rem; text-align: left; vertical-align: top; }
+.tbl th { background: #eef2f6; font-weight: 600; white-space: nowrap; }
+.tbl td { overflow-wrap: anywhere; }
+
+/* ---------- badges: ข้อความ + สี + เส้นขอบ (NFR-11) ---------- */
+.badge {
+  display: inline-block; padding: .05rem .55rem; border-radius: 999px; border: 1px solid currentColor;
+  font-size: .9rem; font-weight: 600; line-height: 1.6; white-space: nowrap;
+}
+.st-DRAFT, .st-PENDING_PAYMENT { background: #eef1f4; color: #37424d; }
+.st-SUBMITTED { background: #e8f0fb; color: #08386f; }
+.st-IN_REVIEW { background: #e6f1f8; color: #0a4a6b; }
+.st-NEED_FIX { background: #fff4ce; color: #5c4200; }
+.st-PENDING_APPROVAL { background: #f1eafb; color: #4b2a7a; }
+.st-APPROVED { background: #e7f5ec; color: #145228; }
+.st-COMPLETED { background: #dff3e5; color: #0f4420; }
+.st-REJECTED { background: #fdecee; color: #7d0f18; }
+.st-CANCELLED { background: #eceff1; color: #37424d; text-decoration: line-through; text-decoration-thickness: 1px; }
+.lv-normal { background: #e7f5ec; color: #145228; }
+.lv-near { background: #fff4ce; color: #5c4200; border-style: dashed; }
+.lv-overdue { background: #fdecee; color: #7d0f18; border-width: 2px; }
+.lv-paused { background: #eceff1; color: #37424d; border-style: dotted; }
+.lv-closed { background: #eef1f4; color: #37424d; }
+
+.wizard-step { font-weight: 700; color: #08386f; }
+.qr-box { display: inline-block; background: #fff; padding: .5rem; border: 1px solid #d5dbe1; border-radius: 6px; }
+
+/* ---------- wider screens ---------- */
+@media (min-width: 768px) {
+  .app-main { padding: 1.5rem; }
+  h1 { font-size: 1.75rem; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .kv { grid-template-columns: minmax(10rem, max-content) 1fr; }
+  .kv dd { margin: 0; }
+}
+
+@media (forced-colors: active) {
+  .badge { border: 1px solid CanvasText; }
+  .bell-count { border: 1px solid CanvasText; }
+}
+
+@media print {
+  .app-header, .app-footer, .skip-link { display: none; }
+}

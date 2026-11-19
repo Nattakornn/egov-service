@@ -1,0 +1,6 @@
+== bug-B09 (BUG_MODE=B09)
+total=51 unique=51 passed=50 failed=1 skipped=0
+  FAIL TC-PDPA-02: Error: PDPA JSON: expected no full id, received 10 problem(s)
+expected-fail=[TC-PDPA-02] allowed=[]
+failed=[TC-PDPA-02] extra=[] should-fail-but-passed=[] side-effects=[]
+RESULT: MATCH
